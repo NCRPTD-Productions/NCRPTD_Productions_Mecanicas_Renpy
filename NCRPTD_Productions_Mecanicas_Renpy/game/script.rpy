@@ -6,6 +6,10 @@ define Edgar = Character('Edgar', color= "#24dddd")
 
 define fadeHold = Fade(.5, .75, 3, color="#000")
 define fadeHoldGameLogo = Fade(.5, 1, 4, color="#000")
+
+define eyeopen = ImageDissolve("eye.png", 1.5, 100)
+define eyeclose = ImageDissolve("eye.png", 1.5, 100, reverse=True)
+
 init:
     transform pac_custom_library_zoom:
         zoom 1.37
@@ -19,10 +23,8 @@ init python:
     
     def eyewarp(x):
         return x**3
-    eye_open = ImageDissolve("eye.png", .75, ramplen=128, reverse=False, time_warp=eyewarp)
-    eye_shut = ImageDissolve("eye.png", .75, ramplen=128, reverse=True, time_warp=eyewarp)
     black_image = Solid("#000")
-    white_image = Solid("#FFF")
+    white_image = Solid("#ffffff00")
 
 #Custom image sizes
 transform opening_image_size: #Opening text size adjustment
@@ -35,6 +37,7 @@ transform characters_half_size_placed_at_right:
 
 transform characters_zoomed_placed_at_right: 
     zoom 0.7
+    
     pos (300, 400)
 
 transform characters_half_size_placed_at_center: 
@@ -57,7 +60,7 @@ transform carlos_corner_bedroom_background_size:
 #
 
 #Point and click image buttons
-screen test_pac:
+screen intro_pac:
         imagebutton:
             pos(75, 845)
             idle "pac_edgar_idle.png"
@@ -117,22 +120,22 @@ label start:
     
 label carlos_closed_eyes_scene:
     
-    scene bg blank at custom_background_size
+    scene black
     # play sound "sfx_alarm.mp3" loop
     "*BEEP* *BEEP"
     #TODO: Meter audio de alarma
-    scene white
-    with eye_open
-    scene black
-    with eye_shut
-    scene white
-    with eye_open
-    scene black
-    with eye_shut
-    scene white
-    with eye_open
-    scene black
-    with eye_shut
+    show bg techo habitacion carlos at carlos_corner_bedroom_background_size
+    with eyeopen
+    hide bg techo habitacion carlos at carlos_corner_bedroom_background_size
+    with eyeclose
+    show bg techo habitacion carlos at carlos_corner_bedroom_background_size
+    with eyeopen
+    hide bg techo habitacion carlos at carlos_corner_bedroom_background_size
+    with eyeclose
+    show bg techo habitacion carlos at carlos_corner_bedroom_background_size
+    with eyeopen
+    hide bg techo habitacion carlos at carlos_corner_bedroom_background_size
+    with eyeclose
 
 label carlos_bedroom_ceiling_sequence:
     scene bg techo habitacion carlos at carlos_corner_bedroom_background_size
@@ -158,7 +161,7 @@ label start_point_and_click:
     scene bg habitacion carlos at carlos_bedroom_background_size
     "{i}Explora la habitación o ve al escritorio.{/i}"
 
-    call screen test_pac
+    call screen intro_pac
 
 #point and click action end scenes
 

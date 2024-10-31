@@ -1,0 +1,28 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 128, in script
+    call screen test_pac
+ScriptError: could not find label 'carlos_open_eyes'.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\bootstrap.py", line 359, in bootstrap
+    renpy.main.main()
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\main.py", line 652, in main
+    run(restart)
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\main.py", line 148, in run
+    renpy.execution.run_context(True)
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\execution.py", line 958, in run_context
+    context.run()
+  File "game/script.rpy", line 128, in script
+    call screen test_pac
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'carlos_open_eyes'.
+
+Windows-10-10.0.22631 AMD64
+Ren'Py 8.3.2.24090902
+NCRPTD_Productions_Mecanicas_Renpy 1.0
+Thu Oct 31 01:32:37 2024

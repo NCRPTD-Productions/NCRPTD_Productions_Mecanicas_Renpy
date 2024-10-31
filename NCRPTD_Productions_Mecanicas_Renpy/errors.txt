@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 42: 'zoom' is not a keyword argument or valid child of the imagebutton statement.
+    zoom 0.005
+        ^
+
+Ren'Py Version: Ren'Py 8.3.2.24090902
+Thu Oct 31 00:21:41 2024

@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 42: 'zoom' is not a keyword argument or valid child of the imagebutton statement.
-    zoom 0.005
+File "game/script.rpy", line 162: expected 'label_name' not found.
+    jump
         ^
 
+File "game/script.rpy", line 163: choice menuitem expects a non-empty block.
+    "El Escarabajo de oro.":
+                            ^
+
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Thu Oct 31 00:21:41 2024
+Thu Oct 31 19:27:43 2024

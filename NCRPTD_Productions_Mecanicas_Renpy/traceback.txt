@@ -1,9 +1,17 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 128, in script
+  File "game/script.rpy", line 183, in script call
+    call left_library_action_pac
+  File "game/script.rpy", line 178, in script call
+    call left_library_action_pac
+  File "game/script.rpy", line 173, in script call
+    call left_library_action_pac
+  File "game/script.rpy", line 186, in script call
+    call start_point_and_click
+  File "game/script.rpy", line 148, in script
     call screen test_pac
-ScriptError: could not find label 'carlos_open_eyes'.
+ScriptError: could not find label 'end_point_and_click'.
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -16,13 +24,21 @@ Full traceback:
     renpy.execution.run_context(True)
   File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\execution.py", line 958, in run_context
     context.run()
-  File "game/script.rpy", line 128, in script
+  File "game/script.rpy", line 183, in script call
+    call left_library_action_pac
+  File "game/script.rpy", line 178, in script call
+    call left_library_action_pac
+  File "game/script.rpy", line 173, in script call
+    call left_library_action_pac
+  File "game/script.rpy", line 186, in script call
+    call start_point_and_click
+  File "game/script.rpy", line 148, in script
     call screen test_pac
   File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\script.py", line 1103, in lookup
     raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'carlos_open_eyes'.
+ScriptError: could not find label 'end_point_and_click'.
 
 Windows-10-10.0.22631 AMD64
 Ren'Py 8.3.2.24090902
 NCRPTD_Productions_Mecanicas_Renpy 1.0
-Thu Oct 31 01:32:37 2024
+Thu Oct 31 19:30:18 2024

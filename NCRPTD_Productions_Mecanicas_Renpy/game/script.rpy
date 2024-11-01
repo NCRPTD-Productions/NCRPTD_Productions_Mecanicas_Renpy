@@ -2,8 +2,7 @@
 
 define Carlos = Character('Carlos', color= "#E03b8b")
 define Edgar = Character('Edgar', color= "#24dddd")
-define Justo= Character('Justo Pianelo')
-
+define Justo= Character('Justo Pianelo', color= "#b209c9")
 
 # NVL characters are used for the phone texting
 define n_nvl = Character("Nighten", kind=nvl, image="nighten", callback=Phone_SendSound)
@@ -11,6 +10,12 @@ define e_nvl = Character("Eileen", kind=nvl, callback=Phone_ReceiveSound)
 
 define config.adv_nvl_transition = None
 define config.nvl_adv_transition = Dissolve(0.3)
+
+#
+
+# Videos
+
+image pruebadiosqueande = Movie(play="prueba.mkv", size=(1920,1080), loop=False)
 
 #
 
@@ -138,12 +143,16 @@ screen displayTextScreen:
 #scene management
 
 label start:
+    play music "audio/bgm_opening_sequence.mp3"
     show bg ncrptd productions opening title at opening_image_size
     with fadeHold
     show bg members at opening_image_size
     with fadeHold
     show bg game logo at opening_image_size
     with fadeHoldGameLogo
+    # show pruebadiosqueande
+    # "this video has ended"
+    stop music fadeout 1.0
     
 label carlos_closed_eyes_scene:
     

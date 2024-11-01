@@ -1,34 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 279, in script call
-    call decryption("este es el mensaje")
-  File "game/decryption_minigame_scripts/decryption_main.rpy", line 13, in script
-    python:
-  File "game/decryption_minigame_scripts/decryption_main.rpy", line 14, in <module>
-    keyOrder = DetermineKeyOrder(messageText)
-  File "game/decryption_minigame_scripts/d_python_functions.rpy", line 51, in DetermineKeyOrder
-    seen[letter] = KEY.index(letter)
-ValueError: 'J' is not in list
+  File "game/script.rpy", line 153, in script
+    jump carlos_closed_eyes_scene
+ScriptError: could not find label 'carlos_closed_eyes_scene'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 279, in script call
-    call decryption("este es el mensaje")
-  File "game/decryption_minigame_scripts/decryption_main.rpy", line 13, in script
-    python:
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\ast.py", line 821, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\python.py", line 1178, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/decryption_minigame_scripts/decryption_main.rpy", line 14, in <module>
-    keyOrder = DetermineKeyOrder(messageText)
-  File "game/decryption_minigame_scripts/d_python_functions.rpy", line 51, in DetermineKeyOrder
-    seen[letter] = KEY.index(letter)
-ValueError: 'J' is not in list
+  File "game/script.rpy", line 153, in script
+    jump carlos_closed_eyes_scene
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\ast.py", line 1699, in execute
+    rv = renpy.game.script.lookup(target)
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'carlos_closed_eyes_scene'.
 
 Windows-10-10.0.22631 AMD64
 Ren'Py 8.3.2.24090902
 NCRPTD_Productions_Mecanicas_Renpy 1.0
-Fri Nov  1 00:36:55 2024
+Fri Nov  1 14:29:15 2024

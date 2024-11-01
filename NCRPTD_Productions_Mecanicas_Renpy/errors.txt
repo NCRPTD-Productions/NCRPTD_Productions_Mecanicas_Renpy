@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 162: expected 'label_name' not found.
-    jump
-        ^
-
-File "game/script.rpy", line 163: choice menuitem expects a non-empty block.
-    "El Escarabajo de oro.":
-                            ^
+File "game/decryption_minigame_scripts/d_custom_screens.rpy", line 16: hbox expects a non-empty block.
+    else:
+         ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Thu Oct 31 19:27:43 2024
+Fri Nov  1 11:11:12 2024

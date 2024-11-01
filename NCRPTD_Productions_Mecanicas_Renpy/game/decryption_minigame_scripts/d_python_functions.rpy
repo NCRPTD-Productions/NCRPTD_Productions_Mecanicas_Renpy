@@ -84,7 +84,7 @@ init python:
                 symbolNum = int(symbolText[i])
                 inputsText[i] = inputkey[symbolNum]
             else:
-                inputsText[i] = ' '
+                inputsText[i] = ''
 
     def KeyCompleted():
         completedKey = 0

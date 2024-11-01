@@ -4,8 +4,8 @@
 ### Renpy ###
 # Don't track content of these folders #
 ########################################
-cache/
-saves/
+NCRPTD_Productions_Mecanicas_Renpy/cache/
+NCRPTD_Productions_Mecanicas_Renpy/saves/
 
 
 # Compiled source #
@@ -23,9 +23,9 @@ saves/
 
 # The log file and other misc things #
 ######################################
-log.txt
-errors.txt
-traceback.txt
-files.txt
+NCRPTD_Productions_Mecanicas_Renpy/log.txt
+NCRPTD_Productions_Mecanicas_Renpy/errors.txt
+NCRPTD_Productions_Mecanicas_Renpy/traceback.txt
+NCRPTD_Productions_Mecanicas_Renpy/files.txt
 
 # End of https://www.toptal.com/developers/gitignore/api/renpy

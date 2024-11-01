@@ -139,7 +139,7 @@ label start:
 label carlos_closed_eyes_scene:
     
     scene black
-    # play sound "sfx_alarm.mp3" loop
+    play sound "sfx_alarm.mp3"
     "*BEEP* *BEEP"
     #TODO: Meter audio de alarma
     show bg techo habitacion carlos at carlos_corner_bedroom_background_size
@@ -160,8 +160,10 @@ label carlos_bedroom_ceiling_sequence:
     with fade
     "??" "Que calvario..."
     #TODO: Meter audio de suspiro corto
+    play sound "sfx_short_sigh.mp3"
     "??" "Cada vez estoy más cerca de descubrir a ese asesino."
     "??" "Solo espero que ese rarito y el disléxico de mierda no me molesten."
+    play sound "sfx_bed_sheets.mp3"
     #TODO: Meter audio de correr sábanas
 
 label carlos_bedroom_scene:
@@ -259,14 +261,17 @@ label bed_action_pac:
 
 label desk_action_pac:
     #TODO: Sonido campana notificación
+    play sound "sfx_phone_notification.mp3"
     show carlos puzzled at characters_half_size_placed_at_right
     "¡TIN!"
     #TODO: Sonido Suspiro corto
+    play sound "sfx_short_sigh.mp3"
     show carlos sigh at characters_half_size_placed_at_right
     "??" "Te juro por Dios, si llega a ser Justo..."
     show carlos telefono neutral at characters_half_size_placed_at_left
     Justo "Carlos, hola, junto a Guillermo demos hescubierto algo increíble, ¿Quieres a la casa de Guillermo venir?."
     show carlos telefono furioso at characters_half_size_placed_at_left
+    play sound "sfx_carlos_frustrated.mp3"
     Carlos "¡NO! ¡ESTE RETARDADO NO!"
     show edgar hiding at edgar_placed_at_right
     Edgar "Glup."

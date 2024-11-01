@@ -158,9 +158,9 @@ label carlos_closed_eyes_scene:
 label carlos_bedroom_ceiling_sequence:
     scene bg techo habitacion carlos at carlos_corner_bedroom_background_size
     with fade
-    "??" "Que calvario..."
     #TODO: Meter audio de suspiro corto
     play sound "sfx_short_sigh.mp3"
+    "??" "Que calvario..."
     "??" "Cada vez estoy más cerca de descubrir a ese asesino."
     "??" "Solo espero que ese rarito y el disléxico de mierda no me molesten."
     play sound "sfx_bed_sheets.mp3"
@@ -179,6 +179,7 @@ label carlos_bedroom_scene:
 
 label start_point_and_click:
     scene bg habitacion carlos at carlos_bedroom_background_size
+    play music "audio/bgm_carlos_bedroom.mp3"
     "{i}Explora la habitación o ve al escritorio.{/i}"
 
     call screen intro_pac
@@ -260,6 +261,7 @@ label bed_action_pac:
     call start_point_and_click
 
 label desk_action_pac:
+    stop music fadeout 1.0
     #TODO: Sonido campana notificación
     play sound "sfx_phone_notification.mp3"
     show carlos puzzled at characters_half_size_placed_at_right
@@ -281,6 +283,10 @@ label desk_action_pac:
     show carlos annoyed at characters_half_size_placed_at_right
     Carlos "..."
     Carlos "¡No se puede ser tan idiota!"
+
+label tutorial:
+    scene black
+    with fade
     call decryption("tres tristes tigres comen trigo en un trigal")
     return
     

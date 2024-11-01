@@ -3,6 +3,15 @@
 define Carlos = Character('Carlos', color= "#E03b8b")
 define Edgar = Character('Edgar', color= "#24dddd")
 define Justo= Character('Justo Pianelo')
+
+
+# NVL characters are used for the phone texting
+define n_nvl = Character("Nighten", kind=nvl, image="nighten", callback=Phone_SendSound)
+define e_nvl = Character("Eileen", kind=nvl, callback=Phone_ReceiveSound)
+
+define config.adv_nvl_transition = None
+define config.nvl_adv_transition = Dissolve(0.3)
+
 #
 
 define fadeHold = Fade(.5, .75, 3, color="#000")

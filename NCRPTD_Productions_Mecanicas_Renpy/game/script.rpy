@@ -2,6 +2,7 @@
 
 define Carlos = Character('Carlos', color= "#E03b8b")
 define Edgar = Character('Edgar', color= "#24dddd")
+define Justo= Character('Justo Pianelo')
 #
 
 define fadeHold = Fade(.5, .75, 3, color="#000")
@@ -34,6 +35,14 @@ transform opening_image_size: #Opening text size adjustment
 transform characters_half_size_placed_at_right: 
     zoom 0.5
     pos (300, 500)
+
+transform edgar_placed_at_right:
+    zoom 0.35
+    pos (1650, 400)
+
+transform edgar_placed_at_left:
+    zoom 0.35
+    pos (400, 400)
 
 transform characters_zoomed_placed_at_right: 
     zoom 0.7
@@ -78,7 +87,16 @@ screen intro_pac:
             at pac_custom_library_zoom
             hovered Show("displayTextScreen", displayText = "A book?")
             unhovered Hide("displayTextScreen")
-            
+              
+        imagebutton:
+            pos(1020, 860)
+            idle "pac_escritorio_idle.png"
+            hover "pac_escritorio_hover.png"
+            action [Hide("displayTextScreen"), Jump("desk_action_pac")]
+            at pac_custom_library_zoom
+            hovered Show("displayTextScreen", displayText = "Manos a la obra.")
+            unhovered Hide("displayTextScreen")
+             
         imagebutton:
             pos(1725, 545)
             idle "pac_biblioteca_derecha_idle.png"
@@ -87,7 +105,7 @@ screen intro_pac:
             at pac_custom_library_zoom
             hovered Show("displayTextScreen", displayText = "A book?")
             unhovered Hide("displayTextScreen")
-            
+             
         imagebutton:
             pos(2110, 1085)
             idle "pac_cama_carlos_idle.png"
@@ -149,7 +167,7 @@ label carlos_bedroom_ceiling_sequence:
 label carlos_bedroom_scene:
     scene bg habitacion carlos at carlos_bedroom_background_size
     show carlos normal  at characters_half_size_placed_at_right
-    show edgar neutral  at characters_half_size_placed_at_left
+    show edgar normal  at edgar_placed_at_right
     with fade
     "??" "Hola, Edgar. ¿Cómo amaneciste?"
     Edgar "Glup."
@@ -164,17 +182,6 @@ label start_point_and_click:
     call screen intro_pac
 
 #point and click action end scenes
-
-label edgar_action_pac:
-    Edgar "Glup."
-    show carlos smirk at characters_half_size_placed_at_right
-    "??" "Tú lo has dicho, amigo."
-    call start_point_and_click
-
-label bed_action_pac:
-    show carlos thoughtful at characters_half_size_placed_at_right
-    "??" "No estoy cansado aún."
-    call start_point_and_click
 
 #Left library
 
@@ -238,4 +245,38 @@ label right_library_option_The_Psychoanalyst:
     call right_library_action_pac
 
 #
+
+label edgar_action_pac:
+    Edgar "Glup."
+    show carlos smirk at characters_half_size_placed_at_right
+    "??" "Tú lo has dicho, amigo."
+    call start_point_and_click
+
+label bed_action_pac:
+    show carlos thoughtful at characters_half_size_placed_at_right
+    "??" "No estoy cansado aún."
+    call start_point_and_click
+
+label desk_action_pac:
+    #TODO: Sonido campana notificación
+    show carlos puzzled at characters_half_size_placed_at_right
+    "¡TIN!"
+    #TODO: Sonido Suspiro corto
+    show carlos sigh at characters_half_size_placed_at_right
+    "??" "Te juro por Dios, si llega a ser Justo..."
+    show carlos telefono neutral at characters_half_size_placed_at_left
+    Justo "Carlos, hola, junto a Guillermo demos hescubierto algo increíble, ¿Quieres a la casa de Guillermo venir?."
+    show carlos telefono furioso at characters_half_size_placed_at_left
+    Carlos "¡NO! ¡ESTE RETARDADO NO!"
+    show edgar hiding at edgar_placed_at_right
+    Edgar "Glup."
+    hide edgar hiding
+    show carlos sigh at characters_half_size_placed_at_right
+    Carlos "Ni me voy a molestar. Lo voy a bloquear."
+    show carlos annoyed at characters_half_size_placed_at_right
+    Carlos "..."
+    Carlos "¡No se puede ser tan idiota!"
+    call decryption("este es el mensaje")
+    return
+    
 #

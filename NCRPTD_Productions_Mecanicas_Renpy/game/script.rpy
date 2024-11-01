@@ -276,7 +276,7 @@ label desk_action_pac:
     show carlos annoyed at characters_half_size_placed_at_right
     Carlos "..."
     Carlos "¡No se puede ser tan idiota!"
-    call decryption("este es el mensaje")
+    call decryption("tres tristes tigres comen trigo en un trigal")
     return
     
 #

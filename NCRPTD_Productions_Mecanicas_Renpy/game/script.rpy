@@ -39,18 +39,21 @@ init:
         zoom 0.5
         pos (-10, 350) # pos (300, 500)
         # Move the character across the screen (to the right)
-        linear .75 xalign .3  # Move to the right over 2 seconds
+        linear .25 xalign .3  # Move to the right over 2 seconds
         # easeinout 2.0 xalign 0.5  # Optionally ease the character to the center after
 
     transform characters_half_size_placed_at_center: 
         zoom 0.5
+        # xalign .5
+        ypos 350
         
-        pos (600, 350)
+        linear .25 xalign .5  # Move to the right over 2 seconds
+        # pos (600, 350)
 
     transform characters_half_size_placed_at_right: 
         zoom 0.5
         pos (900, 350)
-        linear .75 xalign .5
+        linear .25 xalign .5
 
     transform characters_half_size_placed_at_right_no_transition: 
         zoom 0.5
@@ -69,12 +72,12 @@ init:
         
     transform edgar_placed_at_right:
         zoom 0.35
-        pos (2350, 425) # pos (1650, 400)
-        linear .75 xalign .75
+        pos (2350, 370) # pos (1650, 370)
+        linear .25 xalign .75
 
     transform edgar_placed_at_left:
         zoom 0.35
-        pos (400, 425)
+        pos (400, 370)
 
     transform characters_zoomed_placed_at_right: 
         zoom 0.7
@@ -88,9 +91,20 @@ init:
         zoom .75
         pos (0,0)
         
+    transform carlos_bedroom_left_library: 
+        zoom .75
+        pos (0,0)
+        
+    transform carlos_bedroom_right_library: 
+        zoom .75
+        pos (0,-150)
+        
     transform carlos_corner_bedroom_background_size: 
         zoom 1.5
         pos (0,0)
+
+    transform menu_position:
+        pos(0,0)
 #
 
 init python:
@@ -230,7 +244,7 @@ label start_point_and_click:
 #Left library
 
 label left_library_action_pac:
-    scene bg biblioteca izquierda detalle at carlos_bedroom_background_size
+    scene bg biblioteca izquierda detalle at carlos_bedroom_left_library
     menu:
         "Figura del EVA-01.":
             jump left_library_option_EVA_01
@@ -262,7 +276,7 @@ label library_option_Go_Back:
 #Right library
 
 label right_library_action_pac:
-    scene bg biblioteca derecha detalle at carlos_bedroom_background_size
+    scene bg biblioteca derecha detalle at carlos_bedroom_right_library
     menu:
         "Death Note.":
             jump right_library_option_Death_Note
@@ -285,7 +299,7 @@ label right_library_option_Ryuk_Figure:
 
 label right_library_option_The_Psychoanalyst:
     show carlos 2ndpose at characters_zoomed_placed_at_right
-    "??" "Las secuelas nunca existieron."
+    "??" "¡Las secuelas nunca existieron!."
     call right_library_action_pac
 
 #
@@ -303,6 +317,7 @@ label bed_action_pac:
 
 label desk_action_pac:
     stop music fadeout 1.0
+    "??" "Manos a la obra"
     #TODO: Sonido campana notificación
     play sound "sfx_phone_notification.mp3"
     show carlos puzzled at characters_half_size_placed_at_right_no_transition
@@ -325,10 +340,13 @@ label desk_action_pac:
     show edgar hiding at edgar_placed_at_right
     Edgar "Glup."
     hide edgar hiding
-    show carlos sigh at characters_half_size_placed_at_left
+    show carlos telefono neutral at characters_half_size_placed_at_center
     Carlos "Ni me voy a molestar. Lo voy a bloquear."
-    show carlos annoyed at characters_half_size_placed_at_left
+    nvl_narrator "Bloqueaste a este contacto."
+    show carlos sigh at characters_half_size_placed_at_center
     Carlos "..."
+    scene bg habitacion carlos at carlos_bedroom_background_size with fade
+    show carlos annoyed at characters_half_size_placed_at_center_no_transition
     Carlos "¡No se puede ser tan idiota!"
 
 # label tutorial:

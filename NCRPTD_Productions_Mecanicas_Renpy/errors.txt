@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 43: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
-    easeinout 2.0 xalign 0.5  
-                  ^
+File "game/script.rpy", line 280: expected ':' not found.
+    menu at menu_position:
+            ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Wed Nov  6 13:38:21 2024
+Wed Nov  6 19:09:42 2024

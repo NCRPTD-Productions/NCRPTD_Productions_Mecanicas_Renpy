@@ -78,12 +78,12 @@ screen nvl_phonetext(dialogue):
     for id_d, d in enumerate(dialogue):
         if d.who == None: # Narrator
             text d.what:
-                    xpos -335
+                    xpos -550
                     ypos 0.0
                     xsize 350
                     text_align 0.5
                     italic True
-                    size 28
+                    size 20
                     slow_cps False
                     id d.what_id
                     if d.current:

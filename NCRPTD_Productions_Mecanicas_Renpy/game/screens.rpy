@@ -136,7 +136,7 @@ style window:
     yalign gui.textbox_yalign
     ysize gui.textbox_height
 
-    background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
+    background Image("gui/textbox.png", xalign=0.5, yalign=.5)
 
 style namebox:
     xpos gui.name_xpos
@@ -1303,34 +1303,41 @@ style notify_text:
 
 screen nvl(dialogue, items=None):
 
-    window:
-        style "nvl_window"
 
-        has vbox:
-            spacing gui.nvl_spacing
+    #### ADD THIS TO MAKE THE PHONE WORK!! :) ###
+    if nvl_mode == "phone":
+        use PhoneDialogue(dialogue, items)
+    else:
+    ####
+    ## Indent the rest of the screen
+        window:
+            style "nvl_window"
 
-        ## Displays dialogue in either a vpgrid or the vbox.
-        if gui.nvl_height:
+            has vbox:
+                spacing gui.nvl_spacing
 
-            vpgrid:
-                cols 1
-                yinitial 1.0
+            ## Displays dialogue in either a vpgrid or the vbox.
+            if gui.nvl_height:
+
+                vpgrid:
+                    cols 1
+                    yinitial 1.0
+
+                    use nvl_dialogue(dialogue)
+
+            else:
 
                 use nvl_dialogue(dialogue)
 
-        else:
+            ## Displays the menu, if given. The menu may be displayed incorrectly if
+            ## config.narrator_menu is set to True, as it is above.
+            for i in items:
 
-            use nvl_dialogue(dialogue)
+                textbutton i.caption:
+                    action i.action
+                    style "nvl_button"
 
-        ## Displays the menu, if given. The menu may be displayed incorrectly if
-        ## config.narrator_menu is set to True.
-        for i in items:
-
-            textbutton i.caption:
-                action i.action
-                style "nvl_button"
-
-    add SideImage() xalign 0.0 yalign 1.0
+        add SideImage() xalign 0.0 yalign 1.0
 
 
 screen nvl_dialogue(dialogue):
@@ -1383,7 +1390,7 @@ style nvl_label:
     yanchor 0.0
     xsize gui.nvl_name_width
     min_width gui.nvl_name_width
-    textalign gui.nvl_name_xalign
+    text_align gui.nvl_name_xalign
 
 style nvl_dialogue:
     xpos gui.nvl_text_xpos
@@ -1391,7 +1398,7 @@ style nvl_dialogue:
     ypos gui.nvl_text_ypos
     xsize gui.nvl_text_width
     min_width gui.nvl_text_width
-    textalign gui.nvl_text_xalign
+    text_align gui.nvl_text_xalign
     layout ("subtitle" if gui.nvl_text_xalign else "tex")
 
 style nvl_thought:
@@ -1400,7 +1407,7 @@ style nvl_thought:
     ypos gui.nvl_thought_ypos
     xsize gui.nvl_thought_width
     min_width gui.nvl_thought_width
-    textalign gui.nvl_thought_xalign
+    text_align gui.nvl_thought_xalign
     layout ("subtitle" if gui.nvl_text_xalign else "tex")
 
 style nvl_button:
@@ -1409,8 +1416,7 @@ style nvl_button:
     xanchor gui.nvl_button_xalign
 
 style nvl_button_text:
-    properties gui.text_properties("nvl_button")
-
+    properties gui.button_text_properties("nvl_button")
 
 ## Bubble screen ###############################################################
 ##

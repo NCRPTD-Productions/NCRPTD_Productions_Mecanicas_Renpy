@@ -1,40 +1,32 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 308, in script call
-    call decryption("tres tristes tigres comen trigo en un trigal")
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  [Previous line repeated 15 more times]
-  File "game/decryption_minigame_scripts/d_doneCheck.rpy", line 11, in script
-    jump end
-ScriptError: could not find label 'end'.
+  File "game/script.rpy", line 322, in script
+    show carlos telefono furioso at characters_half_size_placed_at_righ_no_transition
+  File "game/script.rpy", line 322, in <module>
+    show carlos telefono furioso at characters_half_size_placed_at_righ_no_transition
+NameError: name 'characters_half_size_placed_at_righ_no_transition' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 308, in script call
-    call decryption("tres tristes tigres comen trigo en un trigal")
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  [Previous line repeated 15 more times]
-  File "game/decryption_minigame_scripts/d_doneCheck.rpy", line 11, in script
-    jump end
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\ast.py", line 1699, in execute
-    rv = renpy.game.script.lookup(target)
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\script.py", line 1103, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'end'.
+  File "game/script.rpy", line 322, in script
+    show carlos telefono furioso at characters_half_size_placed_at_righ_no_transition
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\ast.py", line 1111, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\ast.py", line 1070, in show_imspec
+    at_list = [ renpy.python.py_eval(i) for i in at_list ]
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\ast.py", line 1070, in <listcomp>
+    at_list = [ renpy.python.py_eval(i) for i in at_list ]
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\python.py", line 1209, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\python.py", line 1202, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 322, in <module>
+    show carlos telefono furioso at characters_half_size_placed_at_righ_no_transition
+NameError: name 'characters_half_size_placed_at_righ_no_transition' is not defined
 
 Windows-10-10.0.22631 AMD64
 Ren'Py 8.3.2.24090902
 NCRPTD_Productions_Mecanicas_Renpy 1.0
-Fri Nov  1 15:33:21 2024
+Wed Nov  6 17:58:28 2024

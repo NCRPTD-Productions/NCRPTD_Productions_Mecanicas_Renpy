@@ -105,6 +105,13 @@ init:
 
     transform menu_position:
         pos(0,0)
+        
+    transform phone_placed_at_left:
+        zoom 1
+        pos (-10, 350) # pos (300, 500)
+        # Move the character across the screen (to the right)
+        linear .25 xalign .3 
+
 #
 
 init python: 
@@ -230,19 +237,27 @@ label tutorial_start:
     hide screen ShowMessage
     hide screen DoneButton
     hide screen Escritorio
-
-    scene black
-    with fade
     jump tutorial_end
 
-label  tutorial_end:
+label tutorial_end:
     #TODO: Agregar sonido teléfono vibrando
     # scene black
     # with fade
     scene bg habitacion carlos at carlos_bedroom_background_size
     show carlos annoyed at characters_half_size_placed_at_left
+    Carlos "¿Qué?"
+    Carlos "¿Tres tristes tigres? ¿El trabalenguas?"
+    #TODO: Poner sonido de smirk
+    show carlos smirk at characters_half_size_placed_at_left_no_transition
+    Carlos "No es de extrañar. Al Asesino le gusta jugar con los detectives."
+    #TODO: Poner sonido vibración llamada
+    show carlos annoyed at characters_half_size_placed_at_left_no_transition
+    hide carlos annoyed
     Carlos "¿Y ahora qué?"
-    return
+    scene bg habitacion carlos at carlos_bedroom_background_size
+    show phone guillermo active call at phone_placed_at_left
+    show carlos telefono furioso at characters_half_size_placed_at_right_no_transition
+
 label end:
     
     #Phone conversation start

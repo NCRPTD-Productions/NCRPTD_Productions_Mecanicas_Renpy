@@ -222,8 +222,6 @@ label topdown_view_desk_scene:
     #desk point and click action sequences
 
 label tutorial_start:
-    scene black
-    with fade
     call decryption("aguante boca")
 
     hide screen SlotButtons
@@ -233,10 +231,14 @@ label tutorial_start:
     hide screen DoneButton
     hide screen Escritorio
 
+    scene black
+    with fade
     jump tutorial_end
 
 label  tutorial_end:
     #TODO: Agregar sonido teléfono vibrando
+    # scene black
+    # with fade
     scene bg habitacion carlos at carlos_bedroom_background_size
     show carlos annoyed at characters_half_size_placed_at_left
     Carlos "¿Y ahora qué?"

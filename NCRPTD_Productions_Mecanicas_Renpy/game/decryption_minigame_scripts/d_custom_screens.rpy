@@ -1,4 +1,5 @@
 screen Escritorio:
+    
     add "escritorio/bg escritorio.png" zoom 0.9
 
 screen SlotButtons:

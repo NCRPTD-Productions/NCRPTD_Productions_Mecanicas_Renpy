@@ -290,8 +290,12 @@ screen navigation():
     vbox:
         style_prefix "navigation"
 
-        xpos gui.navigation_xpos
-        yalign 0.5
+        if main_menu:
+            xalign 0.48
+            yalign 0.61
+        else:
+            xoffset 60
+            yalign 0.5
 
         spacing gui.navigation_spacing
 
@@ -340,6 +344,7 @@ style navigation_button:
 
 style navigation_button_text:
     properties gui.text_properties("navigation_button")
+    xalign 0.5
 
 
 ## Main Menu screen ############################################################
@@ -385,7 +390,7 @@ style main_menu_frame:
     xsize 560
     yfill True
 
-    background "gui/overlay/main_menu.png"
+    # background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
     xalign 1.0

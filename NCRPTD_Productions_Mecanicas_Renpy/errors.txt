@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 280: expected ':' not found.
-    menu at menu_position:
-            ^
+File "game/script.rpy", line 229: Line is indented, but the preceding call statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    hide screen SlotButtons
+    ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Wed Nov  6 19:09:42 2024
+Sat Nov  9 21:23:15 2024

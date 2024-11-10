@@ -1,36 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 271, in script call
-    call start_point_and_click
-  File "game/script.rpy", line 276, in script
-    scene bg biblioteca derecha detalle at carlos_bedroom_library
-  File "game/script.rpy", line 276, in <module>
-    scene bg biblioteca derecha detalle at carlos_bedroom_library
-NameError: name 'carlos_bedroom_library' is not defined
+  File "game/script.rpy", line 208, in script call
+    call start_point_and_click from _call_start_point_and_click
+  File "game/desk-point-and-click.rpy", line 62, in script
+    jump tutorial_start
+ScriptError: could not find label 'tutorial_start'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 271, in script call
-    call start_point_and_click
-  File "game/script.rpy", line 276, in script
-    scene bg biblioteca derecha detalle at carlos_bedroom_library
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\ast.py", line 1245, in execute
-    show_imspec(self.imspec, atl=getattr(self, "atl", None))
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\ast.py", line 1070, in show_imspec
-    at_list = [ renpy.python.py_eval(i) for i in at_list ]
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\ast.py", line 1070, in <listcomp>
-    at_list = [ renpy.python.py_eval(i) for i in at_list ]
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\python.py", line 1209, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\python.py", line 1202, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 276, in <module>
-    scene bg biblioteca derecha detalle at carlos_bedroom_library
-NameError: name 'carlos_bedroom_library' is not defined
+  File "game/script.rpy", line 208, in script call
+    call start_point_and_click from _call_start_point_and_click
+  File "game/desk-point-and-click.rpy", line 62, in script
+    jump tutorial_start
+  File "C:\Users\Usuario\Downloads\renpy-8.3.2-sdk\renpy\ast.py", line 1699, in execute
+    rv = renpy.game.script.lookup(target)
+  File "C:\Users\Usuario\Downloads\renpy-8.3.2-sdk\renpy\script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'tutorial_start'.
 
-Windows-10-10.0.22631 AMD64
+Windows-10-10.0.19041 AMD64
 Ren'Py 8.3.2.24090902
-NCRPTD_Productions_Mecanicas_Renpy 1.0
-Wed Nov  6 19:07:21 2024
+a_golden_chance 1.0
+Sat Nov  9 19:32:41 2024

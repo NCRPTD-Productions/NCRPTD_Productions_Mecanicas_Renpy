@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("NCRPTD_Productions_Mecanicas_Renpy")
+define config.name = _("a_golden_chance")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -37,7 +37,7 @@ define gui.about = _p("""
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "NCRPTD_Productions_Mecanicas_Renpy"
+define build.name = "a_golden_chance"
 
 
 ## Sounds and music ############################################################
@@ -143,7 +143,7 @@ default preferences.afm_time = 15
 ## This generally should not be changed, and if it is, should always be a
 ## literal string, not an expression.
 
-define config.save_directory = "NCRPTD_Productions_Mecanicas_Renpy-1730152637"
+define config.save_directory = "a_golden_chance-1730152637"
 
 
 ## Icon ########################################################################

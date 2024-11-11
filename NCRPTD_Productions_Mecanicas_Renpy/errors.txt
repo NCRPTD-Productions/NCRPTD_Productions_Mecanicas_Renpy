@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 280: end of line expected.
-    jump label act_I_choice_stay_home
-               ^
-
-File "game/script.rpy", line 282: end of line expected.
-    jump label act_I_choice_go
-               ^
+File "game/decryption_minigame_scripts/d_doneCheck.rpy", line 21: expected 'label_name' not found.
+    jump 
+        ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Sun Nov 10 22:15:04 2024
+Mon Nov 11 00:00:49 2024

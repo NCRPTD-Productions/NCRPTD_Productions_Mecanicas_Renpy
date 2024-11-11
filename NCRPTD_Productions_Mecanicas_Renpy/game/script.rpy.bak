@@ -1,8 +1,10 @@
 ﻿#Characters
 
-define Carlos = Character('Carlos', color= "#E03b8b")
-define Edgar = Character('Edgar', color= "#24dddd")
-define Justo= Character('Justo Pianelo', color= "#b209c9")
+define Carlos = Character('Carlos', color= "#e2b520")
+define Edgar = Character('Edgar', color= "#14d1d1")
+define Justo= Character('Justo', color= "#bd4acc")
+define Guillermo= Character('Guillermo', color= "#db4141")
+define AlZodiak= Character('Al Zodiak', color= "#47b947")
 
 # NVL characters are used for the phone texting
 define carlos_phone_nvl = Character("Carlos", kind=nvl, image="nighten", callback=Phone_SendSound)
@@ -52,12 +54,15 @@ init:
 
     transform characters_half_size_placed_at_right: 
         zoom 0.5
-        pos (900, 350)
-        linear .25 xalign .5
+        xpos 900
+        ypos 350
+        # pos (900, 350)
+        linear .25 xalign .6
 
     transform characters_half_size_placed_at_right_no_transition: 
         zoom 0.5
-        pos (900, 350)
+        xalign .6
+        ypos 350
 
     transform characters_half_size_placed_at_left_no_transition: 
         zoom 0.5
@@ -108,7 +113,7 @@ init:
         
     transform phone_placed_at_left:
         zoom 1
-        pos (-10, 350) # pos (300, 500)
+        pos (-10, 125) # pos (300, 500)
         # Move the character across the screen (to the right)
         linear .25 xalign .3 
 
@@ -212,7 +217,7 @@ label carlos_bedroom_scene:
     show edgar hiding at edgar_placed_at_right
     Edgar "..."
     "???" "No digas nada más, mi querido Edgar. Tengo trabajo que hacer."
-    call start_point_and_click from _call_start_point_and_click
+    jump start_point_and_click
 
 
 label start_point_and_click:
@@ -229,17 +234,10 @@ label topdown_view_desk_scene:
     #desk point and click action sequences
 
 label tutorial_start:
-    call decryption("aguante boca")
-
-    hide screen SlotButtons
-    hide screen SlotLetters
-    hide screen ShowInputsText
-    hide screen ShowMessage
-    hide screen DoneButton
-    hide screen Escritorio
-    jump tutorial_end
+    call decryption("holanda")
 
 label tutorial_end:
+    
     #TODO: Agregar sonido teléfono vibrando
     # scene black
     # with fade
@@ -250,44 +248,64 @@ label tutorial_end:
     #TODO: Poner sonido de smirk
     show carlos smirk at characters_half_size_placed_at_left_no_transition
     Carlos "No es de extrañar. Al Asesino le gusta jugar con los detectives."
+    jump guillermo_call
+
+label guillermo_call:
     #TODO: Poner sonido vibración llamada
     show carlos annoyed at characters_half_size_placed_at_left_no_transition
     hide carlos annoyed
     Carlos "¿Y ahora qué?"
-    scene bg habitacion carlos at carlos_bedroom_background_size
     show phone guillermo active call at phone_placed_at_left
-    show carlos telefono furioso at characters_half_size_placed_at_right_no_transition
-
-label end:
+    show carlos telefono furioso at characters_half_size_placed_at_right
+    Carlos "¡No puede ser! ¡A falta de uno, el otro!"
+    Carlos "¿Vale la pena que le conteste, Edgar?"
+    hide carlos telefono furioso
+    show edgar toc at edgar_placed_at_right
+    Edgar "Glup."
+    hide edgar toc
+    play sound "sfx_short_sigh.mp3"
+    show carlos telefono neutral at characters_half_size_placed_at_right
+    Carlos "Solo porque tú lo dijiste, Edgar."
+    hide phone guillermo active call
+    show phone guillermo active call at phone_placed_at_left 
+    show carlos telefono furioso at characters_half_size_placed_at_right
+    Guillermo "¡HOLA, CARLITOOOOOOOS! ¿¡CÓMO ESTÁS!?"
+    Carlos "..."
+    Guillermo "¿Hola? ¿Estás ahí?"
+    Carlos "Sí, aquí estoy. ¿Qué quieres?"
+    Guillermo "Estoy en mi casa con Justo, y encontramos algo \"de otro mundo\"."
+    Guillermo "Es el desafío perfecto para ti, Rey de los Criptogramas. ¿Vienes?"
+    menu:
+        "Quedarme en casa.":
+            jump act_I_choice_stay_home
+        "Ir.":
+            jump act_I_choice_go
+    jump end_game
     
-    #Phone conversation start
-    # e_nvl "who's this?"
-    # carlos_phone_nvl e2m1_b "haha, silly you"
-    # carlos_phone_nvl e1m2_b "We talked about showing off the phone the other day, remember?"
-    # e_nvl "it's today? {image=emoji/fear.png}"
-    # e_nvl "oops sorry night', I forgot {image=emoji/sweat.png}"
-    # carlos_phone_nvl "No problem, you must be quite busy!"
-    # carlos_phone_nvl e2m2_b "congrat on showing the emoji tho {image=emoji/clap.png}"
-    # e_nvl "Nothing magical, it's just a {a=https://www.renpy.org/doc/html/text.html#text-tag-image}image tag{/a} :)"
-    # carlos_phone_nvl e1m2 "But since we use regular renpy, we can use the same principle to send pictures!"
-    # e_nvl "Right! Let me take a selfie {image=emoji/camera.png}"
-    # show nighten e1m2_b
-    # e_nvl "{image=EileenSelfieSmall.png}"
-    # carlos_phone_nvl e2m1_b "awww, you look fantastic!"
-    # show nighten e2m2_b
-    # e_nvl "A bit low res but hey, the pic has to fit the screen somehow"
-    
-    # carlos_phone_nvl "Thank you Eileen for doing this demo with me!"
-    # e_nvl "no problem, I hope people will make good use of it!"
-    # e_nvl "byyee {image=emoji/wave.png}"
+label act_I_choice_stay_home:
+    Carlos "No, no y un millón de veces no. ¡La última vez que me dijiste algo así, estuviste dos horas hablándome sobre la tierra plana!"
+    Guillermo "¡Vamos, amigo! ¡Sabes que es verdad!"
+    Carlos "¡NO!"
+    Guillermo "Te arrepentirás si no vienes, ¡créeme!"
+    Carlos "Tengo cosas que hacer. No me llames."
+    hide phone guillermo active call
+    show carlos sigh at characters_half_size_placed_at_right_no_transition
+    Carlos "Qué calvario..."
+    show carlos normal at characters_half_size_placed_at_right_no_transition
+    Carlos "Edgar, ¿por qué siempre que estoy por trabajar viene un idiota a robarme tiempo?"
+    hide carlos normal
+    show edgar toc at edgar_placed_at_right
+    Edgar "Glup."
+    hide edgar toc
+    show carlos sigh at characters_half_size_placed_at_right
+    Carlos "Bueno, a seguir con los criptogramas..."
+    jump end_game
 
-
-    # show nighten:
-    #     ease 0.5 xalign 0.5 
-
-    # n e1m2 "That's it for the demo!"
-    # n normal e1m2 "Do you have any question?"
-
-    return
-
-#
+label act_I_choice_go:
+    Carlos "Esto es lo que sucede si Carlos acepta ir con los pibardox."
+    $ renpy.quit()
+label end_game:
+    scene black
+    # hide screen End
+    "Thank you for playing!"
+    $ renpy.quit()

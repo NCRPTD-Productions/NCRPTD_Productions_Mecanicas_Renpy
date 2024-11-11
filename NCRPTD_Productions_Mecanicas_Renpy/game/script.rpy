@@ -82,7 +82,7 @@ init:
 
     transform edgar_placed_at_left:
         zoom 0.35
-        pos (400, 370)
+        pos (400, 300)
 
     transform characters_zoomed_placed_at_right: 
         zoom 0.7
@@ -111,12 +111,20 @@ init:
     transform menu_position:
         pos(0,0)
         
-    transform phone_placed_at_left:
+    transform phone_placed_at_left_shake:
         zoom 1
         pos (-10, 125) # pos (300, 500)
         # Move the character across the screen (to the right)
-        linear .25 xalign .3 
+        xalign .3 
+        linear 0.090 xoffset -2 yoffset -2
+        linear 0.090 xoffset +2 yoffset +2
+        repeat
 
+    transform phone_placed_at_left_no_shake:
+        zoom 1
+        pos (-10, 125) # pos (300, 500)
+        # Move the character across the screen (to the right)
+        linear .25 xalign .3
 #
 
 init python: 
@@ -124,26 +132,8 @@ init python:
     import random
     import time
     
-    # Camera Shake using Ren'Py's built-in Shake transition
-    # def camera_shake(intensity=10, duration=0.5):
-    #     """
-    #     Apply a shake effect to the screen using the built-in Shake transition.
+    isfailingintutorial = False
 
-    #     intensity: How intense the shake is (higher value = more movement).
-    #     duration: How long the shake lasts (in seconds).
-    #     """
-    #     # Apply the shake effect to the screen
-    #     shake = Shake(intensity, duration)
-    #     renpy.pause(duration, hard=True)
-    #     return shake
-    # def eyewarp(x):
-    #     return x**3
-    # black_image = Solid("#000")
-    # white_image = Solid("#ffffff00")
-
-    #Camera Shake
-    #
-    
     #Point and click text display hover
 screen displayTextScreen:  
     default displayText = ""
@@ -212,7 +202,7 @@ label carlos_bedroom_scene:
     play music "audio/bgm_carlos_bedroom.mp3"
     "???" "Hola, Edgar. ¿Cómo amaneciste?"
     Edgar "Glup."
-    show carlos smirk  at characters_half_size_placed_at_left
+    show carlos smirk  at characters_half_size_placed_at_left_no_transition
     "???" "Por supuesto que bien. Si te cambié el agua y di de comer."
     show edgar hiding at edgar_placed_at_right
     Edgar "..."
@@ -234,17 +224,20 @@ label topdown_view_desk_scene:
     #desk point and click action sequences
 
 label tutorial_start:
-    call decryption("holanda")
+    #TODO: Agregar sonido dos hojas arrancándose
+    #TODO: Agregar sonido tijeras cortando papel
+    $ isfailingintutorial = True
+    call decryption("asd") from _call_decryption
 
 label tutorial_end:
-    
+    $ isfailingintutorial = False
     #TODO: Agregar sonido teléfono vibrando
     # scene black
     # with fade
     scene bg habitacion carlos at carlos_bedroom_background_size
     show carlos annoyed at characters_half_size_placed_at_left
     Carlos "¿Qué?"
-    Carlos "¿Tres tristes tigres? ¿El trabalenguas?"
+    Carlos "¿\"Tres tristes tigres\"? ¿El trabalenguas?"
     #TODO: Poner sonido de smirk
     show carlos smirk at characters_half_size_placed_at_left_no_transition
     Carlos "No es de extrañar. Al Asesino le gusta jugar con los detectives."
@@ -255,7 +248,7 @@ label guillermo_call:
     show carlos annoyed at characters_half_size_placed_at_left_no_transition
     hide carlos annoyed
     Carlos "¿Y ahora qué?"
-    show phone guillermo active call at phone_placed_at_left
+    show phone receiving guillermo call at phone_placed_at_left_shake
     show carlos telefono furioso at characters_half_size_placed_at_right
     Carlos "¡No puede ser! ¡A falta de uno, el otro!"
     Carlos "¿Vale la pena que le conteste, Edgar?"
@@ -266,8 +259,8 @@ label guillermo_call:
     play sound "sfx_short_sigh.mp3"
     show carlos telefono neutral at characters_half_size_placed_at_right
     Carlos "Solo porque tú lo dijiste, Edgar."
-    hide phone guillermo active call
-    show phone guillermo active call at phone_placed_at_left 
+    hide phone receiving guillermo call
+    show phone guillermo active call at phone_placed_at_left_no_shake
     show carlos telefono furioso at characters_half_size_placed_at_right
     Guillermo "¡HOLA, CARLITOOOOOOOS! ¿¡CÓMO ESTÁS!?"
     Carlos "..."
@@ -286,24 +279,45 @@ label act_I_choice_stay_home:
     Carlos "No, no y un millón de veces no. ¡La última vez que me dijiste algo así, estuviste dos horas hablándome sobre la tierra plana!"
     Guillermo "¡Vamos, amigo! ¡Sabes que es verdad!"
     Carlos "¡NO!"
-    Guillermo "Te arrepentirás si no vienes, ¡créeme!"
+    Guillermo "Te arrepentirás si no vienes, ¡Créeme!"
     Carlos "Tengo cosas que hacer. No me llames."
     hide phone guillermo active call
     show carlos sigh at characters_half_size_placed_at_right_no_transition
     Carlos "Qué calvario..."
     show carlos normal at characters_half_size_placed_at_right_no_transition
-    Carlos "Edgar, ¿por qué siempre que estoy por trabajar viene un idiota a robarme tiempo?"
+    Carlos "Edgar, ¿Por qué siempre que estoy por trabajar viene un idiota a robarme tiempo?"
     hide carlos normal
     show edgar toc at edgar_placed_at_right
     Edgar "Glup."
     hide edgar toc
     show carlos sigh at characters_half_size_placed_at_right
     Carlos "Bueno, a seguir con los criptogramas..."
+
+label start_impossible_cryptogram:
+
+    #TODO: Agregar sonido dos hojas arrancándose
+    #TODO: Agregar sonido tijeras cortando papel
+    call decryption("sda")
     jump end_game
 
 label act_I_choice_go:
     Carlos "Esto es lo que sucede si Carlos acepta ir con los pibardox."
     $ renpy.quit()
+
+label carlos_stops_cryptogram_abruptly:
+    scene bg habitacion carlos at carlos_bedroom_background_size
+    show carlos annoyed at characters_half_size_placed_at_left
+    Carlos "..."
+    hide carlos annoyed
+    show edgar normal at edgar_placed_at_right
+    Edgar "Glup."
+    show carlos annoyedspeech at characters_half_size_placed_at_left
+    Carlos "No, Edgar. Yo jamás."
+    Carlos "JAMÁS pediría ayuda. Solo... Necesito descansar. Hablar con Guillermo me agotó mentalmente."
+    scene black with fade
+
+
+
 label end_game:
     scene black
     # hide screen End

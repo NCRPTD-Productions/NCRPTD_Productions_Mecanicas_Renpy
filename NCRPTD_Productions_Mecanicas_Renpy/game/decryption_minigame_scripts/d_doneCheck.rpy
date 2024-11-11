@@ -6,7 +6,7 @@ init python:
 
 label doneCheck:
     if CheckKeyCompletion() != len(inputkey):
-        if isfailingintutorial:
+        if isintutorial:
             show carlos 2ndpose at characters_half_size_placed_at_center
             Carlos "¡No puedo creer que me haya equivocado!"
             Carlos "¡Es todo culpa de Justo! ¡Me está contagiando su dislexia!"
@@ -23,7 +23,11 @@ label doneCheck:
 
     
     else:
-        jump endDecryption
+        if isintutorial:
+            jump endDecryption
+        else:
+            pause(3)
+            jump end_decryption_abruptly
 
 label end_decryption_abruptly:
     

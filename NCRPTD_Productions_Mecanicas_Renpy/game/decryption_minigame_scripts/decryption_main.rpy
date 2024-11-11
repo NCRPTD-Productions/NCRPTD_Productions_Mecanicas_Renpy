@@ -23,10 +23,11 @@ label decryption(newMessage):
         inputsText = SetEmptyArray(symbolText)
         messageSections = SliceMessage(symbolText, 17)
 
-    scene bg escritorio at decryption_desk
-    show carlos thoughtful at characters_half_size_placed_at_left
-    Carlos "Hay que ser ordenado como siempre. Las letras van en la hoja izquierda, al lado de cada símbolo..."
-    Carlos "Y en el criptograma, en la hoja derecha, arriba de cada símbolo."
+    if isintutorial:
+        scene bg escritorio at decryption_desk
+        show carlos thoughtful at characters_half_size_placed_at_left
+        Carlos "Hay que ser ordenado como siempre. Las letras van en la hoja izquierda, al lado de cada símbolo..."
+        Carlos "Y en el criptograma, en la hoja derecha, arriba de cada símbolo."
     show screen Escritorio
 
     #"\'[messageText]\'"

@@ -6,13 +6,25 @@ define Justo= Character('Justo', color= "#bd4acc")
 define Guillermo= Character('Guillermo', color= "#db4141")
 define AlZodiak= Character('Al Zodiak', color= "#47b947")
 
-# NVL characters are used for the phone texting
+#Phone characters and variables
 define carlos_phone_nvl = Character("Carlos", kind=nvl, image="nighten", callback=Phone_SendSound)
 define justo_phone_nvl = Character("Justo", kind=nvl, callback=Phone_ReceiveSound)
 
 define config.adv_nvl_transition = None
 define config.nvl_adv_transition = Dissolve(0.3)
 
+#Snow shader variables
+image splashbg= Color("#FBF0D9")
+image snow1 = Fixed(SnowBlossom("gui/dreaming particle 1.png", 10, xspeed=(20, 50), yspeed=(100,200), start=10, fast=True, horizontal=False))
+image snow2 = Fixed(SnowBlossom("gui/dreaming particle 2.png", 10, xspeed=(20, 50), yspeed=(100,200), start=10, fast=True, horizontal=False))
+image snow3 = Fixed(SnowBlossom("gui/dreaming particle 3.png", 10, xspeed=(20, 50), yspeed=(100,200), start=10, fast=True, horizontal=False))
+image rain = Fixed(SnowBlossom("gui/raindrop.png", 50, xspeed=(-600, -1000), yspeed=(1000,1600), start=10))
+image rainback:
+    "gui/rain1.png"
+    pause 0.1
+    "gui/rain2.png"
+    pause 0.1
+    repeat
 #
 
 # Videos
@@ -90,7 +102,7 @@ init:
         pos (300, 400)
 
     transform custom_background_size: 
-        zoom 2
+        zoom 2.7
         pos (0,0)
     transform carlos_bedroom_background_size: 
         zoom .75
@@ -132,7 +144,7 @@ init python:
     import random
     import time
     
-    isfailingintutorial = False
+    isintutorial = False
 
     #Point and click text display hover
 screen displayTextScreen:  
@@ -143,7 +155,6 @@ screen displayTextScreen:
         frame:
             text displayText
     #    
-
 #
 
 #scene management
@@ -226,11 +237,11 @@ label topdown_view_desk_scene:
 label tutorial_start:
     #TODO: Agregar sonido dos hojas arrancándose
     #TODO: Agregar sonido tijeras cortando papel
-    $ isfailingintutorial = True
+    $ isintutorial = True
     call decryption("asd") from _call_decryption
 
 label tutorial_end:
-    $ isfailingintutorial = False
+    $ isintutorial = False
     #TODO: Agregar sonido teléfono vibrando
     # scene black
     # with fade
@@ -314,8 +325,31 @@ label carlos_stops_cryptogram_abruptly:
     show carlos annoyedspeech at characters_half_size_placed_at_left
     Carlos "No, Edgar. Yo jamás."
     Carlos "JAMÁS pediría ayuda. Solo... Necesito descansar. Hablar con Guillermo me agotó mentalmente."
-    scene black with fade
+    jump carlos_dream
 
+label carlos_dream:
+    # Show a blank background with the shader applied
+    scene black with fade
+    show snow1
+    show snow2
+    show snow3
+    Carlos "Sí... Sí, eso es."
+    Carlos "Te voy a encontrar. Voy a saber quién eres. Solo yo. Nadie más."
+    Carlos "Así me haré famoso y podré vivir lejos. Lejos de esos infelices."
+    Carlos "Ahora muéstrate. ¡Muéstrate, mierda!"
+    jump ringing_bell_carlos_house
+
+label ringing_bell_carlos_house:
+    #TODO: Poner sonido timbre raro
+    scene bg habitacion carlos at carlos_bedroom_background_size
+    show carlos annoyedspeech at characters_half_size_placed_at_left
+    Carlos "¡NO, NO, NO!"
+    Carlos "¡YA TE ESCUCHÉ, MIERDA!"
+    scene bg pasillo at custom_background_size with fade
+    Carlos "¿Quién es...?"
+    #TODO: Hacer point and click de puerta
+    Guillermo "CHARLY, CHARLY, ¿¡ESTÁS AHÍ!?"
+    Carlos "{i}Si no hago nada, eventualmente se irán...{i}"
 
 
 label end_game:

@@ -1,11 +1,11 @@
-2024-11-11 02:39:13 UTC
+2024-11-11 06:23:48 UTC
 Windows-10-10.0.22631
 Ren'Py 8.3.2.24090902
 
-Early init took 0.09s
-Loading error handling took 0.03s
-Loading script took 0.25s
-Loading save slot metadata took 0.02s
+Early init took 0.07s
+Loading error handling took 0.02s
+Loading script took 0.14s
+Loading save slot metadata took 0.03s
 Loading persistent took 0.00s
 Running init code took 0.04s
 Loading analysis data took 0.01s
@@ -13,14 +13,14 @@ Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.02s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\barba\\AppData\\Roaming/RenPy/backups\\NCRPTD_Productions_Mecanicas_Renpy':
-Dump and make backups took 0.05s
+Dump and make backups took 0.04s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc took 0.03s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 0.22s
+Creating interface object took 0.25s
 Cleaning stores took 0.00s
 Init translation took 0.03s
 Build styles took 0.00s
@@ -30,546 +30,6 @@ Save screen analysis took 0.02s
 Prepare screens took 0.05s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.53s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce RTX 3070 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(2560, 1440) physical=(1366, 697) drawable=(1366, 697)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(2560, 1440) physical=(1366, 697) drawable=(1366, 697)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(2560, 1440) physical=(1366, 697) drawable=(1366, 697)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(2560, 1440) physical=(1366, 697) drawable=(1366, 697)
-Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/script.rpy", line 249, in script call
-    call decryption("asd") from _call_decryption
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  [Previous line repeated 4 more times]
-  File "game/decryption_minigame_scripts/d_doneCheck.rpy", line 20, in script call
-    Carlos "¡No puedo creer que me haya equivocado!"
-  File "game/decryption_minigame_scripts/d_doneCheck.rpy", line 20, in script call
-    Carlos "¡No puedo creer que me haya equivocado!"
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_inputLetters.rpy", line 3, in script call
-    $ assignedLetter = renpy.input(_("Introducir letra:"), allow="[a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]", length=1)
-  File "game/decryption_minigame_scripts/d_inputLetters.rpy", line 3, in script call
-    $ assignedLetter = renpy.input(_("Introducir letra:"), allow="[a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]", length=1)
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/script.rpy", line 319, in script call
-    call decryption("sda")
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  [Previous line repeated 1 more time]
-  File "game/decryption_minigame_scripts/d_doneCheck.rpy", line 27, in script
-    python:
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\ast.py", line 821, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\python.py", line 1178, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/decryption_minigame_scripts/d_doneCheck.rpy", line 28, in <module>
-    renpy.call_in_new_context(simple_coroutine())
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\game.py", line 377, in call_in_new_context
-    return renpy.execution.run_context(False)
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\execution.py", line 958, in run_context
-    context.run()
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\script.py", line 1103, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label '<coroutine object simple_coroutine at 0x00000000084b3c40>'.
-
-While running game code:
-  File "game/script.rpy", line 249, in script call
-    call decryption("asd") from _call_decryption
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  [Previous line repeated 4 more times]
-  File "game/decryption_minigame_scripts/d_doneCheck.rpy", line 20, in script call
-    Carlos "¡No puedo creer que me haya equivocado!"
-  File "game/decryption_minigame_scripts/d_doneCheck.rpy", line 20, in script call
-    Carlos "¡No puedo creer que me haya equivocado!"
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_inputLetters.rpy", line 3, in script call
-    $ assignedLetter = renpy.input(_("Introducir letra:"), allow="[a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]", length=1)
-  File "game/decryption_minigame_scripts/d_inputLetters.rpy", line 3, in script call
-    $ assignedLetter = renpy.input(_("Introducir letra:"), allow="[a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]", length=1)
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/script.rpy", line 319, in script call
-    call decryption("sda")
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  [Previous line repeated 1 more time]
-  File "game/decryption_minigame_scripts/d_doneCheck.rpy", line 27, in script
-    python:
-  File "game/decryption_minigame_scripts/d_doneCheck.rpy", line 28, in <module>
-    renpy.call_in_new_context(simple_coroutine())
-ScriptError: could not find label '<coroutine object simple_coroutine at 0x00000000084b3c40>'.
-Screen sizes: virtual=(2560, 1440) physical=(1366, 697) drawable=(1366, 697)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(2560, 1440) physical=(1366, 697) drawable=(1366, 697)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 204.62s
-Loading error handling took 0.02s
-Loading script took 0.10s
-Loading save slot metadata took 0.02s
-Loading persistent took 0.00s
-Running init code took 0.02s
-Loading analysis data took 0.01s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.02s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\barba\\AppData\\Roaming/RenPy/backups\\NCRPTD_Productions_Mecanicas_Renpy':
-Dump and make backups took 0.04s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\main.py:614: RuntimeWarning: coroutine 'simple_coroutine' was never awaited
-  gc.collect(2)
-RuntimeWarning: Enable tracemalloc to get the object allocation traceback
-Initial gc took 0.05s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.20s
-Cleaning stores took 0.00s
-Init translation took 0.03s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.01s
-Prepare screens took 0.05s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.01s
-Running _start took 0.00s
-Interface start took 0.04s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce RTX 3070 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(2560, 1440) physical=(1366, 697) drawable=(1366, 697)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(2560, 1440) physical=(1366, 697) drawable=(1366, 697)
-Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/script.rpy", line 249, in script call
-    call decryption("asd") from _call_decryption
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  [Previous line repeated 4 more times]
-  File "game/decryption_minigame_scripts/d_doneCheck.rpy", line 20, in script call
-    Carlos "¡No puedo creer que me haya equivocado!"
-  File "game/decryption_minigame_scripts/d_doneCheck.rpy", line 20, in script call
-    Carlos "¡No puedo creer que me haya equivocado!"
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_inputLetters.rpy", line 3, in script call
-    $ assignedLetter = renpy.input(_("Introducir letra:"), allow="[a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]", length=1)
-  File "game/decryption_minigame_scripts/d_inputLetters.rpy", line 3, in script call
-    $ assignedLetter = renpy.input(_("Introducir letra:"), allow="[a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]", length=1)
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/script.rpy", line 319, in script call
-    call decryption("sda")
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  [Previous line repeated 1 more time]
-  File "game/decryption_minigame_scripts/d_doneCheck.rpy", line 27, in script
-    python:
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\ast.py", line 821, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\python.py", line 1178, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/decryption_minigame_scripts/d_doneCheck.rpy", line 28, in <module>
-    renpy.call_in_new_context(prueba)
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\game.py", line 377, in call_in_new_context
-    return renpy.execution.run_context(False)
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\execution.py", line 958, in run_context
-    context.run()
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\script.py", line 1103, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label '<function prueba at 0x0000000000755af0>'.
-
-While running game code:
-  File "game/script.rpy", line 249, in script call
-    call decryption("asd") from _call_decryption
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  [Previous line repeated 4 more times]
-  File "game/decryption_minigame_scripts/d_doneCheck.rpy", line 20, in script call
-    Carlos "¡No puedo creer que me haya equivocado!"
-  File "game/decryption_minigame_scripts/d_doneCheck.rpy", line 20, in script call
-    Carlos "¡No puedo creer que me haya equivocado!"
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_inputLetters.rpy", line 3, in script call
-    $ assignedLetter = renpy.input(_("Introducir letra:"), allow="[a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]", length=1)
-  File "game/decryption_minigame_scripts/d_inputLetters.rpy", line 3, in script call
-    $ assignedLetter = renpy.input(_("Introducir letra:"), allow="[a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]", length=1)
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/script.rpy", line 319, in script call
-    call decryption("sda")
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  [Previous line repeated 1 more time]
-  File "game/decryption_minigame_scripts/d_doneCheck.rpy", line 27, in script
-    python:
-  File "game/decryption_minigame_scripts/d_doneCheck.rpy", line 28, in <module>
-    renpy.call_in_new_context(prueba)
-ScriptError: could not find label '<function prueba at 0x0000000000755af0>'.
-Screen sizes: virtual=(2560, 1440) physical=(1366, 697) drawable=(1366, 697)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(2560, 1440) physical=(1366, 697) drawable=(1366, 697)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 513.13s
-Loading error handling took 0.01s
-Loading script took 0.11s
-Loading save slot metadata took 0.02s
-Loading persistent took 0.00s
-Running init code took 0.02s
-Loading analysis data took 0.01s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.02s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\barba\\AppData\\Roaming/RenPy/backups\\NCRPTD_Productions_Mecanicas_Renpy':
-Dump and make backups took 0.04s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.05s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.20s
-Cleaning stores took 0.00s
-Init translation took 0.03s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.01s
-Prepare screens took 0.05s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.01s
-Running _start took 0.00s
-Interface start took 0.04s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce RTX 3070 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(2560, 1440) physical=(1366, 697) drawable=(1366, 697)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(2560, 1440) physical=(1366, 697) drawable=(1366, 697)
-Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/script.rpy", line 249, in script call
-    call decryption("asd") from _call_decryption
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  [Previous line repeated 4 more times]
-  File "game/decryption_minigame_scripts/d_doneCheck.rpy", line 11, in script call
-    Carlos "¡No puedo creer que me haya equivocado!"
-  File "game/decryption_minigame_scripts/d_doneCheck.rpy", line 11, in script call
-    Carlos "¡No puedo creer que me haya equivocado!"
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_inputLetters.rpy", line 3, in script call
-    $ assignedLetter = renpy.input(_("Introducir letra:"), allow="[a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]", length=1)
-  File "game/decryption_minigame_scripts/d_inputLetters.rpy", line 3, in script call
-    $ assignedLetter = renpy.input(_("Introducir letra:"), allow="[a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]", length=1)
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/script.rpy", line 319, in script call
-    call decryption("sda")
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  [Previous line repeated 1 more time]
-  File "game/decryption_minigame_scripts/d_doneCheck.rpy", line 18, in script
-    python:
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\ast.py", line 821, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\python.py", line 1178, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/decryption_minigame_scripts/d_doneCheck.rpy", line 19, in <module>
-    renpy.call_in_new_context(prueba)
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\game.py", line 377, in call_in_new_context
-    return renpy.execution.run_context(False)
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\execution.py", line 958, in run_context
-    context.run()
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\script.py", line 1103, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label '<function prueba at 0x00000000056b3e50>'.
-
-While running game code:
-  File "game/script.rpy", line 249, in script call
-    call decryption("asd") from _call_decryption
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  [Previous line repeated 4 more times]
-  File "game/decryption_minigame_scripts/d_doneCheck.rpy", line 11, in script call
-    Carlos "¡No puedo creer que me haya equivocado!"
-  File "game/decryption_minigame_scripts/d_doneCheck.rpy", line 11, in script call
-    Carlos "¡No puedo creer que me haya equivocado!"
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_inputLetters.rpy", line 3, in script call
-    $ assignedLetter = renpy.input(_("Introducir letra:"), allow="[a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]", length=1)
-  File "game/decryption_minigame_scripts/d_inputLetters.rpy", line 3, in script call
-    $ assignedLetter = renpy.input(_("Introducir letra:"), allow="[a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]", length=1)
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/script.rpy", line 319, in script call
-    call decryption("sda")
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  [Previous line repeated 1 more time]
-  File "game/decryption_minigame_scripts/d_doneCheck.rpy", line 18, in script
-    python:
-  File "game/decryption_minigame_scripts/d_doneCheck.rpy", line 19, in <module>
-    renpy.call_in_new_context(prueba)
-ScriptError: could not find label '<function prueba at 0x00000000056b3e50>'.
-Screen sizes: virtual=(2560, 1440) physical=(1366, 697) drawable=(1366, 697)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(2560, 1440) physical=(1366, 697) drawable=(1366, 697)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 582.55s
-Loading error handling took 0.02s
-Loading script took 0.11s
-Loading save slot metadata took 0.02s
-Loading persistent took 0.00s
-
-File "game/decryption_minigame_scripts/d_doneCheck.rpy", line 19: expected statement.
-    renpy.pause(3)
-                  ^
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Interface start took 0.30s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce RTX 3070 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(2560, 1440) physical=(1366, 697) drawable=(1366, 697)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(2560, 1440) physical=(1366, 697) drawable=(1366, 697)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 620.52s
-Loading error handling took 0.02s
-Loading script took 0.12s
-Loading save slot metadata took 0.02s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.01s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.02s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\barba\\AppData\\Roaming/RenPy/backups\\NCRPTD_Productions_Mecanicas_Renpy':
-Dump and make backups took 0.04s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.04s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.21s
-Cleaning stores took 0.00s
-Init translation took 0.03s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.01s
-Prepare screens took 0.05s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.01s
-Running _start took 0.00s
-Interface start took 0.04s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce RTX 3070 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(2560, 1440) physical=(1366, 697) drawable=(1366, 697)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(2560, 1440) physical=(1366, 697) drawable=(1366, 697)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 621.69s
-Loading error handling took 0.01s
-Loading script took 0.11s
-Loading save slot metadata took 0.02s
-Loading persistent took 0.00s
-Running init code took 0.02s
-Loading analysis data took 0.01s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.02s
-Index archives took 0.00s
-Dump and make backups took 0.04s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.04s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.20s
-Cleaning stores took 0.00s
-Init translation took 0.03s
-Build styles took 0.00s
-Load screen analysis took 0.02s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
-Prepare screens took 0.05s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.00s
-Running _start took 0.00s
-Interface start took 0.04s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce RTX 3070 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(2560, 1440) physical=(1366, 697) drawable=(1366, 697)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(2560, 1440) physical=(1366, 697) drawable=(1366, 697)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 637.10s
-Loading error handling took 0.02s
-Loading script took 0.11s
-Loading save slot metadata took 0.02s
-Loading persistent took 0.00s
-Running init code took 0.02s
-Loading analysis data took 0.01s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.02s
-Index archives took 0.00s
-Dump and make backups took 0.04s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.05s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.20s
-Cleaning stores took 0.00s
-Init translation took 0.03s
-Build styles took 0.00s
-Load screen analysis took 0.02s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
-Prepare screens took 0.05s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.00s
 Running _start took 0.00s
 Interface start took 0.05s
 
@@ -586,198 +46,12 @@ Maximum texture size: 4096x4096
 Screen sizes: virtual=(2560, 1440) physical=(1366, 697) drawable=(1366, 697)
 Maximum texture size: 4096x4096
 Resetting cache.
-Early init took 1237.79s
+Early init took 94.17s
 Loading error handling took 0.02s
-Loading script took 0.14s
-Loading save slot metadata took 0.02s
-Loading persistent took 0.00s
-Running init code took 0.02s
-Loading analysis data took 0.01s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.02s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\barba\\AppData\\Roaming/RenPy/backups\\NCRPTD_Productions_Mecanicas_Renpy':
-Dump and make backups took 0.04s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.04s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.21s
-Cleaning stores took 0.00s
-Init translation took 0.03s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.02s
-Prepare screens took 0.05s
-Save pyanalysis. took 0.02s
-Save bytecode. took 0.01s
-Running _start took 0.00s
-Interface start took 0.04s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce RTX 3070 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(2560, 1440) physical=(1366, 697) drawable=(1366, 697)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(2560, 1440) physical=(1366, 697) drawable=(1366, 697)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 1294.25s
-Loading error handling took 0.01s
-Loading script took 0.12s
-Loading save slot metadata took 0.02s
-Loading persistent took 0.00s
-
-File "game/decryption_minigame_scripts/d_doneCheck.rpy", line 21: expected 'label_name' not found.
-    jump 
-        ^
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Interface start took 0.29s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce RTX 3070 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(2560, 1440) physical=(1366, 697) drawable=(1366, 697)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(2560, 1440) physical=(1366, 697) drawable=(1366, 697)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 1295.85s
-Loading error handling took 0.01s
-Loading script took 0.13s
-Loading save slot metadata took 0.02s
-Loading persistent took 0.00s
-
-File "game/decryption_minigame_scripts/d_doneCheck.rpy", line 21: expected 'label_name' not found.
-    jump 
-        ^
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Interface start took 0.27s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce RTX 3070 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(2560, 1440) physical=(1366, 697) drawable=(1366, 697)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(2560, 1440) physical=(1366, 697) drawable=(1366, 697)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 1305.04s
-Loading error handling took 0.02s
-Loading script took 0.14s
-Loading save slot metadata took 0.02s
-Loading persistent took 0.00s
-Running init code took 0.04s
-Loading analysis data took 0.01s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.02s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\barba\\AppData\\Roaming/RenPy/backups\\NCRPTD_Productions_Mecanicas_Renpy':
-Dump and make backups took 0.04s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.04s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.21s
-Cleaning stores took 0.00s
-Init translation took 0.03s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.01s
-Prepare screens took 0.05s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.01s
-Running _start took 0.00s
-Interface start took 0.04s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce RTX 3070 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(2560, 1440) physical=(1366, 697) drawable=(1366, 697)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(2560, 1440) physical=(1366, 697) drawable=(1366, 697)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 1417.96s
-Loading error handling took 0.01s
-Loading script took 0.12s
-Loading save slot metadata took 0.02s
-Loading persistent took 0.00s
-Running init code took 0.02s
-Loading analysis data took 0.01s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.02s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\barba\\AppData\\Roaming/RenPy/backups\\NCRPTD_Productions_Mecanicas_Renpy':
-Dump and make backups took 0.04s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.05s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.21s
-Cleaning stores took 0.00s
-Init translation took 0.03s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.01s
-Prepare screens took 0.05s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.01s
-Running _start took 0.00s
-Interface start took 0.04s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce RTX 3070 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(2560, 1440) physical=(1366, 697) drawable=(1366, 697)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(2560, 1440) physical=(1366, 697) drawable=(1366, 697)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 1447.71s
-Loading error handling took 0.01s
 Loading script took 0.10s
 Loading save slot metadata took 0.02s
 Loading persistent took 0.00s
-Running init code took 0.02s
+Running init code took 0.05s
 Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.02s
@@ -785,11 +59,11 @@ Index archives took 0.00s
 Dump and make backups took 0.04s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.05s
+Initial gc took 0.04s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 0.20s
+Creating interface object took 0.21s
 Cleaning stores took 0.00s
 Init translation took 0.03s
 Build styles took 0.00s
@@ -815,25 +89,25 @@ Maximum texture size: 4096x4096
 Screen sizes: virtual=(2560, 1440) physical=(1366, 697) drawable=(1366, 697)
 Maximum texture size: 4096x4096
 Resetting cache.
-Early init took 1489.07s
-Loading error handling took 0.01s
+Early init took 153.79s
+Loading error handling took 0.02s
 Loading script took 0.14s
 Loading save slot metadata took 0.02s
 Loading persistent took 0.00s
-Running init code took 0.02s
+Running init code took 0.05s
 Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.02s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\barba\\AppData\\Roaming/RenPy/backups\\NCRPTD_Productions_Mecanicas_Renpy':
-Dump and make backups took 0.04s
+Dump and make backups took 0.05s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.04s
+Initial gc took 0.05s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 0.20s
+Creating interface object took 0.21s
 Cleaning stores took 0.00s
 Init translation took 0.03s
 Build styles took 0.00s
@@ -859,20 +133,20 @@ Maximum texture size: 4096x4096
 Screen sizes: virtual=(2560, 1440) physical=(1366, 697) drawable=(1366, 697)
 Maximum texture size: 4096x4096
 Resetting cache.
-Early init took 1510.60s
+Early init took 159.90s
 Loading error handling took 0.02s
-Loading script took 0.12s
+Loading script took 0.11s
 Loading save slot metadata took 0.02s
 Loading persistent took 0.00s
-Running init code took 0.03s
-Loading analysis data took 0.02s
+Running init code took 0.05s
+Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.02s
 Index archives took 0.00s
 Dump and make backups took 0.04s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.06s
+Initial gc took 0.05s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
@@ -880,14 +154,14 @@ Creating interface object took 0.21s
 Cleaning stores took 0.00s
 Init translation took 0.03s
 Build styles took 0.00s
-Load screen analysis took 0.03s
+Load screen analysis took 0.02s
 Analyze screens took 0.00s
 Save screen analysis took 0.00s
-Prepare screens took 0.07s
+Prepare screens took 0.05s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.00s
 Running _start took 0.00s
-Interface start took 0.08s
+Interface start took 0.05s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)

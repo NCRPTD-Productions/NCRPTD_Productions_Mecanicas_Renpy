@@ -1,7 +1,7 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 249, in script call
+  File "game/script.rpy", line 243, in script call
     call decryption("asd") from _call_decryption
   File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
     $ ui.interact()
@@ -26,7 +26,7 @@ While running game code:
     $ ui.interact()
   File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
     $ ui.interact()
-  File "game/script.rpy", line 319, in script call
+  File "game/script.rpy", line 313, in script call
     call decryption("sda")
   File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
     $ ui.interact()
@@ -35,16 +35,16 @@ While running game code:
   File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
     $ ui.interact()
   [Previous line repeated 1 more time]
-  File "game/decryption_minigame_scripts/d_doneCheck.rpy", line 18, in script
-    python:
-  File "game/decryption_minigame_scripts/d_doneCheck.rpy", line 19, in <module>
-    renpy.call_in_new_context(prueba)
-ScriptError: could not find label '<function prueba at 0x00000000056b3e50>'.
+  File "game/script.rpy", line 334, in script
+    scene bg blank with wave_effect(wavetime=0, speed=50, amplitude=150, frequency=100)
+  File "game/script.rpy", line 334, in <module>
+    scene bg blank with wave_effect(wavetime=0, speed=50, amplitude=150, frequency=100)
+NameError: name 'wave_effect' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 249, in script call
+  File "game/script.rpy", line 243, in script call
     call decryption("asd") from _call_decryption
   File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
     $ ui.interact()
@@ -69,7 +69,7 @@ Full traceback:
     $ ui.interact()
   File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
     $ ui.interact()
-  File "game/script.rpy", line 319, in script call
+  File "game/script.rpy", line 313, in script call
     call decryption("sda")
   File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
     $ ui.interact()
@@ -78,23 +78,19 @@ Full traceback:
   File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
     $ ui.interact()
   [Previous line repeated 1 more time]
-  File "game/decryption_minigame_scripts/d_doneCheck.rpy", line 18, in script
-    python:
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\ast.py", line 821, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\python.py", line 1178, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/decryption_minigame_scripts/d_doneCheck.rpy", line 19, in <module>
-    renpy.call_in_new_context(prueba)
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\game.py", line 377, in call_in_new_context
-    return renpy.execution.run_context(False)
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\execution.py", line 958, in run_context
-    context.run()
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\script.py", line 1103, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label '<function prueba at 0x00000000056b3e50>'.
+  File "game/script.rpy", line 334, in script
+    scene bg blank with wave_effect(wavetime=0, speed=50, amplitude=150, frequency=100)
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\ast.py", line 1357, in execute
+    paired = renpy.python.py_eval(self.paired)
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\python.py", line 1209, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\python.py", line 1202, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 334, in <module>
+    scene bg blank with wave_effect(wavetime=0, speed=50, amplitude=150, frequency=100)
+NameError: name 'wave_effect' is not defined
 
 Windows-10-10.0.22631 AMD64
 Ren'Py 8.3.2.24090902
 a_golden_chance 1.0
-Sun Nov 10 23:47:46 2024
+Mon Nov 11 02:47:06 2024

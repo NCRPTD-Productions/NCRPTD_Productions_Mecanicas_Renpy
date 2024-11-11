@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/decryption_minigame_scripts/d_doneCheck.rpy", line 21: expected 'label_name' not found.
-    jump 
-        ^
+File "game/script.rpy", line 328: end of line expected.
+    jump carlos_dream:
+                     ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Mon Nov 11 00:00:49 2024
+Mon Nov 11 03:15:47 2024

@@ -1,32 +1,13 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 243, in script call
-    call decryption("asd") from _call_decryption
+  File "game/script.rpy", line 298, in script call
+    call decryption("a") from _call_decryption
   File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
     $ ui.interact()
   File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
     $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  [Previous line repeated 4 more times]
-  File "game/decryption_minigame_scripts/d_doneCheck.rpy", line 11, in script call
-    Carlos "¡No puedo creer que me haya equivocado!"
-  File "game/decryption_minigame_scripts/d_doneCheck.rpy", line 11, in script call
-    Carlos "¡No puedo creer que me haya equivocado!"
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_inputLetters.rpy", line 3, in script call
-    $ assignedLetter = renpy.input(_("Introducir letra:"), allow="[a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]", length=1)
-  File "game/decryption_minigame_scripts/d_inputLetters.rpy", line 3, in script call
-    $ assignedLetter = renpy.input(_("Introducir letra:"), allow="[a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]", length=1)
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/script.rpy", line 313, in script call
+  File "game/script.rpy", line 373, in script call
     call decryption("sda")
   File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
     $ ui.interact()
@@ -35,41 +16,22 @@ While running game code:
   File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
     $ ui.interact()
   [Previous line repeated 1 more time]
-  File "game/script.rpy", line 334, in script
-    scene bg blank with wave_effect(wavetime=0, speed=50, amplitude=150, frequency=100)
-  File "game/script.rpy", line 334, in <module>
-    scene bg blank with wave_effect(wavetime=0, speed=50, amplitude=150, frequency=100)
-NameError: name 'wave_effect' is not defined
+  File "game/script.rpy", line 462, in script
+    show carlos annoyed at characters_half_size_placed_at_Left_no_transition
+  File "game/script.rpy", line 462, in <module>
+    show carlos annoyed at characters_half_size_placed_at_Left_no_transition
+NameError: name 'characters_half_size_placed_at_Left_no_transition' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 243, in script call
-    call decryption("asd") from _call_decryption
+  File "game/script.rpy", line 298, in script call
+    call decryption("a") from _call_decryption
   File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
     $ ui.interact()
   File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
     $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  [Previous line repeated 4 more times]
-  File "game/decryption_minigame_scripts/d_doneCheck.rpy", line 11, in script call
-    Carlos "¡No puedo creer que me haya equivocado!"
-  File "game/decryption_minigame_scripts/d_doneCheck.rpy", line 11, in script call
-    Carlos "¡No puedo creer que me haya equivocado!"
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_inputLetters.rpy", line 3, in script call
-    $ assignedLetter = renpy.input(_("Introducir letra:"), allow="[a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]", length=1)
-  File "game/decryption_minigame_scripts/d_inputLetters.rpy", line 3, in script call
-    $ assignedLetter = renpy.input(_("Introducir letra:"), allow="[a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]", length=1)
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/script.rpy", line 313, in script call
+  File "game/script.rpy", line 373, in script call
     call decryption("sda")
   File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
     $ ui.interact()
@@ -78,19 +40,23 @@ Full traceback:
   File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
     $ ui.interact()
   [Previous line repeated 1 more time]
-  File "game/script.rpy", line 334, in script
-    scene bg blank with wave_effect(wavetime=0, speed=50, amplitude=150, frequency=100)
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\ast.py", line 1357, in execute
-    paired = renpy.python.py_eval(self.paired)
+  File "game/script.rpy", line 462, in script
+    show carlos annoyed at characters_half_size_placed_at_Left_no_transition
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\ast.py", line 1111, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\ast.py", line 1070, in show_imspec
+    at_list = [ renpy.python.py_eval(i) for i in at_list ]
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\ast.py", line 1070, in <listcomp>
+    at_list = [ renpy.python.py_eval(i) for i in at_list ]
   File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\python.py", line 1209, in py_eval
     return py_eval_bytecode(code, globals, locals)
   File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\python.py", line 1202, in py_eval_bytecode
     return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 334, in <module>
-    scene bg blank with wave_effect(wavetime=0, speed=50, amplitude=150, frequency=100)
-NameError: name 'wave_effect' is not defined
+  File "game/script.rpy", line 462, in <module>
+    show carlos annoyed at characters_half_size_placed_at_Left_no_transition
+NameError: name 'characters_half_size_placed_at_Left_no_transition' is not defined
 
 Windows-10-10.0.22631 AMD64
 Ren'Py 8.3.2.24090902
 a_golden_chance 1.0
-Mon Nov 11 02:47:06 2024
+Mon Nov 11 17:22:34 2024

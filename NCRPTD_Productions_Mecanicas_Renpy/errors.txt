@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 261: expected 'simple_expression' not found.
-    show phone guillermo active call at 
-                                        ^
+File "game/script.rpy", line 280: end of line expected.
+    jump label act_I_choice_stay_home
+               ^
+
+File "game/script.rpy", line 282: end of line expected.
+    jump label act_I_choice_go
+               ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Sat Nov  9 21:49:36 2024
+Sun Nov 10 22:15:04 2024

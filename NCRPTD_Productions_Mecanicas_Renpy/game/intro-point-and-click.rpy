@@ -91,17 +91,17 @@ label right_library_action_pac:
 label right_library_option_Death_Note:
     show carlos smirk at characters_zoomed_placed_at_right
     "???" "Kira tenía razón."
-    call right_library_action_pac
+    call right_library_action_pac from _call_right_library_action_pac
 
 label right_library_option_Ryuk_Figure:
     show carlos sigh at characters_zoomed_placed_at_right
     "???" "Me saliste caro."
-    call right_library_action_pac
+    call right_library_action_pac from _call_right_library_action_pac_1
 
 label right_library_option_The_Psychoanalyst:
     show carlos 2ndpose at characters_zoomed_placed_at_right
     "???" "¡Las secuelas nunca existieron!."
-    call right_library_action_pac
+    call right_library_action_pac from _call_right_library_action_pac_2
 
 #
 
@@ -111,11 +111,11 @@ label edgar_action_pac:
     hide edgar toc
     show carlos normal at characters_half_size_placed_at_right
     "???" "Tú lo has dicho, amigo."
-    call start_point_and_click
+    call start_point_and_click from _call_start_point_and_click_3
 label bed_action_pac:
     show carlos thoughtful at characters_half_size_placed_at_right
     "???" "No estoy cansado aún."
-    call start_point_and_click
+    call start_point_and_click from _call_start_point_and_click_4
 
 label desk_action_pac:
     stop music fadeout 1.0

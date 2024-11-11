@@ -47,10 +47,10 @@ label desk_laptop_action_pac:
     show carlos thoughtful at characters_half_size_placed_at_left
     Carlos "Ah, sí, la laptop. Un aparato con miles de páginas y programas para desencriptar textos..."
     hide carlos thoughtful
-    show edgar neutral at edgar_placed_at_right
+    show edgar normal at edgar_placed_at_right
     Edgar "Glup."
     #TODO: Sfx golpe mesa
-    hide edgar neutral
+    hide edgar normal
     show carlos smirk at characters_half_size_placed_at_left
     Carlos "¡Y aún así nadie pudo descifrar la identidad del Asesino del Zodiaco!"
     show edgar hiding at edgar_placed_at_right

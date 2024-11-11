@@ -50,6 +50,7 @@ label desk_laptop_action_pac:
     show edgar normal at edgar_placed_at_right
     Edgar "Glup."
     #TODO: Sfx golpe mesa
+    play sound "sfx_slam_desk.mp3"
     hide edgar normal
     show carlos smirk at characters_half_size_placed_at_left
     Carlos "¡Y aún así nadie pudo descifrar la identidad del Asesino del Zodiaco!"

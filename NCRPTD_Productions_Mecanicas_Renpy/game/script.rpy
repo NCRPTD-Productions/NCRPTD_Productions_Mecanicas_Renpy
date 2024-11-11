@@ -29,19 +29,14 @@ image rainback:
 
 # Videos
 
-image pruebadiosqueande = Movie(play="prueba.mkv", size=(1920,1080), loop=False)
-
-#
-
-define fadeHold = Fade(.5, .75, 3, color="#000")
-define fadeHoldGameLogo = Fade(.5, 1, 4, color="#000")
-
-define eyeopen = ImageDissolve("eye.png", 1.5, 100)
-define eyeclose = ImageDissolve("eye.png", 1.5, 100, reverse=True)
+image carloswakingupvideo = Movie(play="images/videos/carloswakingup.webm", size=(1920,1080))
 
 init:
 
 #Custom image sizes
+    transform video_formatter:
+        zoom 1.5
+        align((0.0, 0.0))
     transform pac_custom_library_zoom:
         zoom 1.37
 
@@ -217,14 +212,15 @@ screen gradient_background():
 #scene management
 
 label start:
+    
     play music "audio/bgm_opening_sequence.mp3"
     show bg ncrptd productions opening title at opening_image_size
     #TODO: Cambiar texto de sprite a "De la mano de"
-    with fadeHold
+    # with fadeHold
     show bg members at opening_image_size
-    with fadeHold
+    # with fadeHold
     show bg game logo at opening_image_size
-    with fadeHoldGameLogo
+    # with fadeHoldGameLogo
     # show pruebadiosqueande
     # "this video has ended"
     stop music fadeout 1.0
@@ -234,27 +230,19 @@ label carlos_closed_eyes_scene:
     
     scene black
     play sound "sfx_alarm.mp3"
-    "BEEP *BEEP"
+    "BEEP BEEP"
+    window hide
     #TODO: Meter audio de golpe seco
-    show bg techo habitacion carlos right at carlos_corner_bedroom_background_size
-    with eyeopen
-    hide bg techo habitacion carlos right at carlos_corner_bedroom_background_size
-    with eyeclose
-    show bg techo habitacion carlos right at carlos_corner_bedroom_background_size
-    with eyeopen
-    hide bg techo habitacion carlos right at carlos_corner_bedroom_background_size
-    with eyeclose
-    show bg techo habitacion carlos right at carlos_corner_bedroom_background_size
-    with eyeopen
-    hide bg techo habitacion carlos right at carlos_corner_bedroom_background_size
-    with eyeclose
+    # play movie "carloswakingupvideo.webm"
+    show carloswakingupvideo at video_formatter
+    pause(4.3)
     jump carlos_bedroom_ceiling_sequence
 
 label carlos_bedroom_ceiling_sequence:
     scene bg techo habitacion carlos right at carlos_corner_bedroom_background_size
     with fade
     #TODO: Meter audio de suspiro corto
-    play sound "sfx_short_sigh.mp3"
+    play sound "images/sfx_short_sigh.mp3"
     "???" "Que calvario..."
     "???" "Cada vez estoy más cerca de descubrir a ese asesino."
     "???" "Solo espero que ese rarito y el disléxico de mierda no me molesten."

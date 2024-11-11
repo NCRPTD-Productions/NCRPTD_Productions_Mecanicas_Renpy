@@ -120,11 +120,9 @@ label bed_action_pac:
 label desk_action_pac:
     stop music fadeout 1.0
     "???" "Manos a la obra"
-    #TODO: Sonido campana notificación
     play sound "sfx_phone_notification.mp3"
     show carlos puzzled at characters_half_size_placed_at_right_no_transition
     "¡TIN!"
-    #TODO: Sonido Suspiro corto
     play sound "sfx_short_sigh.mp3"
     show carlos sigh at characters_half_size_placed_at_right_no_transition
     "???" "Te juro por Dios, si llega a ser Justo..."
@@ -132,9 +130,6 @@ label desk_action_pac:
     show carlos telefono neutral at characters_half_size_placed_at_right_no_transition
     nvl_narrator "1 mensaje nuevo"
     justo_phone_nvl "Carlos, hola, junto a Guillermo demos hescubierto algo increíble, ¿Quieres a la casa de Guillermo venir?."
-
-    #Muestro teléfono, mensaje de Justo :D
-    # Justo "Carlos, hola, junto a Guillermo demos hescubierto algo increíble, ¿Quieres a la casa de Guillermo venir?."
     show carlos telefono furioso at characters_half_size_placed_at_right_no_transition
     Carlos "¡NO! ¡ESTE RETARDADO NO!"
     hide carlos telefono furioso with dissolve

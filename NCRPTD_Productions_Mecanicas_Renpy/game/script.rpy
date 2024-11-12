@@ -285,14 +285,15 @@ label topdown_view_desk_scene:
     #desk point and click action sequences
 
 label tutorial_start:
-    #TODO: Agregar sonido dos hojas arrancándose
-    #TODO: Agregar sonido tijeras cortando papel
     $ isintutorial = True
+    
+    play sound "sfx_paper_tearing.mp3"
+    pause(0.5)
+    play sound "sfx_scissors.mp3"
     call decryption("a") from _call_decryption
 
 label tutorial_end:
     $ isintutorial = False
-    #TODO: Agregar sonido teléfono vibrando
     # scene black
     # with fade
     scene bg habitacion carlos at carlos_bedroom_background_size
@@ -305,13 +306,14 @@ label tutorial_end:
     jump guillermo_call
 
 label guillermo_call:
-    #TODO: Poner sonido vibración llamada
+    play sound "sfx_phone_vibrating.mp3"
     show carlos annoyed at characters_half_size_placed_at_left_no_transition
     hide carlos annoyed
     Carlos "¿Y ahora qué?"
     show phone receiving guillermo call at phone_placed_at_left_shake
     show carlos telefono furioso at characters_half_size_placed_at_right
     Carlos "¡No puede ser! ¡A falta de uno, el otro!"
+    play sound "sfx_phone_vibrating.mp3"
     Carlos "¿Vale la pena que le conteste, Edgar?"
     hide carlos telefono furioso
     show edgar toc at edgar_placed_at_right
@@ -363,8 +365,10 @@ label start_impossible_cryptogram:
 
     #TODO: Agregar sonido dos hojas arrancándose
     #TODO: Agregar sonido tijeras cortando papel
+    play sound "sfx_paper_tearing.mp3"
+    pause(0.5)
+    play sound "sfx_scissors.mp3"
     call decryption("sda") from _call_decryption_1
-    jump end_game
 
 label act_I_choice_go:
     Carlos "Esto es lo que sucede si Carlos acepta ir con los pibardox."
@@ -392,21 +396,26 @@ label carlos_dream:
     Carlos "Sí... Sí, eso es."
     Carlos "Te voy a encontrar. Voy a saber quién eres. Solo yo. Nadie más."
     Carlos "Así me haré famoso y podré vivir lejos. Lejos de esos infelices."
+    play sound "doorbell.mp3"
     # TODO: Poner sonido timbre raro
     Carlos "Ahora muéstrate. ¡Muéstrate, mierda!"
     jump ringing_bell_carlos_house
 
 label ringing_bell_carlos_house:
     #TODO: Poner sonido timbre raro
+    play sound "doorbell.mp3"
     scene bg habitacion carlos at carlos_bedroom_background_size
     with fade
+    play sound "doorbell.mp3"
     show carlos annoyedspeech at characters_half_size_placed_at_left
     Carlos "¡NO, NO, NO!"
+    play sound "doorbell.mp3"
     # TODO: Poner sonido timbre raro
     Carlos "¡YA TE ESCUCHÉ, MIERDA!"
     jump pasillo_casa_carlos
 
 label pasillo_casa_carlos:
+    play music "doorbell.mp3"
     scene bg pasillo at custom_background_size with fade
     Carlos "¿Quién es...?"
     call screen hall_door_pac
@@ -415,14 +424,18 @@ label wait_until_open_door:
     Carlos "{i}Si no hago nada, eventualmente se irán...{i}"
     #Parar sonido
     scene bg pasillo at custom_background_size with fade
+    stop music
     play sound "sfx_short_sigh.mp3"
     # TODO: Agregar sonido golpes y sonido timbre raro
     Carlos "Por fin..."
+    play music "doorbell.mp3"
+    play sound "sfx_knocking_on_door_desperately.mp3"
     call screen hall_door_calling_continuously_pac
 
 label sidewalk_scene_act_II:
     # TODO: Agregar sonido puerta desbloqueándose
     # TODO: Agregar sonido puerta abriéndose
+    stop music
     scene sidewalk at custom_background_size with fade
     show guillermo feliz at characters_half_size_placed_at_center
     show justo feliz at characters_half_size_placed_at_right

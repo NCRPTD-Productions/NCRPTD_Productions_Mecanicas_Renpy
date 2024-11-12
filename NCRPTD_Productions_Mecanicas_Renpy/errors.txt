@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/intro-point-and-click.rpy", line 149: end of line expected.
-    with easein 0.1
-                ^
+File "game/door-point-and-click.rpy", line 75: else clause expects a non-empty block.
+    else :
+          ^
+
+File "game/door-point-and-click.rpy", line 77: Line is indented, but the preceding play sound statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    Carlos "¡Las llaves, las llaves!"
+    ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Mon Nov 11 21:03:30 2024
+Mon Nov 11 23:28:47 2024

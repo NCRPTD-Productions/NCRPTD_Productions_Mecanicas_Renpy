@@ -59,9 +59,13 @@ screen hall_door_calling_continuously_pac:
 label hall_door_continuously_calling_action_pac:
     
     # TODO: Agregar sonido timbre raro
+    
     if isGuillermoShoutOnce:
+        
+        play sound "sfx_knocking_on_door_desperately.mp3"
         jump check_key_picked_up
     else:
+        play sound "sfx_knocking_on_door_desperately.mp3"
         Guillermo "¡CARLOOOOOOOOOOOOOOOOOOOOS!"
         $ isGuillermoShoutOnce = True
 
@@ -69,6 +73,7 @@ label check_key_picked_up:
     if iskeyspickedup:
         jump sidewalk_scene_act_II
     else :
+        play sound "sfx_knocking_on_door_desperately.mp3"
         Carlos "¡Las llaves, las llaves!"
         # TODO: Poner sonido llaves
         Carlos "¡DEJEN DE TOCAR EL TIMBRE!"
@@ -77,4 +82,6 @@ label check_key_picked_up:
 
 label grab_keys:
     $ iskeyspickedup = True
+    
+    play sound "sfx_knocking_on_door_desperately.mp3"
     call screen hall_door_calling_continuously_pac

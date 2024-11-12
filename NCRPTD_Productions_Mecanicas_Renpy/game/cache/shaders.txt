@@ -1,6 +1,6 @@
 <<<<<<< Updated upstream
-renpy.imagedissolve renpy.imagedissolve
 renpy.alpha renpy.geometry renpy.texture
+renpy.imagedissolve renpy.imagedissolve
 renpy.solid
 renpy.geometry renpy.solid
 renpy.dissolve renpy.dissolve

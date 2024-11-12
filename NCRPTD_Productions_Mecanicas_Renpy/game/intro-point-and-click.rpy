@@ -146,7 +146,6 @@ label desk_action_pac:
     Carlos "¿Cómo puede ser que escriba tan mal?"
     # scene bg habitacion carlos at carlos_bedroom_background_size with fade
     show carlos annoyed at characters_half_size_placed_at_center_no_transition
-    #TODO: Add Camera Shake
     with Shake((0, 0, 0, 0), .5, dist=30)
     Carlos "¡No se puede ser tan idiota!"
     jump topdown_view_desk_scene

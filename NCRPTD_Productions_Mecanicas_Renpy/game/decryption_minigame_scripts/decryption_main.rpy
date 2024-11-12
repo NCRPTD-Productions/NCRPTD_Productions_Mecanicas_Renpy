@@ -22,7 +22,7 @@ label decryption(newMessage):
         symbolText = NumStringFromMessage(messageText)
         inputsText = SetEmptyArray(symbolText)
         messageSections = SliceMessage(symbolText, 17)
-
+        
     if isintutorial:
         scene bg escritorio at decryption_desk
         show carlos thoughtful at characters_half_size_placed_at_left

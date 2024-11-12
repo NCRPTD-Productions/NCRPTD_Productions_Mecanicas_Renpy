@@ -36,7 +36,7 @@ screen carlos_desktop_pac:
 
 label desk_plant_action_pac:
     show carlos normal at characters_half_size_placed_at_left
-    Carlos "No. Se riega cada diez días, y faltan dos."
+    Carlos "No. Se riega cada diez días, y aún faltan dos."
     call start_point_and_click from _call_start_point_and_click_2
 
 label desk_lamp_action_pac:
@@ -49,16 +49,15 @@ label desk_laptop_action_pac:
     hide carlos thoughtful
     show edgar normal at edgar_placed_at_right
     Edgar "Glup."
-    #TODO: Sfx golpe mesa
-    play sound "sfx_slam_desk.mp3"
     hide edgar normal
+    play sound "sfx_slam_desk.mp3"
     show carlos smirk at characters_half_size_placed_at_left
     Carlos "¡Y aún así nadie pudo descifrar la identidad del Asesino del Zodiaco!"
     show edgar hiding at edgar_placed_at_right
     Edgar "..."
     Carlos "¡Porque son ineptos, y sus mentes dependen de una máquina!"
     hide edgar hiding
-    Carlos "¡Por eso, Edgar, yo lo hago a la vieja usanza: con lápiz y papel!"
+    Carlos "¡Por eso, Edgar, yo lo hago a la vieja usanza: Con lápiz y papel!"
     hide carlos smirk
     jump tutorial_start
 

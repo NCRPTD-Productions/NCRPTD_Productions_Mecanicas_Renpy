@@ -301,6 +301,7 @@ label tutorial_end:
     Carlos "¿Qué?"
     Carlos "¿\"Tres tristes tigres\"? ¿El trabalenguas?"
     #TODO: Poner sonido de smirk
+    play sound "smirk.mp3"
     show carlos smirk at characters_half_size_placed_at_left_no_transition
     Carlos "No es de extrañar. Al Asesino le gusta jugar con los detectives."
     jump guillermo_call

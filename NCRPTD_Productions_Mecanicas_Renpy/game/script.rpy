@@ -30,6 +30,7 @@ image rainback:
 # Videos
 
 image carloswakingupvideo = Movie(play="images/videos/carloswakingup.webm", size=(1920,1080))
+image opening_sequence_video = Movie(play="images/videos/opening_sequence.webm", size=(1920,1080))
 
 init:
 
@@ -213,24 +214,28 @@ screen gradient_background():
 
 label start:
     
-    play music "audio/bgm_opening_sequence.mp3"
-    show bg ncrptd productions opening title at opening_image_size
-    #TODO: Cambiar texto de sprite a "De la mano de"
-    # with fadeHold
-    show bg members at opening_image_size
-    # with fadeHold
-    show bg game logo at opening_image_size
-    # with fadeHoldGameLogo
-    # show pruebadiosqueande
-    # "this video has ended"
-    stop music fadeout 1.0
+    # play music "audio/bgm_opening_sequence.mp3"
+    # show bg ncrptd productions opening title at opening_image_size
+    # #TODO: Cambiar texto de sprite a "De la mano de"
+    # # with fadeHold
+    # show bg members at opening_image_size
+    # # with fadeHold
+    # show bg game logo at opening_image_size
+    # # with fadeHoldGameLogo
+    # # show pruebadiosqueande
+    # # "this video has ended"
+    # stop music fadeout 1.0
+    show opening_sequence_video at video_formatter
+    pause(14.3)
     jump carlos_closed_eyes_scene
     
 label carlos_closed_eyes_scene:
     
     scene black
-    play sound "sfx_alarm.mp3"
+    play music "sfx_alarm.mp3"
     "BEEP BEEP"
+    play sound "sfx_slam_desk.mp3"
+    stop music fadeout 1.0
     window hide
     #TODO: Meter audio de golpe seco
     # play movie "carloswakingupvideo.webm"
@@ -245,7 +250,7 @@ label carlos_bedroom_ceiling_sequence:
     play sound "images/sfx_short_sigh.mp3"
     "???" "Que calvario..."
     "???" "Cada vez estoy más cerca de descubrir a ese asesino."
-    "???" "Solo espero que ese rarito y el disléxico de mierda no me molesten."
+    "???" "Solo espero que ese rarito y el lerdo no me molesten."
     play sound "sfx_bed_sheets.mp3"
     #TODO: Meter audio de correr sábanas
     jump carlos_bedroom_scene
@@ -358,7 +363,7 @@ label start_impossible_cryptogram:
 
     #TODO: Agregar sonido dos hojas arrancándose
     #TODO: Agregar sonido tijeras cortando papel
-    call decryption("sda")
+    call decryption("sda") from _call_decryption_1
     jump end_game
 
 label act_I_choice_go:

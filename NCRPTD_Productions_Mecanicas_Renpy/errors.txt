@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/door-point-and-click.rpy", line 13: 'size' is not a keyword argument or valid child of the imagebutton statement.
-    size(2.5, 2.5)        
-        ^
-
-File "game/door-point-and-click.rpy", line 33: 'size' is not a keyword argument or valid child of the imagebutton statement.
-    size(2.5, 2.5)        
-        ^
+File "game/intro-point-and-click.rpy", line 149: end of line expected.
+    with easein 0.1
+                ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Mon Nov 11 16:18:26 2024
+Mon Nov 11 21:03:30 2024

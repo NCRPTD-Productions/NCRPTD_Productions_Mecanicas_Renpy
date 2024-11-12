@@ -1,3 +1,6 @@
+init:
+    $ sshake = Shake((0, 0, 0, 0), 1.0, dist=15)
+
 #Image buttons
 screen intro_pac:
     imagebutton:
@@ -6,7 +9,7 @@ screen intro_pac:
         hover "pac_edgar_hover.png"
         action [Hide("displayTextScreen"), Jump("edgar_action_pac")]
         at pac_custom_library_zoom
-        hovered Show("displayTextScreen", displayText = "¿Hablar con el pez?")
+        hovered Show("displayTextScreen", displayText = "¿Hablar con Edgar?")
         unhovered Hide("displayTextScreen")
 
     imagebutton:
@@ -62,7 +65,7 @@ label left_library_action_pac:
             jump library_option_Go_Back
 
 label left_library_option_EVA_01:
-    show carlos annoyed at characters_zoomed_placed_at_right
+    show carlos annoyedspeech at characters_zoomed_placed_at_right
     "???" "Que te subas al maldito EVA, Shinji."
     call left_library_action_pac from _call_left_library_action_pac
 
@@ -119,10 +122,10 @@ label bed_action_pac:
 
 label desk_action_pac:
     stop music fadeout 1.0
-    "???" "Manos a la obra"
     play sound "sfx_phone_notification.mp3"
-    show carlos puzzled at characters_half_size_placed_at_right_no_transition
     "¡TIN!"
+    show carlos puzzled at characters_half_size_placed_at_right_no_transition
+    "???" "..."
     play sound "sfx_short_sigh.mp3"
     show carlos sigh at characters_half_size_placed_at_right_no_transition
     "???" "Te juro por Dios, si llega a ser Justo..."
@@ -144,6 +147,6 @@ label desk_action_pac:
     # scene bg habitacion carlos at carlos_bedroom_background_size with fade
     show carlos annoyed at characters_half_size_placed_at_center_no_transition
     #TODO: Add Camera Shake
-    # $ camera_shake(intensity=20, duration=1.0)
+    with Shake((0, 0, 0, 0), .5, dist=30)
     Carlos "¡No se puede ser tan idiota!"
     jump topdown_view_desk_scene

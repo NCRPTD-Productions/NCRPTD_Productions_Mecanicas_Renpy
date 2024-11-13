@@ -30,7 +30,6 @@ screen hall_door_pac:
 
         
 label hall_door_action_pac:
-    # TODO: Agregar sonido timbre raro
     scene door view at hall_door_eye_view with fade
     Guillermo "CHARLY, CHARLY, ¿¡ESTÁS AHÍ!?"
     jump wait_until_open_door
@@ -58,7 +57,6 @@ screen hall_door_calling_continuously_pac:
         
 label hall_door_continuously_calling_action_pac:
     
-    # TODO: Agregar sonido timbre raro
     
     if isGuillermoShoutOnce:
         
@@ -77,7 +75,6 @@ label check_key_picked_up:
         Carlos "¡Las llaves, las llaves!"
         # TODO: Poner sonido llaves
         Carlos "¡DEJEN DE TOCAR EL TIMBRE!"
-        # TODO: Dejan de sonar golpes y timbre
         call screen hall_door_calling_continuously_pac
 
 label grab_keys:

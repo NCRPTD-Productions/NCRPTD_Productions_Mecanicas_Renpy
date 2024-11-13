@@ -1,28 +1,60 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 219, in script
-    with fadeHold
-  File "game/script.rpy", line 219, in <module>
-    with fadeHold
-NameError: name 'fadeHold' is not defined
+  File "game/script.rpy", line 328, in script call
+    call decryption("a") from _call_decryption
+  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
+    $ ui.interact()
+  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
+    $ ui.interact()
+  File "game/script.rpy", line 407, in script call
+    call decryption("sda") from _call_decryption_1
+  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
+    $ ui.interact()
+  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
+    $ ui.interact()
+  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
+    $ ui.interact()
+  [Previous line repeated 2 more times]
+  File "game/script.rpy", line 579, in script
+    $ show_day_cycle()
+  File "game/script.rpy", line 579, in <module>
+    $ show_day_cycle()
+  File "game/script.rpy", line 196, in show_day_cycle
+    renpy.show("bg day", at_list=day_cicle_transforms, layer='master', what=None, zorder=0, tag=None, behind=[], with_=dissolve)
+TypeError: show() got an unexpected keyword argument 'with_'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 219, in script
-    with fadeHold
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\ast.py", line 1354, in execute
-    trans = renpy.python.py_eval(self.expr)
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\python.py", line 1209, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\python.py", line 1202, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 219, in <module>
-    with fadeHold
-NameError: name 'fadeHold' is not defined
+  File "game/script.rpy", line 328, in script call
+    call decryption("a") from _call_decryption
+  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
+    $ ui.interact()
+  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
+    $ ui.interact()
+  File "game/script.rpy", line 407, in script call
+    call decryption("sda") from _call_decryption_1
+  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
+    $ ui.interact()
+  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
+    $ ui.interact()
+  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
+    $ ui.interact()
+  [Previous line repeated 2 more times]
+  File "game/script.rpy", line 579, in script
+    $ show_day_cycle()
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\ast.py", line 821, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\python.py", line 1178, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/script.rpy", line 579, in <module>
+    $ show_day_cycle()
+  File "game/script.rpy", line 196, in show_day_cycle
+    renpy.show("bg day", at_list=day_cicle_transforms, layer='master', what=None, zorder=0, tag=None, behind=[], with_=dissolve)
+TypeError: show() got an unexpected keyword argument 'with_'
 
 Windows-10-10.0.22631 AMD64
 Ren'Py 8.3.2.24090902
 a_golden_chance 1.0
-Mon Nov 11 19:40:30 2024
+Wed Nov 13 12:39:47 2024

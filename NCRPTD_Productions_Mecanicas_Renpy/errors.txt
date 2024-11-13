@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/door-point-and-click.rpy", line 75: else clause expects a non-empty block.
-    else :
-          ^
-
-File "game/door-point-and-click.rpy", line 77: Line is indented, but the preceding play sound statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    Carlos "¡Las llaves, las llaves!"
-    ^
+File "game/script.rpy", line 200: positional argument follows keyword argument
+        renpy.show("bg day", at_list=day_cicle_transforms, layer='master', what=None, zorder=0, tag=None, behind=eñe,elements_behind)
+                                                                                                                                     ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Mon Nov 11 23:28:47 2024
+Wed Nov 13 12:48:46 2024

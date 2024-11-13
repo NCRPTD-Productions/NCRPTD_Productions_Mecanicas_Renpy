@@ -32,6 +32,23 @@ image rainback:
 image carloswakingupvideo = Movie(play="images/videos/carloswakingup.webm", size=(1920,1080))
 image opening_sequence_video = Movie(play="images/videos/opening_sequence.webm", size=(1920,1080))
 
+default day_time = True
+default day = 1
+default time_of_day = ["morning", "noon", "evening", "night"] # edit this list to rename, add or delete time of days
+define end_of_day = "night" # set this as the last time of day before new day begins
+#default end_of_day = time_of_day[-1] # this can automatically pick up the last element of time_of_day as above, remove above line if you want to use this.
+
+
+#Day cicle label
+label advance(increment = 1):
+    python:
+        while increment > 0:
+            if time_of_day[0] == end_of_day:
+                day += 1
+            time_of_day.append(time_of_day.pop(0))
+            increment -= 1
+    return
+
 init:
 
 #Custom image sizes
@@ -163,11 +180,37 @@ init:
         zoom 3.2
         align(0.5, 0.8)
 
+    transform day_cicle_bedroom_sizes:
+        zoom 1.5
+        align((0.0, 0.0))
 #
 
 init python: 
 
     isintutorial = False
+
+    day_cicle_transforms=[
+        day_cicle_bedroom_sizes
+    ]
+
+    elements_behind=[
+        'bedroom_background'
+    ]
+
+    def show_day_cycle():
+        renpy.scene()
+        renpy.show("bg hab carlos w transparency", at_list=day_cicle_transforms, layer='master', what=None, zorder=1, tag="bedroom_background", behind=[])
+        renpy.show("bg day", at_list=day_cicle_transforms, layer='master', what=None, zorder=0, tag=None, behind=elements_behind)
+        renpy.pause(3)
+        renpy.show("bg night", at_list=day_cicle_transforms, layer='master', what=None, zorder=0, tag=None, behind=elements_behind)
+        renpy.pause(3)
+        renpy.show("bg day", at_list=day_cicle_transforms, layer='master', what=None, zorder=0, tag=None, behind=elements_behind)
+        renpy.scene()
+        # show bg night at custom_background_size
+        # pause (.5)
+        # show bg day zorder 1
+        # pause (.5)
+        # show bg hab carlos w transparency at custom_background_size onlayer screens
 
     #Point and click text display hover
 screen displayTextScreen:  
@@ -214,17 +257,6 @@ screen gradient_background():
 
 label start:
     
-    # play music "audio/bgm_opening_sequence.mp3"
-    # show bg ncrptd productions opening title at opening_image_size
-    # #TODO: Cambiar texto de sprite a "De la mano de"
-    # # with fadeHold
-    # show bg members at opening_image_size
-    # # with fadeHold
-    # show bg game logo at opening_image_size
-    # # with fadeHoldGameLogo
-    # # show pruebadiosqueande
-    # # "this video has ended"
-    # stop music fadeout 1.0
     show opening_sequence_video at video_formatter
     pause(14.3)
     jump carlos_closed_eyes_scene
@@ -237,8 +269,6 @@ label carlos_closed_eyes_scene:
     play sound "sfx_slam_desk.mp3"
     stop music fadeout 1.0
     window hide
-    #TODO: Meter audio de golpe seco
-    # play movie "carloswakingupvideo.webm"
     show carloswakingupvideo at video_formatter
     pause(4.3)
     jump carlos_bedroom_ceiling_sequence
@@ -246,13 +276,11 @@ label carlos_closed_eyes_scene:
 label carlos_bedroom_ceiling_sequence:
     scene bg techo habitacion carlos right at carlos_corner_bedroom_background_size
     with fade
-    #TODO: Meter audio de suspiro corto
     play sound "images/sfx_short_sigh.mp3"
     "???" "Que calvario..."
     "???" "Cada vez estoy más cerca de descubrir a ese asesino."
     "???" "Solo espero que ese rarito y el lerdo no me molesten."
     play sound "sfx_bed_sheets.mp3"
-    #TODO: Meter audio de correr sábanas
     jump carlos_bedroom_scene
 
 label carlos_bedroom_scene:
@@ -284,6 +312,7 @@ label topdown_view_desk_scene:
 
     #desk point and click action sequences
 
+
 label tutorial_start:
     $ isintutorial = True
     
@@ -293,9 +322,7 @@ label tutorial_start:
     call decryption("a") from _call_decryption
 
 label tutorial_end:
-    $ isintutorial = False
-    # scene black
-    # with fade
+    $ isintutorial = act_II_final_scene
     scene bg habitacion carlos at carlos_bedroom_background_size
     show carlos annoyed at characters_half_size_placed_at_left
     Carlos "¿Qué?"
@@ -343,12 +370,15 @@ label guillermo_call:
     jump end_game
     
 label act_I_choice_stay_home:
+    # TODO: Poner sprite gritando AL TELÉFONO
     Carlos "No, no y un millón de veces no. ¡La última vez que me dijiste algo así, estuviste dos horas hablándome sobre la tierra plana!"
     show phone guillermo active call at phone_placed_at_left_jump
     Guillermo "¡Vamos, amigo! ¡Sabes que es verdad!"
+    # TODO: Poner sprite gritando AL TELÉFONO
     Carlos "¡NO!"
     show phone guillermo active call at phone_placed_at_left_jump
     Guillermo "Te arrepentirás si no vienes, ¡Créeme!"
+    show carlos telefono furioso at characters_half_size_placed_at_right_no_transition
     Carlos "Tengo cosas que hacer. No me llames."
     hide phone guillermo active call
     show carlos sigh at characters_half_size_placed_at_right_no_transition
@@ -408,7 +438,7 @@ label ringing_bell_carlos_house:
     scene bg habitacion carlos at carlos_bedroom_background_size
     with fade
     play sound "doorbell.mp3"
-    show carlos annoyedspeech at characters_half_size_placed_at_left
+    show carlos furious at characters_half_size_placed_at_left #TODO: Poner sprite carlos gritando (no al telefono)
     Carlos "¡NO, NO, NO!"
     play sound "doorbell.mp3"
     # TODO: Poner sonido timbre raro
@@ -474,6 +504,7 @@ label response_shove_away_friends_act_II:
     Justo "Y esto algo es que tiene que ver con los... Cli-clipto... Gramas..."
     show carlos 2ndpose at characters_half_size_placed_at_left_no_transition
     Carlos "Se dice \"Criptogramas\"."
+    show justo triste at characters_half_size_placed_at_right_no_transition # TODO: Poner esto en el guión
     Carlos "Ni para decir la R sirves..."
     show guillermo angry at characters_half_size_placed_at_center_no_transition
     Guillermo "¡Bueno, es suficiente!"
@@ -481,9 +512,12 @@ label response_shove_away_friends_act_II:
     show carlos puzzled at characters_half_size_placed_at_left_no_transition
     Carlos "¿Mi problema? ¿En serio?"
     # TODO: Reemplazar sprite carlos gritando
+    show carlos furious at characters_half_size_placed_at_left_no_transition
     Carlos "¡USTEDES SON LOS IMBÉCILES QUE INVADEN MI CASA, A PESAR DE QUE LES DIJE MÁS DE UNA VEZ QUE NO VINIERAN!"
     Carlos "¡¿CUANDO VAN A ENTENDER QUE NO ME INTERESA JUNTARME CON RARITOS!?"
+    show carlos 2ndpose at characters_half_size_placed_at_left_no_transition
     Carlos "¡Son tan inútiles! ¡Uno cree que la Tierra es plana, y el otro no puede pronunciar la R!"
+    show carlos furious at characters_half_size_placed_at_left_no_transition
     Carlos "¡Y ENTRE LOS DOS NO PUEDEN PENSAR EN UNA PUTA FORMA CORRECTA DE DECIR LAS COSAS!"
     show guillermo sorprendido at characters_half_size_placed_at_center_no_transition
     Guillermo "Oh, habló el rey de Roma."
@@ -501,15 +535,88 @@ label response_shove_away_friends_act_II:
     Guillermo "¡Pero diablos, es una gran ironía llamarte así, porque no lo mereces!"
     show guillermo triste at characters_half_size_placed_at_center_no_transition
     Guillermo "Vámonos, Justo."
+    hide guillermo triste
+    hide justo triste
+    show carlos 2ndpose at characters_half_size_placed_at_left_no_transition
+    Carlos "..."
+    show carlos furious at characters_half_size_placed_at_left_no_transition
+    Carlos "¡BIEN! Después de todo ¡NO LOS NECESITO!"
+    # TODO: Poner sonido portazo
+    jump carlos_bedroom_endgame
+
+label carlos_bedroom_endgame:
+    scene bg habitacion carlos at carlos_bedroom_background_size
+    show carlos sigh at characters_half_size_placed_at_right
+    Carlos "..."
+    show carlos furious at characters_half_size_placed_at_right_no_transition
+    Carlos "¡NO PUEDO CREER QUE ESTOS DOS INEPTOS NO ME TOMEN ENSERIO! ¡ME TIENEN HARTO!"
+    show carlos 2ndpose at characters_half_size_placed_at_right_no_transition
+    Carlos "Primero ese maldito disléxico que no sabe conjugar dos palabras bien ni pronunciar debidamente la letra \"R\"."
+    show carlos 2ndpose at characters_half_size_placed_at_right_no_transition
+    Carlos "Luego el \"Señor melodrama\", tomando la postura de héroe que defiende a sus amigos, como si fuera la persona más correcta del planeta..."
+    show carlos furious at characters_half_size_placed_at_right_no_transition
+    Carlos "¡PLANETA EL CUAL CREE ROTUNDAMENTE QUE ES PLANO! ¿¡QUÉ CLASE DE SIMIO CREE TAN FERVIENTEMENTE EN TAN ABSURDAS PATRAÑAS!?"
+    show carlos 2ndpose at characters_half_size_placed_at_right_no_transition
+    Carlos "¡Lamento desde lo más profundo de mi corazón haberlos conocido! ¡Son el par más molesto e incompetente que vi en toda mi vida!"
+    show carlos 2ndpose at characters_half_size_placed_at_right_no_transition
+    Carlos "..."
+    show carlos sigh at characters_half_size_placed_at_right_no_transition
+    Carlos "Bueno, volvamos a lo que respecta..."
+    jump act_II_final_scene
+
+label act_II_final_scene:
+    # while True:
+    #     show park day
+    #     "Es de día"
+    #     show park night
+    #     "Es de noche"
+    #     hide park 
+    #     "El día después"
+    # Simulate a change in the time of day
+    $ show_day_cycle()
+    scene bg habitacion carlos at carlos_bedroom_background_size
+    with fade
+    play sound "sfx_phone_notification.mp3"
+    "¡TIN!"
+    show carlos puzzled at characters_half_size_placed_at_right_no_transition
+    Carlos "..."
+    play sound "sfx_short_sigh.mp3"
+    show carlos sigh at characters_half_size_placed_at_right_no_transition
+    Carlos "Te juro por Dios, si llega a ser ese par..."
+    show carlos puzzled at characters_half_size_placed_at_right_no_transition
+    Carlos "..."
+    show carlos puzzled at characters_half_size_placed_at_right_no_transition
+    Carlos "¿Una noticia internacional?"
+    show carlos puzzled at characters_half_size_placed_at_right_no_transition
+    Carlos "\"Dos adolescentes encuentran una nave espacial y ganan fama mundial...\""
+    show carlos surprised at characters_half_size_placed_at_right_no_transition
+    Carlos "No... No... No..."
+    show carlos 2ndpose at characters_half_size_placed_at_right_no_transition
+    show phone newspaper at phone_placed_at_left_no_shake
+    Carlos "¡No puede ser! ¡¿Por qué no les creí?! ¡Soy un idiota!"
+    show carlos annoyed at characters_half_size_placed_at_right_no_transition
+    Carlos "Mi mayor sueño... Volverme famoso... Arrebatado por ese par de inadaptados mentales..."
+    show carlos 2ndpose at characters_half_size_placed_at_right_no_transition
+    Carlos "Si tan solo hubiera ido con ellos... Si tan solo..."
+    show carlos sigh at characters_half_size_placed_at_right_no_transition #TODO: Poner sonido inspiración (De respirar)
+    Carlos "..."
+    with Shake((0, 0, 0, 0), .5, dist=30)
+    # TODO: Poner sonido grito de furia
+    show carlos furious at characters_half_size_placed_at_right_no_transition
+    Carlos "¡MALDICIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOON!"
+    jump neutral_ending_endgame_screen
+
+label neutral_ending_endgame_screen:
+    play music "audio/bgm_opening_sequence.mp3"
+    scene black
+    with fade
+    show bg neutral ending at opening_image_size
     jump end_game
-
-
 
 label response_go_with_friends_act_II:
     Carlos "Bueno pibes son lo más nunca cambien saludos ;)"
     jump end_game
 label end_game:
-    scene black
     # hide screen End
     "Thank you for playing!"
-    $ renpy.quit()
+    $ MainMenu(confirm=False)()

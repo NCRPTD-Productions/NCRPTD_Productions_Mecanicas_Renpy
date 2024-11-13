@@ -1,7 +1,6 @@
 init python:
     isalreadyfailed = False
 label inputLetter(i):
-    #TODO: Agregar sonido lápiz escribiendo
     play audio "sfx_pencil_writting.mp3"
     $ assignedLetter = renpy.input(_("Introducir letra:"), allow="[a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]", length=1)
     if assignedLetter == "":

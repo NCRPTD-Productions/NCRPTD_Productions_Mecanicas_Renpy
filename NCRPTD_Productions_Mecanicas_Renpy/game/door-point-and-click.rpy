@@ -69,16 +69,17 @@ label hall_door_continuously_calling_action_pac:
 
 label check_key_picked_up:
     if iskeyspickedup:
+        
         jump sidewalk_scene_act_II
     else :
         play sound "sfx_knocking_on_door_desperately.mp3"
         Carlos "¡Las llaves, las llaves!"
-        # TODO: Poner sonido llaves
         Carlos "¡DEJEN DE TOCAR EL TIMBRE!"
         call screen hall_door_calling_continuously_pac
 
 label grab_keys:
     $ iskeyspickedup = True
-    
+    play sound "sfx_pick_up_keys.mp3"
+    pause(1)
     play sound "sfx_knocking_on_door_desperately.mp3"
     call screen hall_door_calling_continuously_pac

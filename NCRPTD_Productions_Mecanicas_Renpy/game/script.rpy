@@ -322,12 +322,11 @@ label tutorial_start:
     call decryption("a") from _call_decryption
 
 label tutorial_end:
-    $ isintutorial = act_II_final_scene
+    $ isintutorial = False
     scene bg habitacion carlos at carlos_bedroom_background_size
     show carlos annoyed at characters_half_size_placed_at_left
     Carlos "¿Qué?"
     Carlos "¿\"Tres tristes tigres\"? ¿El trabalenguas?"
-    #TODO: Poner sonido de smirk
     play sound "smirk.mp3"
     show carlos smirk at characters_half_size_placed_at_left_no_transition
     Carlos "No es de extrañar. Al Asesino le gusta jugar con los detectives."
@@ -394,8 +393,6 @@ label act_I_choice_stay_home:
 
 label start_impossible_cryptogram:
 
-    #TODO: Agregar sonido dos hojas arrancándose
-    #TODO: Agregar sonido tijeras cortando papel
     play sound "sfx_paper_tearing.mp3"
     pause(0.5)
     play sound "sfx_scissors.mp3"
@@ -428,12 +425,10 @@ label carlos_dream:
     Carlos "Te voy a encontrar. Voy a saber quién eres. Solo yo. Nadie más."
     Carlos "Así me haré famoso y podré vivir lejos. Lejos de esos infelices."
     play sound "doorbell.mp3"
-    # TODO: Poner sonido timbre raro
     Carlos "Ahora muéstrate. ¡Muéstrate, mierda!"
     jump ringing_bell_carlos_house
 
 label ringing_bell_carlos_house:
-    #TODO: Poner sonido timbre raro
     play sound "doorbell.mp3"
     scene bg habitacion carlos at carlos_bedroom_background_size
     with fade
@@ -441,7 +436,6 @@ label ringing_bell_carlos_house:
     show carlos furious at characters_half_size_placed_at_left #TODO: Poner sprite carlos gritando (no al telefono)
     Carlos "¡NO, NO, NO!"
     play sound "doorbell.mp3"
-    # TODO: Poner sonido timbre raro
     Carlos "¡YA TE ESCUCHÉ, MIERDA!"
     jump pasillo_casa_carlos
 
@@ -453,19 +447,19 @@ label pasillo_casa_carlos:
 
 label wait_until_open_door:
     Carlos "{i}Si no hago nada, eventualmente se irán...{i}"
-    #Parar sonido
     scene bg pasillo at custom_background_size with fade
     stop music
     play sound "sfx_short_sigh.mp3"
-    # TODO: Agregar sonido golpes y sonido timbre raro
     Carlos "Por fin..."
     play music "doorbell.mp3"
     play sound "sfx_knocking_on_door_desperately.mp3"
     call screen hall_door_calling_continuously_pac
 
 label sidewalk_scene_act_II:
-    # TODO: Agregar sonido puerta desbloqueándose
-    # TODO: Agregar sonido puerta abriéndose
+    stop music
+    play music "sfx_door_lock_unlock.mp3"
+    play sound "sfx_door_open.mp3"
+    pause(.5)
     stop music
     scene sidewalk at custom_background_size with fade
     show guillermo feliz at characters_half_size_placed_at_center
@@ -541,7 +535,7 @@ label response_shove_away_friends_act_II:
     Carlos "..."
     show carlos furious at characters_half_size_placed_at_left_no_transition
     Carlos "¡BIEN! Después de todo ¡NO LOS NECESITO!"
-    # TODO: Poner sonido portazo
+    play audio "sfx_door_slam.mp3"
     jump carlos_bedroom_endgame
 
 label carlos_bedroom_endgame:
@@ -565,14 +559,6 @@ label carlos_bedroom_endgame:
     jump act_II_final_scene
 
 label act_II_final_scene:
-    # while True:
-    #     show park day
-    #     "Es de día"
-    #     show park night
-    #     "Es de noche"
-    #     hide park 
-    #     "El día después"
-    # Simulate a change in the time of day
     $ show_day_cycle()
     scene bg habitacion carlos at carlos_bedroom_background_size
     with fade
@@ -600,6 +586,7 @@ label act_II_final_scene:
     Carlos "Si tan solo hubiera ido con ellos... Si tan solo..."
     show carlos sigh at characters_half_size_placed_at_right_no_transition #TODO: Poner sonido inspiración (De respirar)
     Carlos "..."
+    play sound "sfx_rage_scream.mp3"
     with Shake((0, 0, 0, 0), .5, dist=30)
     # TODO: Poner sonido grito de furia
     show carlos furious at characters_half_size_placed_at_right_no_transition

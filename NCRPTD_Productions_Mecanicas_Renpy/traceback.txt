@@ -1,38 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 322, in script call
-    call decryption("a") from _call_decryption
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/script.rpy", line 325, in script
-    $ isintutorial = act_II_final_scene
-  File "game/script.rpy", line 325, in <module>
-    $ isintutorial = act_II_final_scene
-NameError: name 'act_II_final_scene' is not defined
+  File "game/day-cicle.rpy", line 1, in script
+    init python:
+  File "game/day-cicle.rpy", line 3, in <module>
+    day_cicle_bedroom_sizes
+NameError: name 'day_cicle_bedroom_sizes' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 322, in script call
-    call decryption("a") from _call_decryption
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/script.rpy", line 325, in script
-    $ isintutorial = act_II_final_scene
+  File "game/day-cicle.rpy", line 1, in script
+    init python:
   File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\ast.py", line 821, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\python.py", line 1178, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/script.rpy", line 325, in <module>
-    $ isintutorial = act_II_final_scene
-NameError: name 'act_II_final_scene' is not defined
+  File "game/day-cicle.rpy", line 3, in <module>
+    day_cicle_bedroom_sizes
+NameError: name 'day_cicle_bedroom_sizes' is not defined
 
 Windows-10-10.0.22631 AMD64
 Ren'Py 8.3.2.24090902
 a_golden_chance 1.0
-Wed Nov 13 16:31:39 2024
+Thu Nov 14 15:28:47 2024

@@ -63,19 +63,23 @@ label left_library_action_pac:
             jump left_library_option_Golden_Beetle
         "Volver.":
             jump library_option_Go_Back
+    return
 
 label left_library_option_EVA_01:
     show carlos annoyedspeech at characters_zoomed_placed_at_right
     "???" "Que te subas al maldito EVA, Shinji."
     jump left_library_action_pac
+    return
 
 label left_library_option_Golden_Beetle:
     show carlos thoughtful at characters_zoomed_placed_at_right
     "???" "Lo que me llevó a la criptografía..."
     jump left_library_action_pac
+    return
 
 label library_option_Go_Back:
     jump start_point_and_click
+    return
 
 #Right library
 
@@ -90,21 +94,25 @@ label right_library_action_pac:
             jump right_library_option_The_Psychoanalyst
         "Volver.":
             jump library_option_Go_Back
+    return
 
 label right_library_option_Death_Note:
     show carlos smirk at characters_zoomed_placed_at_right
     "???" "Kira tenía razón."
     jump right_library_action_pac
+    return
 
 label right_library_option_Ryuk_Figure:
     show carlos sigh at characters_zoomed_placed_at_right
     "???" "Me saliste caro."
     jump right_library_action_pac
+    return
 
 label right_library_option_The_Psychoanalyst:
     show carlos 2ndpose at characters_zoomed_placed_at_right
     "???" "¡Las secuelas nunca existieron!."
     jump right_library_action_pac
+    return
 
 #
 
@@ -115,10 +123,13 @@ label edgar_action_pac:
     show carlos normal at characters_half_size_placed_at_right
     "???" "Tú lo has dicho, amigo."
     jump start_point_and_click
+    return
+
 label bed_action_pac:
     show carlos thoughtful at characters_half_size_placed_at_right
     "???" "No estoy cansado aún."
     jump start_point_and_click
+    return
 
 label desk_action_pac:
     stop music fadeout 1.0
@@ -149,3 +160,4 @@ label desk_action_pac:
     with Shake((0, 0, 0, 0), .5, dist=30)
     Carlos "¡No se puede ser tan idiota!"
     jump topdown_view_desk_scene
+    return

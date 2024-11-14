@@ -33,8 +33,7 @@ label hall_door_action_pac:
     scene door view at hall_door_eye_view with fade
     Guillermo "CHARLY, CHARLY, ¿¡ESTÁS AHÍ!?"
     jump wait_until_open_door
-
-
+    return
 
 screen hall_door_calling_continuously_pac:
     imagebutton:
@@ -59,13 +58,13 @@ label hall_door_continuously_calling_action_pac:
     
     
     if isGuillermoShoutOnce:
-        
         play sound "sfx_knocking_on_door_desperately.mp3"
         jump check_key_picked_up
     else:
         play sound "sfx_knocking_on_door_desperately.mp3"
         Guillermo "¡CARLOOOOOOOOOOOOOOOOOOOOS!"
         $ isGuillermoShoutOnce = True
+        call screen hall_door_calling_continuously_pac
 
 label check_key_picked_up:
     if iskeyspickedup:
@@ -83,3 +82,4 @@ label grab_keys:
     pause(1)
     play sound "sfx_knocking_on_door_desperately.mp3"
     call screen hall_door_calling_continuously_pac
+    return

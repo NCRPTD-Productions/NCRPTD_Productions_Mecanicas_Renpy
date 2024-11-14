@@ -38,11 +38,13 @@ label desk_plant_action_pac:
     show carlos normal at characters_half_size_placed_at_left
     Carlos "No. Se riega cada diez días, y aún faltan dos."
     jump topdown_view_desk_scene
+    return
 
 label desk_lamp_action_pac:
     show carlos puzzled at characters_half_size_placed_at_left
     Carlos "Aún no es de noche."
     jump topdown_view_desk_scene
+    return
 
 label desk_laptop_action_pac:
     show carlos thoughtful at characters_half_size_placed_at_left
@@ -61,5 +63,6 @@ label desk_laptop_action_pac:
     Carlos "¡Por eso, Edgar, yo lo hago a la vieja usanza: Con lápiz y papel!"
     hide carlos smirk
     jump tutorial_start
+    return
 
 #

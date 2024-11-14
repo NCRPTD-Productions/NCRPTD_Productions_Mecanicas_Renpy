@@ -284,6 +284,7 @@ label carlos_bedroom_ceiling_sequence:
     jump carlos_bedroom_scene
 
 label carlos_bedroom_scene:
+    # call show_ui_button
     scene bg habitacion carlos at carlos_bedroom_background_size
     show carlos normal  at characters_half_size_placed_at_left
     show edgar normal  at edgar_placed_at_right

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 200: positional argument follows keyword argument
-        renpy.show("bg day", at_list=day_cicle_transforms, layer='master', what=None, zorder=0, tag=None, behind=eñe,elements_behind)
-                                                                                                                                     ^
+File "game/ui-buttons.rpy", line 29: invalid syntax
+    ui.button("Click me"m clicked= ui_button_pressed)
+                         ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Wed Nov 13 12:48:46 2024
+Thu Nov 14 14:01:52 2024

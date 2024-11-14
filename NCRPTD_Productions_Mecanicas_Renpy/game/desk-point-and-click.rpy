@@ -37,11 +37,12 @@ screen carlos_desktop_pac:
 label desk_plant_action_pac:
     show carlos normal at characters_half_size_placed_at_left
     Carlos "No. Se riega cada diez días, y aún faltan dos."
-    call start_point_and_click from _call_start_point_and_click_2
+    jump topdown_view_desk_scene
 
 label desk_lamp_action_pac:
     show carlos puzzled at characters_half_size_placed_at_left
     Carlos "Aún no es de noche."
+    jump topdown_view_desk_scene
 
 label desk_laptop_action_pac:
     show carlos thoughtful at characters_half_size_placed_at_left

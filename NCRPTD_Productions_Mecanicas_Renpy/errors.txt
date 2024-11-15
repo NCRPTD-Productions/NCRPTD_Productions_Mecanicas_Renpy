@@ -8,3 +8,9 @@ File "game/story/chapter-two.rpy", line 6: expected 'simple_expression' not foun
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
 Fri Nov 15 12:47:06 2024
+File "game/artifact_pac/artifact_main.rpy", line 106: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    show screen Artifact(isOn, thinAntValue, weirdAntValue, bButton, sButton)
+    ^
+
+Ren'Py Version: Ren'Py 8.3.2.24090902
+Fri Nov 15 12:47:03 2024

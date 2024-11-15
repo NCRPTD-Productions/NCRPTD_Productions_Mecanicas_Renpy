@@ -23,9 +23,9 @@ label start_chapter_II_guillermo_home:
     jump chapter_II_guillermo_bedroom_scene_I
 
 label chapter_II_guillermo_bedroom_scene_I:
+    play sound "sfx_pasos.mp3"
+    play music "bgm_cueva_de_guillermo.mp3"
     scene bg habitacion guillermo desordenada vacia at guillermo_bedroom
-    # TODO: Poner sonido pasos
-    # TODO: Poner música cueva guille
     Guillermo "¡Ven a la terraza!"
     show carlos normal at characters_half_size_placed_at_left
     Carlos "Cuánto desorden... Dios."
@@ -43,6 +43,7 @@ label chapter_II_guillermo_bedroom_pac_handler:
 label chapter_II_guillermo_bedroom_no_pac:
     # TODO: Agregar sonido pasos
     scene bg habitacion guillermo desordenada vacia at guillermo_bedroom
+    play sound "sfx_pasos.mp3"
     Guillermo "¡Ven a la terraza!"
     show carlos puzzled at characters_half_size_placed_at_left
     Carlos "¿En serio te pondrás a jugar? ¡Si acabamos de llegar!"
@@ -54,7 +55,7 @@ label chapter_II_guillermo_bedroom_no_pac:
     play sound "smirk.mp3"
     show carlos smirk at characters_half_size_placed_at_left_no_transition
     Carlos "Estaré en la terraza."
-    # TODO: Agregar sonido pasos
+    play sound "sfx_pasos.mp3"
     jump chapter_II_artifact_introducion
     return
 
@@ -66,7 +67,7 @@ label chapter_II_artifact_introducion:
     # else:
     #     show artifact_off at artifact_point_and_click_artifact_displacement
     #     "off"
-    call screen artifact_point_and_click
+    call artifact_pac(1)
     # jump end_game
     return
     

@@ -9,15 +9,15 @@ While running game code:
     $ ui.interact()
   File "game/story/chapter-two.rpy", line 70, in script call
     call artifact_pac(1)
-  File "game/artifact_pac/artifact_main.rpy", line 54, in script call
+  File "game/artifact_pac/artifact_main.rpy", line 52, in script call
     $ ui.interact()
-  File "game/artifact_pac/artifact_main.rpy", line 54, in script call
+  File "game/artifact_pac/artifact_main.rpy", line 52, in script call
     $ ui.interact()
-  File "game/artifact_pac/artifact_main.rpy", line 54, in script call
+  File "game/artifact_pac/artifact_main.rpy", line 52, in script call
     $ ui.interact()
   [Previous line repeated 27 more times]
-  File "game/artifact_pac/artifact_main.rpy", line 30, in script
-    show screen Artifact(isOn, thinAntValue, weirdAntValue, bButton, sButton, tvindex)
+  File "game/artifact_pac/artifact_main.rpy", line 28, in script
+    show screen Artifact(isOn, thinAntValue, weirdAntValue, bButton, sButton)
   File "renpy/common/000statements.rpy", line 647, in execute_show_screen
     renpy.show_screen(name, *args, **kwargs)
 TypeError: missing a required argument: 'indexval'
@@ -33,15 +33,15 @@ Full traceback:
     $ ui.interact()
   File "game/story/chapter-two.rpy", line 70, in script call
     call artifact_pac(1)
-  File "game/artifact_pac/artifact_main.rpy", line 54, in script call
+  File "game/artifact_pac/artifact_main.rpy", line 52, in script call
     $ ui.interact()
-  File "game/artifact_pac/artifact_main.rpy", line 54, in script call
+  File "game/artifact_pac/artifact_main.rpy", line 52, in script call
     $ ui.interact()
-  File "game/artifact_pac/artifact_main.rpy", line 54, in script call
+  File "game/artifact_pac/artifact_main.rpy", line 52, in script call
     $ ui.interact()
   [Previous line repeated 27 more times]
-  File "game/artifact_pac/artifact_main.rpy", line 30, in script
-    show screen Artifact(isOn, thinAntValue, weirdAntValue, bButton, sButton, tvindex)
+  File "game/artifact_pac/artifact_main.rpy", line 28, in script
+    show screen Artifact(isOn, thinAntValue, weirdAntValue, bButton, sButton)
   File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\ast.py", line 1974, in execute
     self.call("execute")
   File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\ast.py", line 1953, in call
@@ -69,4 +69,4 @@ TypeError: missing a required argument: 'indexval'
 Windows-10-10.0.22631 AMD64
 Ren'Py 8.3.2.24090902
 a_golden_chance 1.0
-Fri Nov 15 14:54:09 2024
+Fri Nov 15 14:59:05 2024

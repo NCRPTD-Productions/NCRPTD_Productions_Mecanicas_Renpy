@@ -1,39 +1,25 @@
-    
-init:
-    transform zoomedin:
-        zoom 1.35
-
-init python:
-    imageIndex = 0
-    is_first_image_discovered = False
-    is_second_image_discovered = False
-
-screen Artifact(isOn, thinAntValue, weirdAntValue, bButton, sButton, indexval):
+screen Artifact(isOn, thinAntValue, weirdAntValue, bButton, sButton):
     if (isOn):
 
         if (thinAntValue == -1 and weirdAntValue == 0 and bButton == 1 and sButton == 0):
             add "point_and_click/artifact/artifact_on_1st.png" zoom 1.35
             # "Primera imagen"
-            $ indexval =+ 1
-                    
-            # $ is_first_image_discovered = True
-            # $ global imageIndex
-            # $ imageIndex = imageIndex + 1
+            $ imageIndex += 1
         
         elif (thinAntValue == 0 and weirdAntValue == -1 and bButton == 1 and sButton == 1):
             add "point_and_click/artifact/artifact_on_2nd.png" zoom 1.35
-            $ indexval =+ 1
             # "segunda imagen"
-            # $ global imageIndex
-            # $ imageIndex = imageIndex + 1
-            # $ is_second_image_discovered = True
-
+            $ imageIndex += 1
         else:
             add "point_and_click/artifact/artifact_on.png" zoom 1.35
             
     else:
         add "point_and_click/artifact/artifact_off.png" zoom 1.35
     
+    
+init:
+    transform zoomedin:
+        zoom 1.35
 
 screen ThinAntenna(thinAntValue):
     imagebutton:

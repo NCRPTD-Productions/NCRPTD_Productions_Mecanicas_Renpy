@@ -19,20 +19,26 @@ screen ui_buttons:
     imagebutton:
         idle "ui/ui_button_scrapbook_idle.png"
         hover "ui/ui_button_scrapbook_hover.png"
-        action ShowMenu("ui_scrapbook_right_side_button")
+        action ShowMenu("handle_carlos_scrapbook_ui_button")
         at ui_right_side_button_scrapbook
 
 label handle_carlos_phone_ui_button:
-    
     # show carlos_phone_system
+    show screen carlos_phone_system 
     show screen ui_phone_right_side_button
-    jump carlos_phone_system 
-    "Teléfono de carlos"
+    "Teléfono de carlos."
+    # return
+
+label handle_carlos_scrapbook_ui_button:
+    scene black
+    show screen carlos_gui_scrapbook
+    show screen ui_scrapbook_right_side_button
+    "Crypto Notes."
 
 screen ui_phone_right_side_button:
     imagebutton:
-        at ui_right_side_button_phone
         idle "ui/ui_button_tel_clicked.png"
+        at ui_right_side_button_phone
         action Return()
 
 

@@ -2,11 +2,9 @@
 errors listed below, and try again.
 
 
-The label carlos_phone_system is defined twice, at File "game/carlos-phone-system.rpyc", line 34:
-
-and File "game/pac-scripts/carlos-phone-system.rpy", line 34:
-label carlos_phone_system:
-
+File "game/pac-scripts/carlos-phone-system.rpy", line 89: screen expects a non-empty block.
+    screen carlos_phone_system_pac:
+                                   ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Fri Nov 15 02:21:16 2024
+Fri Nov 15 03:04:19 2024

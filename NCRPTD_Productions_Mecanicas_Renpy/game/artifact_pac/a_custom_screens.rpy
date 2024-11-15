@@ -31,19 +31,22 @@ screen ThinAntenna(thinAntValue):
             idle "point_and_click/artifact/interactibles/antenae/thin_antenna_-1_idle.png"
             hover "point_and_click/artifact/interactibles/antenae/thin_antenna_-1_hover.png"
             at zoomedin
-            action Call("setThinAntennaValue", 0)
+            if (canClickThings):
+                action Call("setThinAntennaValue", 0)
 
         elif (thinAntValue == 0):
             idle "point_and_click/artifact/interactibles/antenae/thin_antenna_0_idle.png"
             hover "point_and_click/artifact/interactibles/antenae/thin_antenna_0_hover.png"
             at zoomedin
-            action Call("setThinAntennaValue", 1)
+            if (canClickThings):
+                action Call("setThinAntennaValue", 1)
 
         elif (thinAntValue == 1):
             idle "point_and_click/artifact/interactibles/antenae/thin_antenna_1_idle.png"
             hover "point_and_click/artifact/interactibles/antenae/thin_antenna_1_hover.png"
             at zoomedin
-            action Call("setThinAntennaValue", -1)
+            if (canClickThings):
+                action Call("setThinAntennaValue", -1)
 
 screen WeirdAntenna(weirdAntValue):
     imagebutton:
@@ -52,19 +55,22 @@ screen WeirdAntenna(weirdAntValue):
             idle "point_and_click/artifact/interactibles/antenae/weird_antenna_-1_idle.png"
             hover "point_and_click/artifact/interactibles/antenae/weird_antenna_-1_hover.png"
             at zoomedin
-            action Call("setWeirdAntennaValue", 0)
+            if (canClickThings):
+                action Call("setWeirdAntennaValue", 0)
 
         elif (weirdAntValue == 0):
             idle "point_and_click/artifact/interactibles/antenae/weird_antenna_0_idle.png"
             hover "point_and_click/artifact/interactibles/antenae/weird_antenna_0_hover.png"
             at zoomedin
-            action Call("setWeirdAntennaValue", 1)
+            if (canClickThings):
+                action Call("setWeirdAntennaValue", 1)
 
         elif (weirdAntValue == 1):
             idle "point_and_click/artifact/interactibles/antenae/weird_antenna_1_idle.png"
             hover "point_and_click/artifact/interactibles/antenae/weird_antenna_1_hover.png"
             at zoomedin
-            action Call("setWeirdAntennaValue", -1)
+            if (canClickThings):
+                action Call("setWeirdAntennaValue", -1)
 
 screen BigButton(bButton):
     imagebutton:
@@ -73,13 +79,15 @@ screen BigButton(bButton):
             idle "point_and_click/artifact/interactibles/buttons/big_button_0_idle.png"
             hover "point_and_click/artifact/interactibles/buttons/big_button_0_hover.png"
             at zoomedin
-            action Call("setBButtonValue", 1)
+            if (canClickThings):
+                action Call("setBButtonValue", 1)
 
         elif (bButton == 1):
             idle "point_and_click/artifact/interactibles/buttons/big_button_1_idle.png"
             hover "point_and_click/artifact/interactibles/buttons/big_button_1_hover.png"
             at zoomedin
-            action Call("setBButtonValue", 0)
+            if (canClickThings):
+                action Call("setBButtonValue", 0)
 
 screen SmallButton(sButton):
     imagebutton:
@@ -88,13 +96,15 @@ screen SmallButton(sButton):
             idle "point_and_click/artifact/interactibles/buttons/small_button_0_idle.png"
             hover "point_and_click/artifact/interactibles/buttons/small_button_0_hover.png"
             at zoomedin
-            action Call("setSButtonValue", 1)
+            if (canClickThings):
+                action Call("setSButtonValue", 1)
 
         elif (sButton == 1):
             idle "point_and_click/artifact/interactibles/buttons/small_button_1_idle.png"
             hover "point_and_click/artifact/interactibles/buttons/small_button_1_hover.png"
             at zoomedin
-            action Call("setSButtonValue", 0)
+            if (canClickThings):
+                action Call("setSButtonValue", 0)
 
 screen OnOff:
     imagebutton:
@@ -102,18 +112,18 @@ screen OnOff:
         idle "point_and_click/artifact/interactibles/buttons/button_onoff_idle.png"
         hover "point_and_click/artifact/interactibles/buttons/button_onoff_hover.png"
         at zoomedin
-
-        if (onoff == 0):
-            action Call("ArtifactOnOff_1")
-        elif(onoff == 1):
-            action Call("ArtifactOnOff_2")
-        elif(onoff >= 2):
-            action Call("ArtifactOnOff_3")
+        
+        if (canClickOnOff):
+            if (onoff == 0):
+                action Call("ArtifactOnOff_1")
+            elif(onoff == 1):
+                action Call("ArtifactOnOff_2")
+            elif(onoff >= 2):
+                action Call("ArtifactOnOff_3")
             
 
 screen GoBackArrow:
     imagebutton:
         pos(100, 100)
-        idle "ui_arrow_left.png"
-        at zoomedin
+        idle "ui/ui_arrow_left.png"
         action Call("GoBack")

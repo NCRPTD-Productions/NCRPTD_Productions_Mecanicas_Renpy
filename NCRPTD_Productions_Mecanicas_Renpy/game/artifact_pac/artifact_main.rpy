@@ -7,14 +7,22 @@ define onoff = 0
 define imageIndex = 0
 
 define canClickThings = False
+define canClickOnOff = False
 
 label artifact_pac(momentIndex):
     stop music
-    show screen Artifact(isOn, thinAntValue, weirdAntValue, bButton, sButton) with dissolve
     
+    show screen Artifact(isOn, thinAntValue, weirdAntValue, bButton, sButton)
+    show screen ThinAntenna(thinAntValue)
+    show screen WeirdAntenna(weirdAntValue)
+    show screen BigButton(bButton)
+    show screen SmallButton(sButton)
+    show screen OnOff
+
     if(momentIndex == 1):
         Carlos "¿Qué es esto?"
         Guillermo "Enciéndelo. Ya verás que te vas a reír."
+        $ canClickOnOff = True
     
     label showArtifact:
         show screen Artifact(isOn, thinAntValue, weirdAntValue, bButton, sButton)
@@ -26,6 +34,7 @@ label artifact_pac(momentIndex):
 
         if (imageIndex >= 3 and momentIndex == 1):
             $ canClickThings = False
+            $ canClickOnOff = False
             stop music
             Guillermo "¡Allí está! ¡¿Ves!? ¡Te dije que habíamos encontrado algo: ese QR es algo de otro mundo!"
             Carlos "No. Eso no es un QR. Es un {i}MaxiCode{/i}, un tipo de código de barras."
@@ -43,26 +52,22 @@ label artifact_pac(momentIndex):
         $ ui.interact()
 
 label setThinAntennaValue(value):
-    if (canClickThings):
-        $ thinAntValue = value
+    $ thinAntValue = value
     
     jump showArtifact
 
 label setWeirdAntennaValue(value):
-    if (canClickThings):
-        $ weirdAntValue = value
+    $ weirdAntValue = value
     
     jump showArtifact
 
 label setBButtonValue(value):
-    if (canClickThings):
-        $ bButton = value
+    $ bButton = value
     
     jump showArtifact
 
 label setSButtonValue(value):
-    if (canClickThings):
-        $ sButton = value
+    $ sButton = value
     
     jump showArtifact
 
@@ -70,6 +75,7 @@ label ArtifactOnOff_1:
     play sound "sfx_boton_presionado.mp3"
     $ isOn = not isOn
     $ onoff += 1
+    $ canClickOnOff = False
 
     show screen Artifact(isOn, thinAntValue, weirdAntValue, bButton, sButton)
     show screen ThinAntenna(thinAntValue)
@@ -77,6 +83,7 @@ label ArtifactOnOff_1:
     show screen BigButton(bButton)
     show screen SmallButton(sButton)
     show screen OnOff
+
 
     Carlos "¡¿Qué?!"
     Guillermo "Ay, no. El viento debió haber descalibrado las antenas."
@@ -93,6 +100,7 @@ label ArtifactOnOff_1:
     Guillermo "¡Vamos, hazlo de una vez!"
 
     $ canClickThings = True
+    $ canClickOnOff = True
     play music "bgm_thundersnail.mp3"
     
     jump showArtifact
@@ -100,7 +108,8 @@ label ArtifactOnOff_1:
 label ArtifactOnOff_2:
     play sound "sfx_vibe_stops.mp3"
     $ onoff += 1
-    
+    $ canClickThings = False
+    $ canClickOnOff = False
 
     $ isOn = not isOn
     show screen Artifact(isOn, thinAntValue, weirdAntValue, bButton, sButton)
@@ -116,6 +125,8 @@ label ArtifactOnOff_2:
     Carlos "Se paró una mosca."
     Guillermo "El diablo."
     play music "bgm_thundersnail.mp3"
+    $ canClickThings = True
+    $ canClickOnOff = True
 
     jump showArtifact
 

@@ -20,7 +20,7 @@ init python:
         'C',
         'Y',
         'B',
-        'W',
+        'J',
         'Q'
 
         ]

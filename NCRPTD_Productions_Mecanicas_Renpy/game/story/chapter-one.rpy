@@ -65,7 +65,7 @@ label tutorial_start:
     play sound "sfx_paper_tearing.mp3"
     pause(0.5)
     play sound "sfx_scissors.mp3"
-    call decryption("a") from _call_decryption
+    call decryption("tres tristes tigres comen trigo en un trigal") from _call_decryption
     return
 
 label tutorial_end:
@@ -148,7 +148,7 @@ label start_impossible_cryptogram:
     play sound "sfx_paper_tearing.mp3"
     pause(0.5)
     play sound "sfx_scissors.mp3"
-    call decryption("sda") from _call_decryption_1
+    call decryption("eeporqsue enerneucnlto qsecauubn") from _call_decryption_1
     return
 
 label act_I_choice_go:

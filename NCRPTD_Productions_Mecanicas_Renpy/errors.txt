@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/artifact_pac/a_custom_screens.rpy", line 112: 'a' is not a keyword argument or valid child of the imagebutton statement.
-    a
-     ^
+File "game/artifact_pac/artifact_main.rpy", line 106: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    show screen Artifact(isOn, thinAntValue, weirdAntValue, bButton, sButton)
+    ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Fri Nov 15 11:09:38 2024
+Fri Nov 15 12:47:03 2024

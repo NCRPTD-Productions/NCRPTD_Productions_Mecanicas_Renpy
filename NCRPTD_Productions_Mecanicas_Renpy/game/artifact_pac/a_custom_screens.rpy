@@ -102,11 +102,18 @@ screen OnOff:
         idle "point_and_click/artifact/interactibles/buttons/button_onoff_idle.png"
         hover "point_and_click/artifact/interactibles/buttons/button_onoff_hover.png"
         at zoomedin
-        action Call("ArtifactOnOff")
+
+        if (onoff == 0):
+            action Call("ArtifactOnOff_1")
+        elif(onoff == 1):
+            action Call("ArtifactOnOff_2")
+        elif(onoff >= 2):
+            action Call("ArtifactOnOff_3")
+            
 
 screen GoBackArrow:
     imagebutton:
         pos(100, 100)
         idle "ui_arrow_left.png"
         at zoomedin
-        action Call()
+        action Call("GoBack")

@@ -1,58 +1,48 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/story/chapter-one.rpy", line 68, in script call
-    call decryption("a") from _call_decryption
   File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
     $ ui.interact()
   File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
     $ ui.interact()
   File "game/story/chapter-two.rpy", line 66, in script call
-    call artifact_pac
-  File "game/artifact_pac/artifact_main.rpy", line 13, in script
-    show screen Artifact(isOn, thinAntValue, weirdAntValue, bButton, sButton)
-  File "renpy/common/000statements.rpy", line 647, in execute_show_screen
-    renpy.show_screen(name, *args, **kwargs)
-TypeError: missing a required argument: 'thinAntValue'
+    call artifact_pac(1)
+  File "game/artifact_pac/artifact_main.rpy", line 43, in script call
+    $ ui.interact()
+  File "game/artifact_pac/artifact_main.rpy", line 43, in script call
+    $ ui.interact()
+  File "game/artifact_pac/artifact_main.rpy", line 27, in script
+    if (imageIndex >= 3 &&):
+SyntaxError: invalid syntax (game/artifact_pac/artifact_main.rpy, line 27)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/story/chapter-one.rpy", line 68, in script call
-    call decryption("a") from _call_decryption
   File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
     $ ui.interact()
   File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
     $ ui.interact()
   File "game/story/chapter-two.rpy", line 66, in script call
-    call artifact_pac
-  File "game/artifact_pac/artifact_main.rpy", line 13, in script
-    show screen Artifact(isOn, thinAntValue, weirdAntValue, bButton, sButton)
-  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\ast.py", line 1974, in execute
-    self.call("execute")
-  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\ast.py", line 1953, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 647, in execute_show_screen
-    renpy.show_screen(name, *args, **kwargs)
-  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\display\screen.py", line 1361, in show_screen
-    sls.add(_layer, d, _tag, zorder=_zorder, transient=_transient, keep_st=True, name=name)
-  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\display\scenelists.py", line 444, in add
-    if not self.hide_or_replace(layer, remove_index, "replaced"):
-  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\display\scenelists.py", line 503, in hide_or_replace
-    if not oldsle.displayable._handles_event(prefix):
-  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\display\screen.py", line 533, in _handles_event
-    self.update()
-  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\display\screen.py", line 697, in update
-    self.screen.function(**self.scope)
-  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\parameter.py", line 455, in apply_arguments
-    return parameters.apply(args or (), kwargs or {}, ignore_errors)
-  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\parameter.py", line 307, in apply
-    raise TypeError(msg) # from None
-TypeError: missing a required argument: 'thinAntValue'
+    call artifact_pac(1)
+  File "game/artifact_pac/artifact_main.rpy", line 43, in script call
+    $ ui.interact()
+  File "game/artifact_pac/artifact_main.rpy", line 43, in script call
+    $ ui.interact()
+  File "game/artifact_pac/artifact_main.rpy", line 27, in script
+    if (imageIndex >= 3 &&):
+  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\ast.py", line 1843, in execute
+    if renpy.python.py_eval(condition):
+  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\python.py", line 1207, in py_eval
+    code = py_compile(code, 'eval')
+  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\python.py", line 1144, in py_compile
+    raise e
+  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\python.py", line 1081, in py_compile
+    raise orig_e
+  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\python.py", line 1073, in py_compile
+    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
+SyntaxError: invalid syntax (game/artifact_pac/artifact_main.rpy, line 27)
 
 Windows-10-10.0.19041 AMD64
 Ren'Py 8.3.2.24090902
 a_golden_chance 1.0
-Fri Nov 15 10:55:19 2024
+Fri Nov 15 12:49:40 2024

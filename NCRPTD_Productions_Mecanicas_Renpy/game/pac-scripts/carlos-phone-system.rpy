@@ -1,11 +1,11 @@
 init python:
-
+    is_phone_system_enabled=True
     isCameraEnabled = False
-    phone_navigation_gui_carlos_home_enabled = True
+    phone_navigation_gui_carlos_home_enabled = False
     phone_navigation_gui_guillermo_home_enabled = True
-    phone_navigation_gui_gas_station_enabled = True
-    phone_navigation_gui_risky_gas_station_enabled = True
-    phone_navigation_gui_al_zodiak_enabled = True
+    phone_navigation_gui_gas_station_enabled = False
+    phone_navigation_gui_risky_gas_station_enabled = False
+    phone_navigation_gui_al_zodiak_enabled = False
 
 init:
     transform phone:
@@ -46,6 +46,7 @@ init:
         ypos 2500
         linear .5 yalign 0.3
 
+
 #armo el teléfono con los sprites e imagebuttons
 screen carlos_phone_system:
     imagebutton:
@@ -55,44 +56,48 @@ screen carlos_phone_system:
     if phone_navigation_gui_carlos_home_enabled:
         imagebutton:
             auto "point_and_click/phone_system/phone_map_pac_carlos_home_%s.png"
-            action Jump("carlos_home_phone_system_location")
+            action [Jump("carlos_home_phone_system_location"), Return()]
             at phone_map_carlos_home
     if phone_navigation_gui_guillermo_home_enabled:
         imagebutton:
             auto "point_and_click/phone_system/phone_map_pac_guillermo_home_%s.png"
-            action Jump("guillermo_home_phone_system_location")
+            action [Jump("guillermo_home_phone_system_location"), Return()]
             at phone_map_guillermo_home
     if phone_navigation_gui_gas_station_enabled:
         imagebutton:
             auto "point_and_click/phone_system/phone_map_pac_gas_station_%s.png"
-            action Jump("gas_station_phone_system_location")
+            action [Jump("gas_station_phone_system_location"), Return()]
             at phone_map_gas_station
     if phone_navigation_gui_risky_gas_station_enabled:
         imagebutton:
             auto "point_and_click/phone_system/phone_map_pac_old_gas_station_%s.png"
-            action Jump("risky_gas_station_phone_system_location")
+            action [Jump("risky_gas_station_phone_system_location"), Return()]
             at phone_map_risky_gas_station
     if phone_navigation_gui_al_zodiak_enabled:
         imagebutton:
             auto "point_and_click/phone_system/phone_map_pac_ufo_%s.png"
-            action Jump("al_zodiak_phone_system_location")
+            action [Jump("al_zodiak_phone_system_location"), Return()]
             at phone_map_al_zodiak
 
 # screen carlos_phone_system_pac:
 
 label carlos_home_phone_system_location:
     scene gas station
+    $ is_phone_system_enabled = False
     # scene black
     "Casa Carlos"
     # call handle_carlos_phone_ui_button
     return
 
 label guillermo_home_phone_system_location:
-    scene nave
-    "Casa Guillermo"
+    hide screen carlos_phone_system
+    hide screen ui_buttons
+    jump start_chapter_II_guillermo_home
+    
+    return
     # call handle_carlos_phone_ui_button
     # scene gas station
-    return
+    # return
 
 label gas_station_phone_system_location:
     scene gas station

@@ -22,18 +22,25 @@ screen ui_buttons:
         action ShowMenu("handle_carlos_scrapbook_ui_button")
         at ui_right_side_button_scrapbook
 
+label carlos_bedroom_navigation_gui:
+    scene bg habitacion carlos at carlos_bedroom_background_size
+    show screen ui_buttons
+
 label handle_carlos_phone_ui_button:
     # show carlos_phone_system
-    show screen carlos_phone_system 
-    show screen ui_phone_right_side_button
+    scene black
+    call screen carlos_phone_system 
+    # show screen ui_phone_right_side_button
     "Teléfono de carlos."
     # return
+    return
 
 label handle_carlos_scrapbook_ui_button:
     scene black
-    show screen carlos_gui_scrapbook
-    show screen ui_scrapbook_right_side_button
+    call screen carlos_gui_scrapbook
+    # show screen ui_scrapbook_right_side_button
     "Crypto Notes."
+    return
 
 screen ui_phone_right_side_button:
     imagebutton:

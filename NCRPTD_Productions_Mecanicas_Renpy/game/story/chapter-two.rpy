@@ -63,7 +63,7 @@ label chapter_II_artifact_introducion:
     # else:
     #     show artifact_off at artifact_point_and_click_artifact_displacement
     #     "off"
-    call screen artifact_point_and_click
+    call artifact_pac
     # jump end_game
     return
     

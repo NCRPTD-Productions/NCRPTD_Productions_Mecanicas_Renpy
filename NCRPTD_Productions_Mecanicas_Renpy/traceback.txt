@@ -7,19 +7,13 @@ While running game code:
     $ ui.interact()
   File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
     $ ui.interact()
-  File "game/story/chapter-two.rpy", line 66, in script
-    call screen artifact_point_and_click
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/pac-scripts/artifact-point-and-click.rpy", line 32, in execute
-    screen artifact_point_and_click:
-  File "game/pac-scripts/artifact-point-and-click.rpy", line 32, in execute
-    screen artifact_point_and_click:
-  File "game/pac-scripts/artifact-point-and-click.rpy", line 93, in execute
-    if artifact_thin_antenna_position == -1:
-  File "game/pac-scripts/artifact-point-and-click.rpy", line 94, in execute
-    imagebutton:
-Exception: Imagebutton does not have a idle image. (auto='point_and_click/artifact/buttons/thin_antenna_-1_%s.png').
+  File "game/story/chapter-two.rpy", line 66, in script call
+    call artifact_pac
+  File "game/artifact_pac/artifact_main.rpy", line 13, in script
+    show screen Artifact(isOn, thinAntValue, weirdAntValue, bButton, sButton)
+  File "renpy/common/000statements.rpy", line 647, in execute_show_screen
+    renpy.show_screen(name, *args, **kwargs)
+TypeError: missing a required argument: 'thinAntValue'
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -30,53 +24,35 @@ Full traceback:
     $ ui.interact()
   File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
     $ ui.interact()
-  File "game/story/chapter-two.rpy", line 66, in script
-    call screen artifact_point_and_click
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\ast.py", line 1974, in execute
+  File "game/story/chapter-two.rpy", line 66, in script call
+    call artifact_pac
+  File "game/artifact_pac/artifact_main.rpy", line 13, in script
+    show screen Artifact(isOn, thinAntValue, weirdAntValue, bButton, sButton)
+  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\ast.py", line 1974, in execute
     self.call("execute")
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\ast.py", line 1953, in call
+  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\ast.py", line 1953, in call
     return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\statements.py", line 374, in call
+  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\statements.py", line 374, in call
     return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\exports\statementexports.py", line 345, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\display\core.py", line 2215, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\display\core.py", line 2745, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\display\screen.py", line 480, in visit_all
-    callback(self)
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\display\core.py", line 2745, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\display\screen.py", line 491, in per_interact
+  File "renpy/common/000statements.rpy", line 647, in execute_show_screen
+    renpy.show_screen(name, *args, **kwargs)
+  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\display\screen.py", line 1361, in show_screen
+    sls.add(_layer, d, _tag, zorder=_zorder, transient=_transient, keep_st=True, name=name)
+  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\display\scenelists.py", line 444, in add
+    if not self.hide_or_replace(layer, remove_index, "replaced"):
+  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\display\scenelists.py", line 503, in hide_or_replace
+    if not oldsle.displayable._handles_event(prefix):
+  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\display\screen.py", line 533, in _handles_event
     self.update()
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\display\screen.py", line 697, in update
+  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\display\screen.py", line 697, in update
     self.screen.function(**self.scope)
-  File "game/pac-scripts/artifact-point-and-click.rpy", line 32, in execute
-    screen artifact_point_and_click:
-  File "game/pac-scripts/artifact-point-and-click.rpy", line 32, in execute
-    screen artifact_point_and_click:
-  File "game/pac-scripts/artifact-point-and-click.rpy", line 93, in execute
-    if artifact_thin_antenna_position == -1:
-  File "game/pac-scripts/artifact-point-and-click.rpy", line 94, in execute
-    imagebutton:
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\ui.py", line 975, in _imagebutton
-    idle = choice(idle, idle_image, "idle", required=True)
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\ui.py", line 969, in choice
-    raise Exception("Imagebutton does not have a %s image. (auto=%r)." % (name, auto))
-Exception: Imagebutton does not have a idle image. (auto='point_and_click/artifact/buttons/thin_antenna_-1_%s.png').
+  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\parameter.py", line 455, in apply_arguments
+    return parameters.apply(args or (), kwargs or {}, ignore_errors)
+  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\parameter.py", line 307, in apply
+    raise TypeError(msg) # from None
+TypeError: missing a required argument: 'thinAntValue'
 
-Windows-10-10.0.22631 AMD64
+Windows-10-10.0.19041 AMD64
 Ren'Py 8.3.2.24090902
 a_golden_chance 1.0
-Fri Nov 15 09:43:08 2024
+Fri Nov 15 10:55:19 2024

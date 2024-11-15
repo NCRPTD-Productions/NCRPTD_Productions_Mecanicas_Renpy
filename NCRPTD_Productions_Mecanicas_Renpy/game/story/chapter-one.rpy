@@ -416,10 +416,6 @@ label response_go_with_friends_act_II:
     jump chapter_II_guillermo_bedroom_no_pac
     return
 
-
-    Carlos "Bueno pibes son lo más nunca cambien saludos ;)"
-    jump end_game
-    return
 label end_game:
     # hide screen End
     "Thank you for playing!"

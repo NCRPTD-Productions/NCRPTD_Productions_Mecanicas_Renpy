@@ -1,34 +1,70 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/story/chapter-one.rpy", line 68, in script call
-    call decryption("a") from _call_decryption
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/pac-scripts/guillermo_bedroom_pac.rpy", line 109, in script
-    jump chapter_II_guillermo_bedroom_pac_handler
-ScriptError: could not find label 'chapter_II_guillermo_bedroom_pac_handler'.
+  File "game/story/chapter-one.rpy", line 52, in script
+    call screen intro_pac
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "game/pac-scripts/intro-point-and-click.rpy", line 5, in execute
+    screen intro_pac:
+  File "game/pac-scripts/intro-point-and-click.rpy", line 5, in execute
+    screen intro_pac:
+  File "game/pac-scripts/intro-point-and-click.rpy", line 6, in execute
+    imagebutton:
+  File "renpy/common/00defaults.rpy", line 173, in _imagemap_auto_function
+    rv = auto_param % variant
+TypeError: not all arguments converted during string formatting
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/story/chapter-one.rpy", line 68, in script call
-    call decryption("a") from _call_decryption
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
-    $ ui.interact()
-  File "game/pac-scripts/guillermo_bedroom_pac.rpy", line 109, in script
-    jump chapter_II_guillermo_bedroom_pac_handler
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\ast.py", line 1699, in execute
-    rv = renpy.game.script.lookup(target)
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\script.py", line 1103, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'chapter_II_guillermo_bedroom_pac_handler'.
+  File "game/story/chapter-one.rpy", line 52, in script
+    call screen intro_pac
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\ast.py", line 1974, in execute
+    self.call("execute")
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\ast.py", line 1953, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\statements.py", line 374, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\exports\statementexports.py", line 345, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\display\core.py", line 2215, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\display\core.py", line 2745, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\display\screen.py", line 480, in visit_all
+    callback(self)
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\display\core.py", line 2745, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\display\screen.py", line 491, in per_interact
+    self.update()
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\display\screen.py", line 697, in update
+    self.screen.function(**self.scope)
+  File "game/pac-scripts/intro-point-and-click.rpy", line 5, in execute
+    screen intro_pac:
+  File "game/pac-scripts/intro-point-and-click.rpy", line 5, in execute
+    screen intro_pac:
+  File "game/pac-scripts/intro-point-and-click.rpy", line 6, in execute
+    imagebutton:
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\ui.py", line 975, in _imagebutton
+    idle = choice(idle, idle_image, "idle", required=True)
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\ui.py", line 963, in choice
+    rv = renpy.config.imagemap_auto_function(auto, name)
+  File "renpy/common/00defaults.rpy", line 173, in _imagemap_auto_function
+    rv = auto_param % variant
+TypeError: not all arguments converted during string formatting
 
 Windows-10-10.0.22631 AMD64
 Ren'Py 8.3.2.24090902
 a_golden_chance 1.0
-Fri Nov 15 06:22:39 2024
+Fri Nov 15 07:05:54 2024

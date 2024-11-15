@@ -104,7 +104,7 @@ label justo_in_computer_action_pac:
     Carlos "¿Qué haces?"
     # TODO: Poner sonido tecleo intenso
     Justo "Estoy... Jugando Castle Crashers. ¿Quieres jugar?"
-    Carlos "No, gracias"
+    Carlos "No, gracias."
     hide carlos normal
     jump chapter_II_guillermo_bedroom_pac_handler
     return

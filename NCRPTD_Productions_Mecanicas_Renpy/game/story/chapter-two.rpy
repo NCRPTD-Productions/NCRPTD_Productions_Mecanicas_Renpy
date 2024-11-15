@@ -28,7 +28,7 @@ label chapter_II_guillermo_bedroom_scene_I:
     Carlos "Cuánto desorden... Dios."
     hide carlos normal
     Justo "Hola, Calos. ¿Todo bien?"
-    show carlos annoyed at characters_half_size_placed_at_left
+    show carlos annoyed at characters_half_size_placed_at_left_no_transition
     "{i}Investiga la sala o ve a la terraza.{i}"
     hide carlos annoyed
     jump chapter_II_guillermo_bedroom_pac_handler
@@ -58,4 +58,6 @@ label chapter_II_guillermo_bedroom_no_pac:
 label chapter_II_artifact_introducion:
     scene black with fade
     "Mostrar artefacto."
+    jump end_game
+    return
     

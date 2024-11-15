@@ -1,50 +1,70 @@
 init:
     $ sshake = Shake((0, 0, 0, 0), 1.0, dist=15)
 
+    transform pac_intro_left_library:
+        zoom .7
+        align (.216, .625)        # pos(645, 545)
+
+    transform pac_intro_right_library:
+        zoom .7
+        align (.782, .66)        # pos(645, 545)
+
+    transform pac_intro_edgar:
+        zoom .35
+        align (.013, .63)        # pos(645, 545)
+
+    transform pac_intro_desk:
+        zoom .7
+        align (.496, .89)        # pos(645, 545)
+
+    transform pac_intro_bed:
+        zoom .83
+        align (1.075, 1.34)        # pos(645, 545)
+
 #Image buttons
 screen intro_pac:
-    imagebutton:
-        pos(75, 845)
-        idle "pac_edgar_idle.png"
-        hover "pac_edgar_hover.png"
-        action [Hide("displayTextScreen"), Jump("edgar_action_pac")]
-        at pac_custom_library_zoom
-        hovered Show("displayTextScreen", displayText = "¿Hablar con Edgar?")
-        unhovered Hide("displayTextScreen")
 
     imagebutton:
-        pos(645, 545)
-        idle "pac_biblioteca_izquierda_idle.png"
-        hover "pac_biblioteca_izquierda_hover.png"
+        auto "point_and_click/intro_carlos_bedroom/pac_biblioteca_izquierda_%s.png"
+        # hover "point_and_click/intro_carlos_bedroom/pac_biblioteca_izquierda_hover.png"
         action [Hide("displayTextScreen"), Jump("left_library_action_pac")]
-        at pac_custom_library_zoom
+        at pac_intro_left_library
         hovered Show("displayTextScreen", displayText = "¿Leer?")
         unhovered Hide("displayTextScreen")
             
     imagebutton:
+        pos(75, 845)
+        auto "point_and_click/intro_carlos_bedroom/pac_edgar_%s.png"
+        # hover "point_and_click/intro_carlos_bedroom/pac_edgar_hover.png"
+        action [Hide("displayTextScreen"), Jump("edgar_action_pac")]
+        at pac_intro_edgar
+        hovered Show("displayTextScreen", displayText = "¿Hablar con Edgar?")
+        unhovered Hide("displayTextScreen")
+
+    imagebutton:
         pos(1020, 860)
-        idle "pac_escritorio_idle.png"
-        hover "pac_escritorio_hover.png"
+        auto "point_and_click/intro_carlos_bedroom/pac_escritorio_%s.png"
+        # hover "point_and_click/intro_carlos_bedroom/pac_escritorio_hover.png"
         action [Hide("displayTextScreen"), Jump("desk_action_pac")]
-        at pac_custom_library_zoom
+        at pac_intro_desk
         hovered Show("displayTextScreen", displayText = "Manos a la obra.")
         unhovered Hide("displayTextScreen")
             
     imagebutton:
         pos(1725, 545)
-        idle "pac_biblioteca_derecha_idle.png"
-        hover "pac_biblioteca_derecha_hover.png"
+        auto "point_and_click/intro_carlos_bedroom/pac_biblioteca_derecha_%s.png"
+        # hover "point_and_click/intro_carlos_bedroom/pac_biblioteca_derecha_hover.png"
         action [Hide("displayTextScreen"), Jump("right_library_action_pac")]
-        at pac_custom_library_zoom
+        at pac_intro_right_library
         hovered Show("displayTextScreen", displayText = "¿Leer?")
         unhovered Hide("displayTextScreen")
             
     imagebutton:
         pos(2110, 1085)
-        idle "pac_cama_carlos_idle.png"
-        hover "pac_cama_carlos_hover.png"
+        auto "point_and_click/intro_carlos_bedroom/pac_cama_carlos_%s.png"
+        # hover "point_and_click/intro_carlos_bedroom/pac_cama_carlos_hover.png"
         action [Hide("displayTextScreen"), Jump("bed_action_pac")]
-        at pac_custom_library_zoom
+        at pac_intro_bed
         hovered Show("displayTextScreen", displayText = "¿Dormir?")
         unhovered Hide("displayTextScreen")
 

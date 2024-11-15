@@ -96,8 +96,8 @@ init:
         pos (0,-150)
         
     transform carlos_corner_bedroom_background_size: 
-        zoom 1.5
-        pos (0,0)
+        zoom .7
+        align(.5, .5)
 
     transform menu_position:
         pos(0,0)

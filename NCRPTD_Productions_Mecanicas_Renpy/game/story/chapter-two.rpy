@@ -70,4 +70,22 @@ label chapter_II_artifact_introducion:
     call artifact_pac(1)
     # jump end_game
     return
+
+label act_II_images_rendered_in_artifact:
+    Guillermo "¡Allí está! ¡¿Ves!? ¡Te dije que habíamos encontrado algo: ese QR es algo de otro mundo!"
+    Carlos "No. Eso no es un QR. Es un {i}MaxiCode{/i}, un tipo de código de barras."
+    Carlos "Imagino que el Artefacto lo conseguiste de {i}4chan{/i}, ¿verdad?"
+    Guillermo "¿Qué me habrá delatado?"
+    Guillermo "Sí. Un usuario anónimo lo publicó en un foro de conspiracionismo."
+    Guillermo "Dijo que se podía obtener señales alienígenas con él. ¡¿No es genial?!"
+    Carlos "Podrás haberme impresionado con el Artefacto, pero no por ello creeré en los alienígenas, Guillermo."
+    Guillermo "¡Oh, vamos!"
+    Carlos "Y aún así no preguntaste por ahí qué clase de código es este. Ni siquiera investigaste."
+    Guillermo "Blah, blah, blah."
+    jump show_phone_ui_scanner
+    return
+
+label show_phone_ui_scanner:
+    jump end_game
+    return
     

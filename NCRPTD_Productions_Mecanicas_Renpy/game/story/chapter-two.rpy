@@ -56,8 +56,14 @@ label chapter_II_guillermo_bedroom_no_pac:
     return
 
 label chapter_II_artifact_introducion:
-    scene black with fade
-    "Mostrar artefacto."
-    jump end_game
+    # scene artifact_off with fade
+    # if artifact_is_on:
+    #     show artifact_on at artifact_point_and_click_artifact_displacement
+    #     "on"
+    # else:
+    #     show artifact_off at artifact_point_and_click_artifact_displacement
+    #     "off"
+    call screen artifact_point_and_click
+    # jump end_game
     return
     

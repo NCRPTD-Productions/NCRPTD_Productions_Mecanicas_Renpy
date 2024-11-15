@@ -73,9 +73,19 @@ init:
     transform custom_background_size: 
         zoom 2.7
         pos (0,0)
+        
+    transform sidewalk_size: 
+        zoom 1.5
+        align((0.5, 0.5))
+    
+
     transform carlos_bedroom_background_size: 
-        zoom .75
+        zoom .7
         pos (0,0)
+        
+    transform custom_hallway_background_size: 
+        zoom 1.4
+        align (.5, .5)
         
     transform carlos_bedroom_left_library: 
         zoom .75

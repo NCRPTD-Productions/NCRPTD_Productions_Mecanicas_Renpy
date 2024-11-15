@@ -7,15 +7,12 @@ init python:
 label doneCheck:
     if CheckKeyCompletion() != len(inputkey):
         if not isintutorial:
-            show carlos surprised at characters_half_size_placed_at_center
             Carlos "..."
             Carlos "No puede ser... ¿¡Qué me pasa?!"
             # Pause for 3 seconds
             pause(3)
             jump end_decryption_abruptly
         jump showSlots
-
-    
     else:
         if isintutorial:
             jump endDecryption

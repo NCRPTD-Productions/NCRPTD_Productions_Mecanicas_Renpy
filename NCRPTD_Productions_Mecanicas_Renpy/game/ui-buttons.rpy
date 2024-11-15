@@ -1,34 +1,45 @@
 init:
-    transform ui_right_side_buttons:
-        align(1.0, .3)
-        zoom(.5)
+    transform ui_right_side_button_phone:
+        align(1.01, 0.1)
+        offset(-15, 15)
+        zoom 0.5
+
+    transform ui_right_side_button_scrapbook:
+        align(1.01, .3)
+        offset(-15, 15)
+        zoom 0.5
         
-init python:
-    def ui_button_pressed():
-        global is_button_pressed
-        is_button_pressed = True
-        renpy.pause(0.5)
-
 screen ui_buttons:
-    
     imagebutton:
-        idle "ui_button_tel.png"
-        hover "ui_button_tel_clicked.png"
-        action Jump("ui_right_side_button_phone")
-        at ui_right_side_buttons
-        # hovered Show("displayTextScreen", displayText = "¿Regar?")
-        # unhovered Hide("displayTextScreen")
+        idle "ui/ui_button_tel_idle.png"
+        hover "ui/ui_button_tel_hover.png"
+        action ShowMenu("handle_carlos_phone_ui_button")
+        at ui_right_side_button_phone
 
-label ui_right_side_button_phone:
-    "Buenas tardes"
+    imagebutton:
+        idle "ui/ui_button_scrapbook_idle.png"
+        hover "ui/ui_button_scrapbook_hover.png"
+        action ShowMenu("ui_scrapbook_right_side_button")
+        at ui_right_side_button_scrapbook
 
 
-label show_ui_button:
-    $ ui.frame = Frame("ui_button_tel.png", 0, 0, 800, 600)
+label handle_carlos_phone_ui_button:
+    
+    # show carlos_phone_system
+    show screen ui_phone_right_side_button
+    call carlos_phone_system 
+    "Teléfono de carlos"
 
-    $ is_button_pressed = False
-    $ ui.button("Click me", clicked= ui_button_pressed)
+screen ui_phone_right_side_button:
+    imagebutton:
+        at ui_right_side_button_phone
+        idle "ui/ui_button_tel_clicked.png"
+        action Return()
 
-    # while not is_button_pressed:
-    #     hacer algo
 
+screen ui_scrapbook_right_side_button:
+    imagebutton:
+        at ui_right_side_button_scrapbook
+        idle "ui/ui_button_scrapbook_clicked.png"
+        action Return()
+        

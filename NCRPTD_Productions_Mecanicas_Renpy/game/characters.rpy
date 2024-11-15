@@ -4,7 +4,7 @@ define Carlos = Character('Carlos', color= "#e2b520")
 define Edgar = Character('Edgar', color= "#14d1d1")
 define Justo= Character('Justo', color= "#bd4acc")
 define Guillermo= Character('Guillermo', color= "#db4141")
-define AlZodiak= Character('Al Zodiak', color= "#47b947")
+define AlZodiak= Character('Al Zodiak', color= "#70d1ac")
 
 #Phone characters and variables
 define carlos_phone_nvl = Character("Carlos", kind=nvl, image="nighten", callback=Phone_SendSound)

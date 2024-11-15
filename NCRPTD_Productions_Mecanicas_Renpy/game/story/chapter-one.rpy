@@ -53,8 +53,6 @@ label start_point_and_click:
 
 label topdown_view_desk_scene:
 
-    scene bg habitacion carlos at carlos_bedroom_background_size
-    Carlos "Por fin. A trabajar..."
     call screen carlos_desktop_pac
     return
 
@@ -88,7 +86,7 @@ label guillermo_call:
     hide carlos annoyed
     Carlos "¿Y ahora qué?"
     show phone receiving guillermo call at phone_placed_at_left_shake
-    show carlos telefono furioso at characters_half_size_placed_at_right
+    show carlos telefono furioso at characters_half_size_placed_at_right_no_transition
     Carlos "¡No puede ser! ¡A falta de uno, el otro!"
     play sound "sfx_phone_vibrating.mp3"
     Carlos "¿Vale la pena que le conteste, Edgar?"
@@ -97,11 +95,11 @@ label guillermo_call:
     Edgar "Glup."
     hide edgar toc
     play sound "sfx_short_sigh.mp3"
-    show carlos telefono neutral at characters_half_size_placed_at_right
+    show carlos telefono neutral at characters_half_size_placed_at_right_no_transition
     Carlos "Solo porque tú lo dijiste, Edgar."
     hide phone receiving guillermo call
     show phone guillermo active call at phone_placed_at_left_jump
-    show carlos telefono furioso at characters_half_size_placed_at_right
+    show carlos telefono furioso at characters_half_size_placed_at_right_no_transition
     Guillermo "¡HOLA, CARLITOOOOOOOS! ¿¡CÓMO ESTÁS!?"
     Carlos "..."
     show phone guillermo active call at phone_placed_at_left_jump
@@ -126,6 +124,7 @@ label act_I_choice_stay_home:
     # TODO: Poner sprite gritando AL TELÉFONO
     Carlos "¡NO!"
     show phone guillermo active call at phone_placed_at_left_jump
+    show carlos telefono neutral at characters_half_size_placed_at_right_no_transition
     Guillermo "Te arrepentirás si no vienes, ¡Créeme!"
     show carlos telefono furioso at characters_half_size_placed_at_right_no_transition
     Carlos "Tengo cosas que hacer. No me llames."
@@ -138,6 +137,7 @@ label act_I_choice_stay_home:
     show edgar toc at edgar_placed_at_right
     Edgar "Glup."
     hide edgar toc
+    play sound "sfx_short_sigh.mp3"
     show carlos sigh at characters_half_size_placed_at_right
     Carlos "Bueno, a seguir con los criptogramas..."
     jump start_impossible_cryptogram
@@ -152,7 +152,31 @@ label start_impossible_cryptogram:
     return
 
 label act_I_choice_go:
-    Carlos "Esto es lo que sucede si Carlos acepta ir con los pibardox."
+    play sound "sfx_short_sigh.mp3"
+    show carlos sigh at characters_half_size_placed_at_right_no_transition
+    Carlos "Está bien... Iré... "
+    show carlos annoyed at characters_half_size_placed_at_right_no_transition
+    Guillermo "¡SEEEEEEEHHHHHHH!"
+    Guillermo "¡Ven cuanto antes! ¿Aún tienes mi dirección?"
+    show carlos telefono neutral at characters_half_size_placed_at_right_no_transition
+    Carlos "Creo que sí. En fin, te veré en un rato."
+    Guillermo "¡GENIAL! ¡Justo, adivina! Carlos dijo que-{nw=0.75}"
+    play sound "sfx_hang_up_call.mp3"
+    hide phone guillermo active call
+    show carlos sigh at characters_half_size_placed_at_right_no_transition
+    Carlos "¿En qué me metí, Edgar?"
+    hide carlos sigh
+    show edgar toc at edgar_placed_at_left
+    Edgar "Glup."
+    hide edgar toc
+    show carlos annoyedspeech at characters_half_size_placed_at_right_no_transition
+    Carlos "Lo sé, lo sé. Yo acepté."
+    Carlos "Si llega a ser como la última vez, lo mato."
+    show carlos thoughtful at characters_half_size_placed_at_right_no_transition
+    Carlos "{i}Tal vez en mi teléfono aún tenga guardada la dirección de la casa de Guillermo.{i}"
+    hide carlos thoughtful
+    show screen ui_buttons
+    Carlos "asjdlasjdlkasjldk"
     $ renpy.quit()
 
 label carlos_stops_cryptogram_abruptly:
@@ -179,7 +203,7 @@ label carlos_dream:
     Carlos "Te voy a encontrar. Voy a saber quién eres. Solo yo. Nadie más."
     Carlos "Así me haré famoso y podré vivir lejos. Lejos de esos infelices."
     play sound "doorbell.mp3"
-    Carlos "Ahora muéstrate. ¡Muéstrate, mierda!"
+    Carlos "Ahora muéstrate. ¡Muéstrate!"
     jump ringing_bell_carlos_house
     return
 
@@ -191,21 +215,20 @@ label ringing_bell_carlos_house:
     show carlos furious at characters_half_size_placed_at_left #TODO: Poner sprite carlos gritando (no al telefono)
     Carlos "¡NO, NO, NO!"
     play sound "doorbell.mp3"
-    Carlos "¡YA TE ESCUCHÉ, MIERDA!"
+    Carlos "¡YA TE ESCUCHÉ!"
     jump pasillo_casa_carlos
     return
 
 label pasillo_casa_carlos:
     play music "doorbell.mp3"
-    scene bg pasillo at custom_background_size with fade
+    scene hallway_carlos at custom_hallway_background_size with fade
     Carlos "¿Quién es...?"
     call screen hall_door_pac
-    return
 
 label wait_until_open_door:
-    Carlos "{i}Si no hago nada, eventualmente se irán...{i}"
-    scene bg pasillo at custom_background_size with fade
+    scene hallway_carlos at custom_hallway_background_size with fade
     stop music
+    Carlos "{i}Si no hago nada, eventualmente se irán...{i}"
     play sound "sfx_short_sigh.mp3"
     Carlos "Por fin..."
     play music "doorbell.mp3"
@@ -219,13 +242,13 @@ label sidewalk_scene_act_II:
     play sound "sfx_door_open.mp3"
     pause(.5)
     stop music
-    scene sidewalk at custom_background_size with fade
+    scene sidewalk at sidewalk_size
     show guillermo feliz at characters_half_size_placed_at_center
     show justo feliz at characters_half_size_placed_at_right
     Guillermo "¡Carlitos!"
     Justo "Hola, Calos.{nw=.25}"
     show carlos annoyedspeech at characters_half_size_placed_at_left
-    Carlos "¿Qué carajos quieren?"
+    Carlos "¿Qué diablos quieren?"
     show guillermo neutral at characters_half_size_placed_at_center_no_transition
     Guillermo "Lo que te dije por llamada. ¡Ven con nosotros a mi casa! ¡Tenemos algo que te va a encantar!"
     show carlos 2ndpose at characters_half_size_placed_at_left_no_transition
@@ -353,6 +376,7 @@ label act_II_final_scene:
     # TODO: Poner sonido grito de furia
     show carlos furious at characters_half_size_placed_at_right_no_transition
     Carlos "¡MALDICIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOON!"
+    scene black
     jump neutral_ending_endgame_screen
     return
 
@@ -365,6 +389,32 @@ label neutral_ending_endgame_screen:
     return
 
 label response_go_with_friends_act_II:
+    show carlos annoyed at characters_half_size_placed_at_left_no_transition
+    show guillermo roblox face at characters_half_size_placed_at_center_no_transition
+    show justo complacido at characters_half_size_placed_at_right_no_transition
+    Carlos "Hmmm..."
+    show carlos annoyedspeech at characters_half_size_placed_at_left_no_transition 
+    Carlos "Está bien, iré. Pero deja de hacer esa cara, Guillermo."
+    show guillermo feliz at characters_half_size_placed_at_center_no_transition
+    show justo feliz at characters_half_size_placed_at_right_no_transition
+    Guillermo "¡SIII!"
+    Justo "¡YAY!"
+    show justo complacido at characters_half_size_placed_at_right_no_transition
+    show guillermo roblox face at characters_half_size_placed_at_center_no_transition
+    Guillermo "Pero no te pongas nerviosa, Carlos."
+    show carlos furious at characters_half_size_placed_at_left_no_transition
+    show justo neutral at characters_half_size_placed_at_right_no_transition
+    Carlos "¡BASTA!"
+    show guillermo roblox face at characters_half_size_placed_at_center_no_transition
+    show carlos 2ndpose at characters_half_size_placed_at_left_no_transition
+    show justo feliz at characters_half_size_placed_at_right_no_transition
+    Guillermo "Espléndido."
+    show guillermo neutral at characters_half_size_placed_at_center_no_transition
+    Guillermo "Vamos de una vez, yo los guío. "
+    jump end_game
+    return
+
+
     Carlos "Bueno pibes son lo más nunca cambien saludos ;)"
     jump end_game
     return

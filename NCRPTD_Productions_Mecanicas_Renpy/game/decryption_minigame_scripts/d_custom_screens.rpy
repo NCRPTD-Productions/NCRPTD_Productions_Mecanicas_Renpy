@@ -1,6 +1,6 @@
 screen Escritorio:
     
-    add "escritorio/bg escritorio.png" zoom 1 #Era 0.9
+    add "escritorio/bg desk_decryption.png" at decryption_desk
 
 screen SlotButtons:
     vbox:

@@ -1,26 +1,78 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/day-cicle.rpy", line 1, in script
-    init python:
-  File "game/day-cicle.rpy", line 3, in <module>
-    day_cicle_bedroom_sizes
-NameError: name 'day_cicle_bedroom_sizes' is not defined
+Compiling ATL code at game/images.rpy:82
+  File "game/story/chapter-one.rpy", line 71, in script call
+    call decryption("a") from _call_decryption
+  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
+    $ ui.interact()
+  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
+    $ ui.interact()
+  File "game/story/chapter-one.rpy", line 152, in script call
+    call decryption("sda") from _call_decryption_1
+  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
+    $ ui.interact()
+  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
+    $ ui.interact()
+  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
+    $ ui.interact()
+  [Previous line repeated 1 more time]
+  File "game/story/chapter-one.rpy", line 201, in script
+    scene hallway_carlos at custom_hallway_background_size with fade
+  File "game/images.rpy", line 82, in <module>
+    aligh (.5, .5)
+NameError: name 'aligh' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/day-cicle.rpy", line 1, in script
-    init python:
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\ast.py", line 821, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\python.py", line 1178, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/day-cicle.rpy", line 3, in <module>
-    day_cicle_bedroom_sizes
-NameError: name 'day_cicle_bedroom_sizes' is not defined
+  File "game/story/chapter-one.rpy", line 71, in script call
+    call decryption("a") from _call_decryption
+  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
+    $ ui.interact()
+  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
+    $ ui.interact()
+  File "game/story/chapter-one.rpy", line 152, in script call
+    call decryption("sda") from _call_decryption_1
+  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
+    $ ui.interact()
+  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
+    $ ui.interact()
+  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
+    $ ui.interact()
+  [Previous line repeated 1 more time]
+  File "game/story/chapter-one.rpy", line 201, in script
+    scene hallway_carlos at custom_hallway_background_size with fade
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\ast.py", line 1245, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\ast.py", line 1074, in show_imspec
+    renpy.config.show(name,
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\exports\displayexports.py", line 503, in show
+    sls.add(layer, img, key, zorder, behind, at_list=at_list, name=name, atl=atl, default_transform=default_transform, transient=transient)
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\display\scenelists.py", line 477, in add
+    thing.visit_all(lambda d : None)
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\display\displayable.py", line 424, in visit_all
+    for d in self.visit():
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\atl.py", line 816, in visit
+    block = self.compile()
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\atl.py", line 723, in compile
+    block = self.atl.compile(self.context)
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\atl.py", line 925, in compile
+    statements = [ i.compile(ctx) for i in self.statements ]
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\atl.py", line 925, in <listcomp>
+    statements = [ i.compile(ctx) for i in self.statements ]
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\atl.py", line 1231, in compile
+    child = ctx.eval(expr)
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\atl.py", line 387, in eval
+    return renpy.python.py_eval(expr, locals=self.context)
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\python.py", line 1209, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\python.py", line 1202, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/images.rpy", line 82, in <module>
+    aligh (.5, .5)
+NameError: name 'aligh' is not defined
 
 Windows-10-10.0.22631 AMD64
 Ren'Py 8.3.2.24090902
 a_golden_chance 1.0
-Thu Nov 14 15:28:47 2024
+Thu Nov 14 20:11:28 2024

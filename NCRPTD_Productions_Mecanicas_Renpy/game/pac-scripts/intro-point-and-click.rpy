@@ -120,7 +120,7 @@ label edgar_action_pac:
     show edgar toc at edgar_placed_at_left
     Edgar "Glup."
     hide edgar toc
-    show carlos normal at characters_half_size_placed_at_right
+    show carlos smirk at characters_half_size_placed_at_right
     "???" "Tú lo has dicho, amigo."
     jump start_point_and_click
     return
@@ -159,5 +159,8 @@ label desk_action_pac:
     show carlos annoyed at characters_half_size_placed_at_center_no_transition
     with Shake((0, 0, 0, 0), .5, dist=30)
     Carlos "¡No se puede ser tan idiota!"
+    scene pac_desk_desk_objects at carlos_bedroom_background_size
+    with fade
+    Carlos "Por fin. A trabajar..."
     jump topdown_view_desk_scene
     return

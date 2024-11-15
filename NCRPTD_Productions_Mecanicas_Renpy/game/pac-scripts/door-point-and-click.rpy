@@ -5,8 +5,7 @@ init python:
 init:
     transform hall_door:
         zoom 1.43
-        xalign .5
-        ypos 50
+        align(.5, .42)
         # align(0.5, 0.95)
 
     transform hall_door_eye_view:
@@ -15,14 +14,15 @@ init:
         # align(0.5, 0.95)
 
     transform hall_door_keys:
-        zoom 2.5
-        align(.63, .8)
+        zoom 1
+        
+        # align(0.9, 0.8)      
+        align(.58, .38)
         # align(0.5, 0.95)
 
 screen hall_door_pac:
     imagebutton:
-        idle "door idle.png"
-        hover "door hover.png"
+        auto "pac_hallway_carlos_door_%s.png"
         action [Hide("displayTextScreen"), Jump("hall_door_action_pac")]
         at hall_door
         # hovered Show("displayTextScreen", displayText = "¿Abrir?")
@@ -37,15 +37,13 @@ label hall_door_action_pac:
 
 screen hall_door_calling_continuously_pac:
     imagebutton:
-        idle "door idle.png"
-        hover "door hover.png"
+        auto "pac_hallway_carlos_door_%s.png"
         action [Hide("displayTextScreen"), Jump("hall_door_continuously_calling_action_pac")]
         at hall_door
         # hovered Show("displayTextScreen", displayText = "¿Abrir?")
         # unhovered Hide("displayTextScreen")
         
     imagebutton:
-        align(0.9, 0.8)      
         idle "door keys idle.png"
         hover "door keys hover.png"
         action [Hide("displayTextScreen"), Jump("grab_keys")]

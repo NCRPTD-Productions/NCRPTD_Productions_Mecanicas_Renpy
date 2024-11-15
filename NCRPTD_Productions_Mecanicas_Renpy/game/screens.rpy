@@ -290,13 +290,12 @@ screen navigation():
     vbox:
         style_prefix "navigation"
 
-        if main_menu:
-            xalign 0.48
-            yalign 0.61
+        if renpy.get_screen("main_menu"):
+            align((0.48, 0.61))
         else:
             xoffset 60
-            yalign 0.5
-
+            align(0.01, 0.5)
+        
         spacing gui.navigation_spacing
 
         if main_menu:

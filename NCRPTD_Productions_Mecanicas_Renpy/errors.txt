@@ -2,71 +2,9 @@
 errors listed below, and try again.
 
 
-The label left_library_action_pac is defined twice, at File "game/intro-point-and-click.rpyc", line 57:
-
-and File "game/pac-scripts/intro-point-and-click.rpy", line 57:
-label left_library_action_pac:
-
-
-The label left_library_option_EVA_01 is defined twice, at File "game/intro-point-and-click.rpyc", line 68:
-
-and File "game/pac-scripts/intro-point-and-click.rpy", line 68:
-label left_library_option_EVA_01:
-
-
-The label left_library_option_Golden_Beetle is defined twice, at File "game/intro-point-and-click.rpyc", line 74:
-
-and File "game/pac-scripts/intro-point-and-click.rpy", line 74:
-label left_library_option_Golden_Beetle:
-
-
-The label library_option_Go_Back is defined twice, at File "game/intro-point-and-click.rpyc", line 80:
-
-and File "game/pac-scripts/intro-point-and-click.rpy", line 80:
-label library_option_Go_Back:
-
-
-The label right_library_action_pac is defined twice, at File "game/intro-point-and-click.rpyc", line 86:
-
-and File "game/pac-scripts/intro-point-and-click.rpy", line 86:
-label right_library_action_pac:
-
-
-The label right_library_option_Death_Note is defined twice, at File "game/intro-point-and-click.rpyc", line 99:
-
-and File "game/pac-scripts/intro-point-and-click.rpy", line 99:
-label right_library_option_Death_Note:
-
-
-The label right_library_option_Ryuk_Figure is defined twice, at File "game/intro-point-and-click.rpyc", line 105:
-
-and File "game/pac-scripts/intro-point-and-click.rpy", line 105:
-label right_library_option_Ryuk_Figure:
-
-
-The label right_library_option_The_Psychoanalyst is defined twice, at File "game/intro-point-and-click.rpyc", line 111:
-
-and File "game/pac-scripts/intro-point-and-click.rpy", line 111:
-label right_library_option_The_Psychoanalyst:
-
-
-The label edgar_action_pac is defined twice, at File "game/intro-point-and-click.rpyc", line 119:
-
-and File "game/pac-scripts/intro-point-and-click.rpy", line 119:
-label edgar_action_pac:
-
-
-The label bed_action_pac is defined twice, at File "game/intro-point-and-click.rpyc", line 128:
-
-and File "game/pac-scripts/intro-point-and-click.rpy", line 128:
-label bed_action_pac:
-
-
-The label desk_action_pac is defined twice, at File "game/intro-point-and-click.rpyc", line 134:
-
-and File "game/pac-scripts/intro-point-and-click.rpy", line 134:
-label desk_action_pac:
-
+File "game/carlos-phone-system.rpy", line 3: invalid syntax
+    $ isCameraEnabled = False
+     ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Thu Nov 14 15:40:53 2024
+Fri Nov 15 01:12:15 2024

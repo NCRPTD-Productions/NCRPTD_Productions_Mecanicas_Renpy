@@ -1,72 +1,104 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
+While processing text tag {color=#} in '{color=#}I{/color}'.:
   File "game/story/chapter-one.rpy", line 68, in script call
-    call decryption("a") from _call_decryption
+    call decryption("tres tristes trigos comen trigo en un trigal") from _call_decryption
   File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
     $ ui.interact()
   File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
     $ ui.interact()
-  File "game/story/chapter-two.rpy", line 70, in script call
-    call artifact_pac(1)
-  File "game/artifact_pac/artifact_main.rpy", line 52, in script call
+  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
     $ ui.interact()
-  File "game/artifact_pac/artifact_main.rpy", line 52, in script call
+  [Previous line repeated 4 more times]
+  File "game/decryption_minigame_scripts/d_inputLetters.rpy", line 11, in script call
+    Carlos "¡No puedo creer que me haya equivocado!"
+  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
     $ ui.interact()
-  File "game/artifact_pac/artifact_main.rpy", line 52, in script call
+  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
     $ ui.interact()
-  [Previous line repeated 27 more times]
-  File "game/artifact_pac/artifact_main.rpy", line 28, in script
-    show screen Artifact(isOn, thinAntValue, weirdAntValue, bButton, sButton)
-  File "renpy/common/000statements.rpy", line 647, in execute_show_screen
-    renpy.show_screen(name, *args, **kwargs)
-TypeError: missing a required argument: 'indexval'
+  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
+    $ ui.interact()
+  [Previous line repeated 19 more times]
+  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script
+    $ ui.interact()
+  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in <module>
+    $ ui.interact()
+Exception: Color string '' must be 3, 4, 6, or 8 hex digits long.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
   File "game/story/chapter-one.rpy", line 68, in script call
-    call decryption("a") from _call_decryption
+    call decryption("tres tristes trigos comen trigo en un trigal") from _call_decryption
   File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
     $ ui.interact()
   File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
     $ ui.interact()
-  File "game/story/chapter-two.rpy", line 70, in script call
-    call artifact_pac(1)
-  File "game/artifact_pac/artifact_main.rpy", line 52, in script call
+  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
     $ ui.interact()
-  File "game/artifact_pac/artifact_main.rpy", line 52, in script call
+  [Previous line repeated 4 more times]
+  File "game/decryption_minigame_scripts/d_inputLetters.rpy", line 11, in script call
+    Carlos "¡No puedo creer que me haya equivocado!"
+  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
     $ ui.interact()
-  File "game/artifact_pac/artifact_main.rpy", line 52, in script call
+  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
     $ ui.interact()
-  [Previous line repeated 27 more times]
-  File "game/artifact_pac/artifact_main.rpy", line 28, in script
-    show screen Artifact(isOn, thinAntValue, weirdAntValue, bButton, sButton)
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\ast.py", line 1974, in execute
-    self.call("execute")
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\ast.py", line 1953, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 647, in execute_show_screen
-    renpy.show_screen(name, *args, **kwargs)
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\display\screen.py", line 1361, in show_screen
-    sls.add(_layer, d, _tag, zorder=_zorder, transient=_transient, keep_st=True, name=name)
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\display\scenelists.py", line 444, in add
-    if not self.hide_or_replace(layer, remove_index, "replaced"):
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\display\scenelists.py", line 503, in hide_or_replace
-    if not oldsle.displayable._handles_event(prefix):
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\display\screen.py", line 533, in _handles_event
-    self.update()
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\display\screen.py", line 697, in update
-    self.screen.function(**self.scope)
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\parameter.py", line 455, in apply_arguments
-    return parameters.apply(args or (), kwargs or {}, ignore_errors)
-  File "C:\Users\barba\OneDrive\Escritorio\renpy-8.3.2\renpy\parameter.py", line 307, in apply
-    raise TypeError(msg) # from None
-TypeError: missing a required argument: 'indexval'
+  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script call
+    $ ui.interact()
+  [Previous line repeated 19 more times]
+  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in script
+    $ ui.interact()
+  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\ast.py", line 821, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\python.py", line 1178, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/decryption_minigame_scripts/d_showSlots.rpy", line 8, in <module>
+    $ ui.interact()
+  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\display\core.py", line 2215, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\display\core.py", line 2879, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\display\core.py", line 1381, in draw_screen
+    surftree = renpy.display.render.render_screen(
+  File "render.pyx", line 486, in renpy.display.render.render_screen
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\display\layout.py", line 903, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\display\layout.py", line 903, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\display\layout.py", line 903, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\display\screen.py", line 754, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\display\layout.py", line 903, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\display\layout.py", line 1171, in render
+    surf = render(d, width - x, rh, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\text\text.py", line 2540, in render
+    virtual_layout = Layout(self, width, height, renders, drawable_res=False, size_only=True)
+  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\text\text.py", line 733, in __init__
+    self.paragraphs = self.segment(text.tokens, style, renders, text)
+  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\text\text.py", line 1418, in segment
+    push().color = renpy.easy.color(value)
+  File "C:\Users\Usuario\Documents\renpy-8.3.2-sdk\renpy\color.py", line 165, in __new__
+    raise Exception("Color string {!r} must be 3, 4, 6, or 8 hex digits long.".format(c))
+Exception: Color string '' must be 3, 4, 6, or 8 hex digits long.
 
-Windows-10-10.0.22631 AMD64
+Windows-10-10.0.19041 AMD64
 Ren'Py 8.3.2.24090902
 a_golden_chance 1.0
-Fri Nov 15 14:59:05 2024
+Fri Nov 15 15:39:34 2024

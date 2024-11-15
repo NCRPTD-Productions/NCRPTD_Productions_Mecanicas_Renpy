@@ -8,7 +8,7 @@ init:
         align (1.055, 0.05)
 
     transform pac_desk_laptop:
-        zoom 1.15
+        zoom 1.2
         align (0.53,0.15)
 
     transform pac_desk_pencil_holder:
@@ -81,7 +81,7 @@ label desk_laptop_action_pac:
     play sound "sfx_slam_desk.mp3"
     show carlos smirk at characters_half_size_placed_at_left_no_transition
     with Shake((0, 0, 0, 0), .5, dist=30)
-    Carlos "¡Y aún así nadie pudo descifrar la identidad del Asesino del Zodiaco!"
+    Carlos "¡Y aún así nadie pudo descifrar la identidad del Asesino del Zodíaco!"
     show edgar hiding at edgar_placed_at_right
     Edgar "..."
     show carlos annoyedspeech at characters_half_size_placed_at_left_no_transition

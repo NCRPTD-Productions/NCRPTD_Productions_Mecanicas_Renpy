@@ -3,7 +3,7 @@ init:
 
     transform pac_intro_left_library:
         zoom .7
-        align (.216, .625)        # pos(645, 545)
+        align (.217, .625)        # pos(645, 545)
 
     transform pac_intro_right_library:
         zoom .7
@@ -15,7 +15,7 @@ init:
 
     transform pac_intro_desk:
         zoom .7
-        align (.496, .89)        # pos(645, 545)
+        align (.498, .885)        # pos(645, 545)
 
     transform pac_intro_bed:
         zoom .83

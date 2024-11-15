@@ -22,12 +22,11 @@ screen ui_buttons:
         action ShowMenu("ui_scrapbook_right_side_button")
         at ui_right_side_button_scrapbook
 
-
 label handle_carlos_phone_ui_button:
     
     # show carlos_phone_system
     show screen ui_phone_right_side_button
-    call carlos_phone_system 
+    jump carlos_phone_system 
     "Teléfono de carlos"
 
 screen ui_phone_right_side_button:

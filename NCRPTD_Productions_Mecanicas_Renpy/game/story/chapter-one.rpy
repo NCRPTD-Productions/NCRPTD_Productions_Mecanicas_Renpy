@@ -175,9 +175,9 @@ label act_I_choice_go:
     show carlos thoughtful at characters_half_size_placed_at_right_no_transition
     Carlos "{i}Tal vez en mi teléfono aún tenga guardada la dirección de la casa de Guillermo.{i}"
     hide carlos thoughtful
-    show screen ui_buttons
-    Carlos "asjdlasjdlkasjldk"
-    $ renpy.quit()
+    call handle_carlos_phone_ui_button
+    # Carlos "asjdlasjdlkasjldk"
+    # $ renpy.quit()
 
 label carlos_stops_cryptogram_abruptly:
     scene bg habitacion carlos at carlos_bedroom_background_size

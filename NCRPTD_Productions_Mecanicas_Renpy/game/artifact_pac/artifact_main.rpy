@@ -4,15 +4,17 @@ define bButton = 0
 define sButton = 0
 define isOn = False
 define onoff = 0
-define imageIndex = 0
 
 define canClickThings = False
 define canClickOnOff = False
 
+init python:
+    tvindex = 0
+
 label artifact_pac(momentIndex):
     stop music
     
-    show screen Artifact(isOn, thinAntValue, weirdAntValue, bButton, sButton)
+    show screen Artifact(isOn, thinAntValue, weirdAntValue, bButton, sButton, tvindex)
     show screen ThinAntenna(thinAntValue)
     show screen WeirdAntenna(weirdAntValue)
     show screen BigButton(bButton)
@@ -25,14 +27,14 @@ label artifact_pac(momentIndex):
         $ canClickOnOff = True
     
     label showArtifact:
-        show screen Artifact(isOn, thinAntValue, weirdAntValue, bButton, sButton)
+        show screen Artifact(isOn, thinAntValue, weirdAntValue, bButton, sButton, tvindex)
         show screen ThinAntenna(thinAntValue)
         show screen WeirdAntenna(weirdAntValue)
         show screen BigButton(bButton)
         show screen SmallButton(sButton)
         show screen OnOff
-
-        if (imageIndex >= 3 and momentIndex == 1):
+    
+        if (tvindex >= 2 and momentIndex == 1):
             $ canClickThings = False
             $ canClickOnOff = False
             stop music
@@ -77,7 +79,7 @@ label ArtifactOnOff_1:
     $ onoff += 1
     $ canClickOnOff = False
 
-    show screen Artifact(isOn, thinAntValue, weirdAntValue, bButton, sButton)
+    show screen Artifact(isOn, thinAntValue, weirdAntValue, bButton, sButton, tvindex)
     show screen ThinAntenna(thinAntValue)
     show screen WeirdAntenna(weirdAntValue)
     show screen BigButton(bButton)

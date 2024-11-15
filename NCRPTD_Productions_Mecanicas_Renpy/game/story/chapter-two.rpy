@@ -2,6 +2,9 @@ init:
     transform guillermo_house_outside:
         zoom 1.5
         align((0.5, 0.5))
+    transform guillermo_bedroom:
+        zoom .68
+        align((0.5, 0.5))
 
 label start_chapter_II_guillermo_home:
     scene black
@@ -20,7 +23,7 @@ label start_chapter_II_guillermo_home:
     jump chapter_II_guillermo_bedroom_scene_I
 
 label chapter_II_guillermo_bedroom_scene_I:
-    scene guillermo bedroom at guillermo_house_outside
+    scene bg habitacion guillermo desordenada vacia at guillermo_bedroom
     # TODO: Poner sonido pasos
     # TODO: Poner música cueva guille
     Guillermo "¡Ven a la terraza!"
@@ -39,7 +42,7 @@ label chapter_II_guillermo_bedroom_pac_handler:
 
 label chapter_II_guillermo_bedroom_no_pac:
     # TODO: Agregar sonido pasos
-    scene guillermo bedroom at guillermo_house_outside
+    scene bg habitacion guillermo desordenada vacia at guillermo_bedroom
     Guillermo "¡Ven a la terraza!"
     show carlos puzzled at characters_half_size_placed_at_left
     Carlos "¿En serio te pondrás a jugar? ¡Si acabamos de llegar!"
